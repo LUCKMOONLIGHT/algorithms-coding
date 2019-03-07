@@ -75,8 +75,9 @@ public class Test15 {
         double result = powerWithUnsignedExponent(base, exponent >> 2);
 
         // 求最终的值，如果是奇数就还要剩以一次底数
+        // 位运算判断奇偶性，效率高
         result *= result;
-        if (exponent % 2 != 0) {
+        if ((exponent & 1) == 1) {
             result *= base;
         }
 
