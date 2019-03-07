@@ -121,24 +121,7 @@ public class Test09 {
 
 
 
-```python
-class Solution:
-    def __init__(self):
-        self.stack1 = []    # 栈A
-        self.stack2 = []    # 栈B
-    def push(self, node):
-        # write code here
-        self.stack1.append(node)    # 向栈顶添加元素
-    def pop(self):
-        # return xx
-        if len(self.stack2) > 0:
-            return self.stack2.pop()
-        # 将栈A的所有元素pop并push至栈B中，
-        while len(self.stack1)>0: # 或者 while self.stack1
-            self.stack2.append(self.stack1.pop())
-        if len(self.stack2) > 0:
-            return self.stack2.pop()
-```
+
 
 
 
