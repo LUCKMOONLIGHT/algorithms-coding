@@ -8,6 +8,8 @@
 2. 当遍历完整个链表后，再从栈顶开始逐个输出节点的值
 
 ## 代码
+
+```java
 public Node reverserLinkedList2(Node node){
         Stack<Node> nodeStack = new Stack<>();
         Node head = null;
@@ -27,7 +29,7 @@ public Node reverserLinkedList2(Node node){
             tempNode.setNode(null);
         }
         return head;
-    }
---------------------- 
 
+ }
+```
 
