@@ -1,68 +1,48 @@
 ## 题目描述
 
-输入一个键表，输出该链表中倒数第k 个结点
+定义一个函数，输入一个链表的头结点，反转该链表并输出反转后链表的头结点。
 
 ## 解题思路
 
-1. 使用双指针，一个指针先走k次，然后两个指针一起走
-2. 等到第一个指针到尾结点时，前面的指针满足要求
+1. 使用尾插法翻转链表|使用栈翻转链表见Test6
 
 
 
 ## 代码
 
 ```java
-public class Test21 {
-    public static class ListNode {
-        int value;
-        ListNode next;
-    }
-
-    /**
-     * 输入一个键表，输出该链表中倒数第k 个结点．为了符合大多数人的习惯，
-     * 本题从1开始计数，即链表的尾结点是倒数第1个结点．例如一个链表有6个结点，
-     * 从头结点开始它们的值依次是1、2、3、4、5 6。这个链表的倒数第3个结点是值为4的结点．
+public class Test23 {
+        /**
+     * 定义一个函数，输入一个链表的头结点，反转该链表并输出反转后链表的头结点。
      *
      * @param head 链表的头结点
-     * @param k    倒数第k个结点
-     * @return 倒数第k个结点
+     * @return 反转后的链表的头结点
      */
-    public static ListNode findKthToTail(ListNode head, int k) {
+    public static ListNode reverseList(ListNode head) {
+        // 创建一个临时结点，当作尾插法的逻辑头结点
+        ListNode root = new ListNode();
+        // 逻辑头结点点的下一个结点为空
+        root.next = null;
 
-        // 输入的链表不能为空，并且k大于0
-        if (k < 1 || head == null) {
-            return null;
+        // 用于记录要处理的下一个结点
+        ListNode next;
+        // 当前处理的结点不为空
+        while (head != null) {
+            // 记录要处理的下一个结点
+            next = head.next;
+            // 当前结点的下一个结点指向逻辑头结点的下一个结点
+            head.next = root.next;
+            // 逻辑头结点的下一个结点指向当前处理的结点
+            root.next = head;
+            // 上面操作完成了一个结点的头插
+
+            // 当前结点指向下一个要处理的结点
+            head = next;
         }
 
-        // 指向头结点
-        ListNode pointer = head;
-
-        // 倒数第k个结点与倒数第一个结点相隔k-1个位置
-        // pointer先走k-1个位置
-        for (int i = 1; i < k; i++) {
-            // 说明还有结点
-            if (pointer.next != null) {
-                pointer = pointer.next;
-            }
-            // 已经没有节点了，但是i还没有到达k-1说明k太大，链表中没有那么多的元素
-            else {
-                // 返回结果
-                return null;
-            }
-
-        }
-
-        // pointer还没有走到链表的末尾，那么pointer和head一起走，
-        // 当pointer走到最后一个结点即，pointer.next=null时，head就是倒数第k个结点
-        while (pointer.next != null) {
-            head = head.next;
-            pointer = pointer.next;
-        }
-
-        // 返回结果
-        return head;
+        // 逻辑头结点的下一个结点就是返回后的头结点
+        return root.next;
     }
-
     public static void main(String[] args) {
         ListNode head = new ListNode();
         head.value = 1;
@@ -91,11 +71,12 @@ public class Test21 {
         head.next.next.next.next.next.next.next.next = new ListNode();
         head.next.next.next.next.next.next.next.next.value = 9;
 
-        System.out.println(findKthToTail(head, 1).value); // 倒数第一个
-        System.out.println(findKthToTail(head, 5).value); // 中间的一个
-        System.out.println(findKthToTail(head, 9).value); // 倒数最后一个就是顺数第一个
+        printList(head);
+        head = reverseList(head);
+        printList(head);
+        head = reverseList2(head);
+        printList(head);
 
-        System.out.println(findKthToTail(head, 10));
     }
 }
 ```
