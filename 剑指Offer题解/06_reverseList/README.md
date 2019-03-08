@@ -15,8 +15,8 @@ public Node reverserLinkedList2(Node node){
         Node head = null;
         //存入栈中，模拟递归开始的栈状态
         while (node != null){
-            nodeStack.push(node);
             node = node.getNode();
+            nodeStack.push(node);
         }
         //特殊处理第一个栈顶元素（也就是反转前的最后一个元素，因为它位于最后，不需要反转，如果它参与下面的while， 因为它的下一个节点为空，如果getNode()， 那么为空指针异常）
         if ((!nodeStack.isEmpty())){
