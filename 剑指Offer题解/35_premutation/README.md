@@ -24,38 +24,59 @@
 ## 代码
 
 ```java
-public class Test35 {
-    public static void permutation(char[] chars) {
-        // 输入较验
-        if (chars == null || chars.length < 1) {
-            return;
-        }
-        // 进行排列操作
-        permutation(chars, 0);
-    }
-
-    /**
-     * 求字符数组的排列
+public class Test36 {
+        /**
+     * 题目：数组中有一个数字出现的次数超过数组长度的一半，请找出这个数字
      *
-     * @param chars 待排列的字符串
-     * @param begin 当前处理的位置
+     * @param numbers 输入数组
+     * @return 找到的数字
      */
-    public static void permutation(char[] chars, int begin) {
-        // 如果是最后一个元素了，就输出排列结果
-        if (chars.length - 1 == begin) {
-            System.out.print(new String(chars) + " ");
-        } else {
-            char tmp;
-            // 对当前还未处理的字符串进行处理，每个字符都可以作为当前处理位置的元素
-            for (int i = begin; i < chars.length; i++) {
-                // 下面是交换元素的位置
-                tmp = chars[begin];
-                chars[begin] = chars[i];
-                chars[i] = tmp;
+    public static int moreThanHalfNum(int[] numbers) {
 
-                // 处理下一个位置
-                permutation(chars, begin + 1);
+        // 输入校验
+        if (numbers == null || numbers.length < 1) {
+            throw new IllegalArgumentException("array length must large than 0");
+        }
+
+        // 用于记录出现次数大于数组一半的数
+        int result = numbers[0];
+        // 于当前记录的数不同的数的个数
+        int count = 1;
+        // 从第二个数开始向后找
+        for (int i = 1; i < numbers.length; i++) {
+            // 如果记数为0
+            if (count == 0) {
+                // 重新记录一个数，假设它是出现次数大于数组一半的
+                result = numbers[i];
+                // 记录统计值
+                count = 1;
             }
+            // 如果记录的值与统计值相等，记数值增加
+            else if (result == numbers[i]) {
+                count++;
+            }
+            // 如果不相同就减少，相互抵消
+            else {
+                count--;
+            }
+        }
+
+        // 最后的result可能是出现次数大于数组一半长度的值
+        // 统计result的出现次数
+        count = 0;
+        for (int number : numbers) {
+            if (result == number) {
+                count++;
+            }
+        }
+
+        // 如果出现次数大于数组的一半就返回对应的值
+        if (count > numbers.length / 2) {
+            return result;
+        }
+        // 否则输入异常
+        else {
+            throw new IllegalArgumentException("invalid input");
         }
     }
 }
