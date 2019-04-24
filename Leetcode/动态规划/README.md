@@ -23,6 +23,8 @@
 
 
 
+
+
 ### 一维动态规划
 
 ##### 1. 斐波拉契
@@ -151,6 +153,133 @@ dp[1] = false;
 for (int i = 2; i <= N; i++) {
 	dp[i] = !dp[i - 1];
 }
-return dp[N];
+        return dp[N];
+```
+
+
+
+二维动态规划
+
+1. 最长公共子序列 | 最长公共子串
+
+```java
+public static int findLCS(String A, int n, String B, int m) {
+                int[][] dp = new int[n + 1][m + 1];
+                for (int i = 0; i <= n; i++) {
+                        for (int j = 0; j <= m; j++) {
+                                dp[i][j] = 0;
+                        }
+                }
+
+                for (int i = 1; i <= n; i++) {
+                        for (int j = 1; j <= m; j++) {
+                                if (A.charAt(i - 1) == B.charAt(j - 1)) {
+                                        dp[i][j] = dp[i - 1][j - 1] + 1;
+                                } else {
+                                        dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
+                                }
+                        }
+                }
+                return dp[n][m];
+        }
+
+最长公共子串
+# 两个字母相同
+if word_a[i] == word_b[j]:
+    cell[i][j] = cell[i-1][j-1] + 1
+# 两个字母不同
+else:
+    cell[i][j] = 0
+```
+
+2. 游艇租赁问题
+
+```java
+/**1.确定合适的数据结构
+输入数据r[][] 二维数组m[][]存放各个子问题的最优解  s[][]存放各个子问题的最优决策
+2.初始化 m[i][j]=r[i][j] s[i][j]=0
+3.循环阶段
+4.构造最优解；递归构造两个子问题的最优解
+m[][]记录最少租金 循环考虑站点数2-6个
+s[][]记录最优策略
+**/
+void rent()
+{
+	int i,j,k,d;
+	for(d=3;d<=n;d++) #规模
+	{
+		for(int i=1;i<=n-d+1;i++) #每个规模子问题的最优解
+		{
+			j = i+d-1; #结尾
+			for(int k=i+1;k<j;k++)
+			{
+				int temp = m[i][k]+m[k][j];
+				if(temp < m[i][j])
+				{
+					m[i][j]=temp;
+					s[i][j]=k;
+				}
+			}
+		}
+	}
+}
+
+//最优解构造函数
+void path(int i,int j)
+{
+	if(s[i][j] == 0)
+	{
+		print(j)
+	}
+	path(i,s[i][j])
+	path(s[i][j],j)
+}
+```
+
+3. 快速计算-矩阵连乘
+
+```java
+/**
+对于给定n个连乘的矩阵，找出一种加括号的方法，使得矩阵连乘的计算量（次数）最小
+1.分析最优解的结构特征
+假设在第k个位置加括号会得到最优解，那么原问题就变成了两个子问题；原问题的最优解包含子问题的最优解
+2.建立最优值递归式
+m[i][j] =   0 i=j
+			min{m[i][k]+m[k+1][j]+p[i-1]*p[k]*p[j]} i < j
+3.自底向上计算并记录最优值
+先求两个矩阵相乘的最优值，再求3个矩阵相乘的最优值，直到n个矩阵连乘的最优值
+4.构造最优解
+将问题分为小规模的问题，自底向上，将规模放大，直到得到所求规模的问题的解
+
+1.初始化
+p[] = {3,5,10,8,2,4}
+m[][]
+s[][]
+2.计算两个矩阵相乘的最优值
+r = 2
+m[i][j] = min{m[i][k]+m[k+1][j]+p[i-1]*p[k]*p[j]}  s[i][j]=k
+r = 3
+m[1][3] = min{k=1,k=2} m[1][1]+m[2][3]+p0p1p3=520 m[1][2]+m[3][3]+p0p2p3=390
+**/
+
+void matrixchain()
+	int i,j,r,k;
+	for(r=2;r <= n; r++)
+		for(int i=1;i <= n-r+1; i++)
+			j = i+r-1;
+			m[i][j] = m[i+1][j]+p[i-1]*p[i]*p[j]
+			s[i][j] = i
+			for(k = i+1;k < j;k++)
+				int t = m[i][k]+m[k+1][j]+p[i-1]*p[k]*p[j]
+				if(t < m[i][j])
+					m[i][j] = t
+					s[i][j] = k
+					
+//最优解输出函数
+void path(int i,int j)
+	if ( i == j)
+		print(i)
+	path(i,s[i][j])
+	path(s[i][j]+1,j)
 ```
 
