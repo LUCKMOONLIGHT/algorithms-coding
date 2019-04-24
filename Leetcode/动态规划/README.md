@@ -283,3 +283,51 @@ void path(int i,int j)
 	path(s[i][j]+1,j)
 ```
 
+4. 1024视频拼接
+
+```java
+class Solution(object):
+    def videoStitching(self, clips, T):
+        clips.sort() //按行进行排序
+        start=0
+        end=0
+        if(clips[0][0] > 0 or clips[-1][1] < T):
+            return -1
+        s=0
+        index=-1
+        while(end < T):
+            while(index+1 < len(clips) and clips[index+1][0] <= start):
+                index+=1
+                end=max(end,clips[index][1])
+            if(index < len(clips)):
+                start=end
+                s+=1
+            else:
+                return -1
+        return s
+        
+class Solution {
+    public int videoStitching(int[][] clips, int T) {
+        for (int i = 0; i < clips.length; i++) {
+            Arrays.sort(clips[i]);
+        }
+        if(clips[0][0] > 0 || clips[clips.length-1][1] < T) return -1;
+        int start = 0;
+        int end = 0;
+        int s = 0;
+        int index = -1;
+        while(end < T){
+            while(index + 1 < clips.length && clips[index + 1][0] <= start){
+                index +=1;
+                end = Math.max(end,clips[index+1][1]);
+            }
+            if (index < clips.length){
+                s+=1;
+                start = end;
+            }else return -1;
+        }
+        return s;
+    }
+}
+```
+
