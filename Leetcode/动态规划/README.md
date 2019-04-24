@@ -286,6 +286,19 @@ void path(int i,int j)
 4. 1024视频拼接
 
 ```java
+/**
+找到一个视频之后，下一个视频应该跟上一个视频可以连上，同时保证延续的时间最长；
+将clips排序，第一个视频应从零开始，最后一个视频的结束时间应该大于T，否则返回-1；
+index记录遍历的位置，end记录已选择视频的结束时间，s记录选择的视频数，若index位置的clip的开始时间小于end，继续后移，知道找到满足条件的最完结束的视频，修改end；
+若index没有超出范围，修改start，s；
+反之返回-1；
+结束返回s。
+--------------------- 
+作者：redtongue 
+来源：CSDN 
+原文：https://blog.csdn.net/redtongue/article/details/89163774 
+版权声明：本文为博主原创文章，转载请附上博文链接！
+**/
 class Solution(object):
     def videoStitching(self, clips, T):
         clips.sort() //按行进行排序
