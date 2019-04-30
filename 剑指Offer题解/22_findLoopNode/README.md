@@ -8,52 +8,67 @@
 
 举一反三：
 
-1. 判断有环的存在
-   1. 可以用两个速度不同的指针[fast](https://www.baidu.com/s?wd=fast&tn=24004469_oem_dg&rsv_dl=gh_pl_sl_csd)、slow从同一地点出发，如果相遇则证明存在环，若fast指向NULL，则不存在环
+1. 判断有环的存在(<span style="color: #ff0000;">追击相遇问题</span>)
 
-2. 找到环的入口结点
+   ![img](1.png)
 
-   1. 在问题一中两指针相遇后，让一个指针从头结点开始，另一个从相遇结点开始，并以相同速度向后指，再次相遇时就是环的入口结点。
+   使用两个slow, fast指针从头开始扫描链表。<span style="color: #ff0000;"><strong>指针slow 每次走1步，指针fast每次走2步。如果存在环，则指针slow、fast会相遇</strong></span>；如果不存在环，指针fast遇到NULL退出。
+
+2. **求有环单链表的环长**
+
+   <p>&nbsp;　　在环上相遇后，记录第一次相遇点为Pos，之后指针slow继续每次走1步，fast每次走2步。<strong><span style="color: #ff0000;">在下次相遇的时候fast比slow正好又多走了一圈，也就是多走的距离等于环长。</span></strong></p>
+
+   <p>　　设从第一次相遇到第二次相遇，设slow走了len步，则fast走了2*len步，相遇时多走了一圈：</p>
+
+   <p>　　　　环长=2*len-len。</p>
+
+3. 找到环的入口结点（求LenA长度）
+
+   1. <span style="color: #ff0000;">第一次碰撞点Pos到连接点Join的距离=头指针到连接点Join的距离</span>，因此，分别从第一次碰撞点Pos、头指针head开始走，相遇的那个点就是连接点。
 
    2. 证明：
 
-      1. 假设存在环，fast以速度2运行，slow以速度1运行，在slow走到入口t时，如图（m1为在slow首次到t时fast的位置，a为h到t的距离，b为t到m1的距离，n为环的周长）： 
+      1. <p>在环上相遇后，记录第一次相遇点为Pos，连接点为Join，假设头结点到连接点的长度为<strong>LenA</strong>，连接点到第一次相遇点的长度为<strong>x</strong>，环长为<strong>R</strong>。</p>
 
-         ![img](20180524222230870.png)
+      ![img](2.png)
 
-      2. 由图知fast走的距离为`a+b+xn`，slow走的距离为`a`，又`v(fast) = 2*v(slow)`，所以`x(fast) = 2*x(slow)`，即`2a = a+b+xn`，因此`a = b+xn`。 
-         m1逆时针到t的距离为n-b。
+      由图知，第一次相遇时，
 
-      3. 在首次相遇时，如图（m2为相遇点）： 由于m1逆时针到t的距离为n-b，即要达到相遇需要追赶`n-b`的距离，由于两者速度差为1，因此需要`n-b`的时间才能相遇，此时slow再次向后n-b距离，即到达m2位置与fast相遇，因为一周长度为n，因此到t的距离为 `n-(n-b) = b`。
+      slow走S = LenA + x
 
-         ![img2](20180524223027442.png)
+      fast走2S = LenA + x + n*R
 
-      4. 为何令slow重新从pHead以速度1开始走，令fast从m2以速度1走？要想在入口t相遇，则需要从m2处再走`b+xn`的距离，刚好pHead处符合（由1)可知），所以令slow从pHead开始走。在相遇后就是入口t的位置。
-
-3. 找出环中任意一个节点
-
-   1. 调用问题二的函数，求出环的入口,然后走n步长。
-
-4. 得到环中节点的数目
-
-   1. 调用问题二的函数，求出环的入口，然后让`ptr_1`走到环的入口，然后让`ptr_1`再次走到环的入口，统计下路程，就是环长。
-
-      ```Java
-      ListNode enterNode = EntryNodeOfLoop(pHead);
-      int ret = 0;
-      do {
-          ++ret;
-      } while ((ptr = ptr.next) != enterNode);
-      return ret;
-      ```
+      <p><span>所以可以知道，<strong>LenA</strong>&nbsp;+&nbsp;<strong>x =&nbsp;</strong>&nbsp;n*<strong>R</strong>;　　<strong>LenA = n*R -x;</strong></span></p>
 
       
+
+4. 找出环中任意一个节点
+   1. 调用问题3的函数，求出环的入口,然后走n步长。
+
+5. **求有环单链表的链表长**
+   1. 上述2中求出了环的**长度**；3中求出了**连接点的位置**，就可以求出头结点到连接点的长度。两者**相加**就是链表的长度。
 
 
 
 ## 代码
 
 ```java
+//2.求有环单链表的环长
+int getRingLength(LinkNode *ringMeetNode){
+    int RingLength=0;
+    LinkNode *fast = ringMeetNode;
+    LinkNode *slow = ringMeetNode;
+    for(;;){
+        fast = fast->next->next;
+        slow = slow->next;
+        RingLength++;
+        if(fast == slow)
+            break;
+    }
+    return RingLength;
+}
+
+//3.找到环的入口结点
 public class Test22{
 	public ListNode EntryNodeOfLoop(ListNode pHead)
     {

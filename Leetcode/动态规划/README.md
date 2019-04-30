@@ -287,17 +287,13 @@ void path(int i,int j)
 
 ```java
 /**
-找到一个视频之后，下一个视频应该跟上一个视频可以连上，同时保证延续的时间最长；
-将clips排序，第一个视频应从零开始，最后一个视频的结束时间应该大于T，否则返回-1；
-index记录遍历的位置，end记录已选择视频的结束时间，s记录选择的视频数，若index位置的clip的开始时间小于end，继续后移，知道找到满足条件的最完结束的视频，修改end；
-若index没有超出范围，修改start，s；
-反之返回-1；
+1.找到一个视频之后，下一个视频应该跟上一个视频可以连上，同时保证延续的时间最长；
+2.将clips排序，第一个视频应从零开始，最后一个视频的结束时间应该大于T，否则返回-1；
+3.index记录遍历的位置，end记录已选择视频的结束时间，s记录选择的视频数，若index位置的clip的开始时间小于end，继续后移，知道找到满足条件的最完结束的视频，修改end；
+4.若index没有超出范围，修改start，s；
+5.反之返回-1；
 结束返回s。
---------------------- 
-作者：redtongue 
-来源：CSDN 
-原文：https://blog.csdn.net/redtongue/article/details/89163774 
-版权声明：本文为博主原创文章，转载请附上博文链接！
+
 **/
 class Solution(object):
     def videoStitching(self, clips, T):
@@ -341,6 +337,47 @@ class Solution {
         }
         return s;
     }
+}
+```
+
+5. 5最长回文子串
+
+```java
+public String longestPalindrome(String s) {
+    String S="";
+	if(s==null||s.length()==0) {//s为空
+		return S;
+	}
+    int n=s.length();
+    char[] a=s.toCharArray();
+    int i,j,low=0,high=0,length;//low记录最长的低坐标，high记录最长的高坐标
+    for(int k=0;k<n;k++) {
+    	//奇回文串，以k为中心点，向左右两边判断
+    	i=j=k;
+    	length=high-low;
+    	while(i>=0&&j<n&&a[i]==a[j]) {
+    		if(length<j-i+1) {
+    			length=j-i+1;
+    			low=i;
+    			high=j;
+    		}
+    		i--;
+    		j++;
+    	}
+    	//偶回文串，以k和k+1为中心点，向左右两边判断
+    	i=k;
+    	j=k+1;
+    	while(i>=0&&j<n&&a[i]==a[j]) {
+    		if(length<j-i+1) {
+    			length=j-i+1;
+    			low=i;
+    			high=j;
+    		}
+    		i--;
+    		j++;
+    	}
+    }
+    return S=s.substring(low, high+1);
 }
 ```
 
