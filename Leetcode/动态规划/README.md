@@ -69,7 +69,7 @@ class Solution {
 }
 ```
 
-4. ##### 198打家劫舍
+4. #### [198. 打家劫舍](https://leetcode-cn.com/problems/house-robber/)
 
 ```java
 class Solution {
@@ -154,6 +154,95 @@ for (int i = 2; i <= N; i++) {
 	dp[i] = !dp[i - 1];
 }
         return dp[N];
+```
+
+#### [322. 零钱兑换](https://leetcode-cn.com/problems/coin-change/)**中等**
+
+给定不同面额的硬币 coins 和一个总金额 amount。编写一个函数来计算可以凑成总金额所需的最少的硬币个数。如果没有任何一种硬币组合能组成总金额，返回 `-1`。
+
+```java
+class Solution {
+    public int coinChange(int[] coins, int amount) {
+        int[] dp = new int[amount+1]; //amount元钱所需要凑的最小硬币数
+        dp[0] = 0;
+        for(int i=1;i<=amount;i++){
+            dp[i] = Integer.MAX_VALUE;
+            boolean flag = false;
+            for(int coin:coins){
+                if(i-coin >=0 && dp[i-coin] != -1){
+                    flag = true;
+                    dp[i] = Math.min(dp[i],dp[i-coin]+1);
+                }
+            }
+            if(flag == false)
+                dp[i] = -1;
+        }
+        return dp[amount];
+    }
+}
+```
+
+#### [300. 最长上升子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/)**中等**
+
+给定一个无序的整数数组，找到其中最长上升子序列的长度。
+
+```java
+/**
+定义状态：dp[i] = 1  ；表示以第 i 个数字为结尾的最长上升子序列的长度
+状态转移方程： dp[i] = Math.max(dp[i],dp[j]+1); 
+如果当前的数 nums[i] 大于之前的某个数nums[j]，那么 nums[i] 就可以接在这个数后面形成一个更长的 LIS
+**/
+class Solution {
+    public int lengthOfLIS(int[] nums) {
+        int len = nums.length;
+        if(len < 2) return len;
+        int[] dp = new int[len];
+        Arrays.fill(dp,1);
+        for(int i=1;i<len;i++){
+            for(int j=0;j<i;j++){
+                if(nums[j] < nums[i]){
+                    dp[i] = Math.max(dp[i],dp[j]+1); 
+                }
+            }
+        }
+        int max = dp[0];
+        for(int k=0;k<len;k++){
+            max = Math.max(max,dp[k]);
+        }
+        return max;
+    }
+}
+```
+
+#### [279. 完全平方数](https://leetcode-cn.com/problems/perfect-squares/)**中等**
+
+```java
+/**
+动态规划：转换为子问题的解dp[i]表示数i的完全平方数
+定义状态：dp[0] = 0;
+        dp[1] = 1;
+        dp[2] = 2;
+        dp[3] = 3;
+状态转移方程：dp[i] = Math.min(dp[i],dp[i-j*j]+1); 需要当前或者减去完全平方数后的最小值
+**/
+
+class Solution {
+    public int numSquares(int n) {
+        if(n<=3) return n;
+        int[] dp = new int[n+1];
+        dp[0] = 0;
+        dp[1] = 1;
+        dp[2] = 2;
+        dp[3] = 3;
+        for(int i=4;i<=n;i++){
+            dp[i] = i;//先将其置为最差解，然后判断
+            for(int j=1;j*j <= i;j++){
+                dp[i] = Math.min(dp[i],dp[i-j*j]+1);
+            }
+        }
+        return dp[n];
+    }
+}
 ```
 
 
