@@ -470,7 +470,7 @@ public String longestPalindrome(String s) {
 }
 ```
 
-887.鸡蛋掉落
+887.鸡蛋掉落 **困难**
 
 ```java
 /**
@@ -560,6 +560,113 @@ class Solution {
             count ++;
         }
         return count;
+    }
+}
+```
+
+#### [329. 矩阵中的最长递增路径](https://leetcode-cn.com/problems/longest-increasing-path-in-a-matrix/)**困难**
+
+给定一个整数矩阵，找出最长递增路径的长度。
+
+对于每个单元格，你可以往上，下，左，右四个方向移动。 你不能在对角线方向上移动或移动到边界外（即不允许环绕）。
+
+```java
+class Solution {
+
+    private int[] row = {-1,1,0,0};
+    private int[] col = {0,0,-1,1};
+
+    public int longestIncreasingPath(int[][] matrix) {
+        if(matrix.length ==0 || matrix[0].length == 0)
+            return 0;
+        boolean[][] visited = new boolean[matrix.length][matrix[0].length];
+        int[][] len = new int[matrix.length][matrix[0].length];
+        int max = 0;
+
+        for(int i=0;i<matrix.length;i++){
+            for(int j=0;j<matrix[0].length;j++){
+                max = Math.max(max,find(matrix,visited,len,i,j));
+            }
+        }
+        return max;
+    }
+    private int find(int[][] matrix,boolean[][] visited,int[][] len,int x,int y){
+        if(visited[x][y])
+            return len[x][y];
+        len[x][y] = 1;
+        for(int i=0;i<4;i++){
+            int curX = x + row[i];
+            int curY = y + col[i];
+            if(curX >=0 && curX < matrix.length && curY >=0 && curY<matrix[0].length && matrix[curX][curY] > matrix[x][y]){
+                len[x][y] = Math.max(len[x][y],find(matrix,visited,len,curX,curY)+1);
+            }
+        }
+        visited[x][y] = true;
+        return len[x][y];
+    }
+}
+
+```
+
+
+
+#### [128. 最长连续序列](https://leetcode-cn.com/problems/longest-consecutive-sequence/)**困难**
+
+给定一个未排序的整数数组，找出最长连续序列的长度。
+
+输入: [100, 4, 200, 1, 3, 2]
+输出: 4
+解释: 最长连续序列是 [1, 2, 3, 4]。它的长度为 4。
+
+```java
+class Solution {
+    public int longestConsecutive(int[] nums) {
+        Map<Integer, Integer> map = new HashMap<>();
+        int res=0;
+        for (int num:nums){
+            if (map.containsKey(num)){
+                continue;
+            }
+            int left = map.containsKey(num-1)?map.get(num-1):0;
+            int right = map.containsKey(num+1)?map.get(num+1):0;
+            int len = left+right+1;
+            res = Math.max(res, len);
+            map.put(num, len);  //随便赋值,标记num在map中已存在
+            map.put(num-left, len);  //左边端点
+            map.put(num+right, len); //右边端点
+        }
+        return res;
+    }
+}
+```
+
+#### [124. 二叉树中的最大路径和](https://leetcode-cn.com/problems/binary-tree-maximum-path-sum/) **困难**
+
+给定一个**非空**二叉树，返回其最大路径和。
+
+本题中，路径被定义为一条从树中任意节点出发，达到任意节点的序列。该路径**至少包含一个**节点，且不一定经过根节点。
+
+```java
+class Solution {
+    
+    private int ret = Integer.MIN_VALUE;
+    
+    public int maxPathSum(TreeNode root) {
+        /**
+        对于任意一个节点, 如果最大和路径包含该节点, 那么只可能是两种情况:
+        1. 其左右子树中所构成的和路径值较大的那个加上该节点的值后向父节点回溯构成最大路径
+        2. 左右子树都在最大路径中, 加上该节点的值构成了最终的最大路径
+        **/
+        getMax(root);
+        return ret;
+    }
+    
+    private int getMax(TreeNode r) {
+        if(r == null) return 0;
+        int left = Math.max(0, getMax(r.left)); // 如果子树路径和为负则应当置0表示最大路径不包含子树
+        int right = Math.max(0, getMax(r.right));
+        ret = Math.max(ret, r.val + left + right); // 判断在该节点包含左右子树的路径和是否大于当前最大路径和
+        return Math.max(left, right) + r.val;
     }
 }
 ```
