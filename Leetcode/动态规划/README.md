@@ -156,6 +156,199 @@ for (int i = 2; i <= N; i++) {
         return dp[N];
 ```
 
+62. 不同路径
+
+    ```java
+    class Solution {
+        public int uniquePaths(int m, int n) {
+            int[][] dp = new int[m][n];
+            for(int i=0;i<m;i++){
+                for(int j=0;j<n;j++){
+                    if(i == 0 || j == 0)
+                        dp[i][j] = 1;
+                    else
+                        dp[i][j] = dp[i-1][j] + dp[i][j-1];
+                }
+            }
+            return dp[m-1][n-1];
+        }
+    }
+    
+    ```
+
+    
+
+63. 不同路径 II
+
+    ```java
+    class Solution {
+        public int uniquePathsWithObstacles(int[][] obstacleGrid) {
+            //1.判断第一行第一列，如果有1的话，该行列全为0，否则为1
+            //2.判断其余行列，如果有1的话，该行为0，否则为dp[i][j-1]+dp[i-1][j]
+            int m = obstacleGrid.length;
+            int n = obstacleGrid[0].length;
+            int[][] dp = new int[m][n];
+            for(int i=0;i<m;i++){
+                if(obstacleGrid[i][0] == 1)
+                    break;
+                else
+                    dp[i][0] = 1;
+            }
+            for(int j=0;j<n;j++){
+                if(obstacleGrid[0][j] == 1)
+                    break;
+                else
+                    dp[0][j] = 1;
+            }
+            for(int i=1;i<m;i++){
+                for(int j=1;j<n;j++){
+                    if(obstacleGrid[i][j] == 1)
+                        dp[i][j] = 0;
+                    else
+                        dp[i][j] = dp[i-1][j]+dp[i][j-1];
+                }
+            } 
+            return dp[m-1][n-1];
+        }
+    }
+    ```
+
+64. 最小路径和
+
+    ```java
+    /**
+    分析思路: 看题目最小XXX很容易想到动态规划，仔细看下最后的状态可以分解为多个子状态，动态规划无疑。
+    
+    确定状态：m*n的最小路径可以看成m-1*n-1的最小路径，m-1*n-1的到m*n有两种可能，向下或者向右，由此我们可以得出转移方程。
+    
+    转移方程: f(m,n)=min(f(m,n-1)+grid(m,n),f(m-1,n)+grid(m,n))
+    
+    初始条件: m=0的时候，只能向右走，即f(m,n)=f(0,n-1)+grid(m,n); n=0的时候，只能向下走，即f(m,n)=f(m-1,0)+grid(m,n);
+    
+    计算顺序： 顺序计算到f(m,n)
+    
+    参考代码：
+    
+    执行用时 : 4 ms, 在Minimum Path Sum的Java提交中击败了96.05% 的用户
+    
+    内存消耗 : 36.6 MB, 在Minimum Path Sum的Java提交中击败了99.82% 的用户
+    **/
+    class Solution {
+        public int minPathSum(int[][] grid) {
+            if(grid==null){
+                return 0;
+            }
+            int m = grid.length, n = grid[0].length;
+            int[][] res = new int[m][n];
+            for(int i=0;i<m;i++){
+                for(int j=0;j<n;j++){
+                   if(i==0) {
+                       res[i][j] = j==0?grid[0][0]:res[i][j-1]+grid[i][j];
+                   }else if(j==0){
+                       res[i][j] = i==0?grid[0][0]:res[i-1][j]+grid[i][j];
+                   }else{
+                       res[i][j] = Math.min(res[i][j-1]+grid[i][j], res[i-1][j] +grid[i][j]);
+                   }
+                }
+            }
+            return res[m-1][n-1];
+        }
+    }
+    
+    ```
+
+    
+
+300. 最长上升子序列
+
+```java
+class Solution {
+    public int lengthOfLIS(int[] nums) {
+        int len = nums.length;
+        if(nums.length < 2) return len;
+        int[] dp = new int[len];
+        int max = 0;
+        for(int i=0;i<len;i++){
+            dp[i] = 1;
+            for(int j=0;j<i;j++){
+                if(nums[i]>nums[j]) {
+                    dp[i]= Math.max(dp[j]+1,dp[i]);
+                }
+            }
+            max = Math.max(max,dp[i]);
+        }
+        return max;
+    }
+}
+```
+
+516. 最长回文子序列
+
+     ```java
+     /**
+     1.从尾部向前迭代，两层循环
+     2.满足条件+2，否则取子问题的最大值
+     **/
+     class Solution {
+         public int longestPalindromeSubseq(String s) {
+             int n = s.length();
+             if(n < 2) return n;
+             int[][] dp = new int[n][n];
+             for(int i=n-1;i>=0;i--){
+                 dp[i][i] = 1;
+                 for(int j=i+1;j<n;j++){
+                     if(s.charAt(i) == s.charAt(j))
+                         dp[i][j] = dp[i+1][j-1] + 2;
+                     else
+                         dp[i][j] = Math.max(dp[i+1][j],dp[i][j-1]);
+                 }
+             }
+             return dp[0][n-1];
+         }
+     }
+     ```
+
+     
+
+5. 最长回文子串
+
+   ```java
+   class Solution {
+       public String longestPalindrome(String s) {
+           if(s == null || s.length() == 0) return s;
+           int n = s.length();
+           int i,j,low=0,high=0,len;
+           for(int k=0;k<n;k++){
+               i=j=k;
+               len = high - low;
+               while(i>=0&&j<n&&s.charAt(i) == s.charAt(j)){
+                   if(len < j-i+1){
+                       len = j-i+1;
+                       low = i;
+                       high = j;
+                   }
+                   i--;
+                   j++;
+               }
+               i = k;
+               j = k+1;
+               while(i>=0&&j<n&&s.charAt(i)==s.charAt(j)){
+                   if(len < j-i+1){
+                       len = j-i+1;
+                       low = i;
+                       high = j;
+                   }
+                   i--;
+                   j++;
+               }
+           }
+           return s.substring(low,high+1);
+       }
+   }
+   ```
+
+   
+
 #### [322. 零钱兑换](https://leetcode-cn.com/problems/coin-change/)**中等**
 
 给定不同面额的硬币 coins 和一个总金额 amount。编写一个函数来计算可以凑成总金额所需的最少的硬币个数。如果没有任何一种硬币组合能组成总金额，返回 `-1`。
