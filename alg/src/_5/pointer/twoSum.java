@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 之和，三数之和，四数之和（java）
+ * 两数之和，三数之和，四数之和（java）
  * 1.可以借助HashMap，将nums加入到HashMap表中，其中nums中的数作为key，索引作为value, 判断Hashmap中存在target-x且这个数的索引值不等于x自身即可。
  *
  * 2.根据已排序这个特性，

@@ -23,12 +23,17 @@ public class isValidSudoku {
 
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
-                if (board[i][j] != '.') {
+                if (board[i][j] != '.') { //空格中已经填入了数
                     int num = board[i][j] - '1';
                     int blockIndex = i / 3 * 3 + j / 3;
+                    //row[i][num] 某行是否出现过num的数
+                    //col[j][num] 某列是否出现过num的数
+                    //block[blockIndex][num] 某3*3格子里是否出现过num的数
+                    //如果出现过
                     if (row[i][num] || col[j][num] || block[blockIndex][num]) {
                         return false;
                     } else {
+                        //如果都没有出现过
                         row[i][num] = true;
                         col[j][num] = true;
                         block[blockIndex][num] = true;

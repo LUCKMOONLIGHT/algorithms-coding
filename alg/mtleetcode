@@ -1,23 +1,23 @@
-1.两数之和
-2.最大子序列
-3.合并两个有序链表
-4.无重复字符的最长子串
-5.寻找两个有序数组的中位数
-6.螺旋矩阵
-7.合并两个有序数组
-8.反转链表
-9.两数相加
-10.整数反转
-11.子集
-12.搜索旋转排序数组
+1.两数之和  双指针
+2.最大子序列和  preMax = Math.max(preMax, preMax+num);   res = Math.max(res, preMax);
+3.合并两个有序链表  while遍历链表，对比l1和l2，将小的连接到node上，最后返回head.next
+4.无重复字符的最长子串  Map<Character,Integer>  字符及其出现的位置  保存最大不重复字符出现的位置  保存最长子串 保存字符出现的位置
+5.寻找两个有序数组的中位数   保存到有序数组中 然后求中位数
+6.螺旋矩阵    matrix[r1][c] [c1 - c2]  matrix[r][c2] [r1+1 - r2]  matrix[r2][c] [c2-1 - c1)  matrix[r][c1] [r2 - r1)
+7.合并两个有序数组  排序+贪心算法
+8.反转链表  ListNode next = cur.next  cur.next = next.next;  next.next = pre.next; pre.next = next;
+9.两数相加    carry = sum / 10;
+10.整数反转  ans = ans * 10 + pop
+11.子集       res.add(new ArrayList<>(list));  dfs(res,list,nums,i+1);
+12.搜索旋转排序数组  二分法 + 鉴别递增区间
 13.字符串转换整数
-14.爬楼梯
-15.二叉树中的最大路径和
+14.爬楼梯  dp
+15.二叉树中的最大路径和   递归 ret = Math.max(ret, r.val + left + right);   Math.max(left, right) + r.val;
 16.最小路径和     逆序两层for循环 当前节点的值只与当前节点和min(左下节点和右下节点)有关  grid[i][j] = grid[i][j] + Math.min(grid[i + 1][j], grid[i][j + 1]);
-17.最长回文子串
-18.火星词典
-19.三数之和
-20.不同路径
+17.最长回文子串  dp[i][j] = s.charAt(i) == s.charAt(j) && (j - i < 2 || dp[i + 1][j - 1]);
+18.火星词典  拓扑排序
+19.三数之和  双指针
+20.不同路径   dp dp[i][j] = dp[i-1][j] + dp[i][j - 1]
 
 21.合并区间      Arrays.sort Comparator compare while start end  list.toArray(new int[list.size()][2])
 22.有效的括号    stack push pop
@@ -25,9 +25,9 @@
 24.全排列        backtrace(nums, start + 1, end, res)
 25.不同路径||    动态规划：obstacleGrid[i][j] = obstacleGrid[i - 1][j] + obstacleGrid[i][j - 1];
 26.打印零与奇偶数    Semaphore
-27.螺旋矩阵||
-28.盛最多水的容器
-29.有效的数独
+27.螺旋矩阵||    迭代条件 装载数据 更新边界
+28.盛最多水的容器   双指针法，移动较小高度的指针
+29.有效的数独    boolean[][] row col block 记录某行列网格中是否出现过该数
 30.三角形最小路径和
 31.数组中的第K个最大元素
 32.验证二叉搜索树
