@@ -24,7 +24,7 @@
 23.环形链表      slow = head fast = head.next 快慢指针
 24.全排列        backtrace(nums, start + 1, end, res)
 25.不同路径||    动态规划：obstacleGrid[i][j] = obstacleGrid[i - 1][j] + obstacleGrid[i][j - 1];
-26.打印零与酒数
+26.打印零与奇偶数    Semaphore
 27.螺旋矩阵||
 28.盛最多水的容器
 29.有效的数独
