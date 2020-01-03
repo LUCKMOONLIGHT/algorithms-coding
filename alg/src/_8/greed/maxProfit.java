@@ -13,7 +13,9 @@ package _8.greed;
  * 第一题是只进行一次交易，相当于 k = 1；  找当前最小值  当前最大值=max(当前值-当前最小值)
  * 第二题是不限交易次数，相当于 k = +infinity（正无穷）；  只要是上升就能盈利 prices[i-1] < prices[i]
  * 第三题是只进行 2 次交易，相当于 k = 2；
- * 剩下两道也是不限次数，但是加了交易「冷冻期」和「手续费」的额外条件，其实就是第二题的变种
+ * 第四题 K笔交易
+ * 第五题 无限次 冷冻期
+ * 第六题 无限次  手续费
  *
  */
 public class maxProfit {
@@ -63,14 +65,16 @@ public class maxProfit {
     }
 
     /**
-     * 状态转移框架 第i天|k次交易（buy的时候把k减一）|0未持有1持有
-     * base case：
+     * 状态转移框架 第i天|k次交易（buy的时候把k减一）|0未持有（卖出）1持有（买入）  最大利润
+     * base case 初始化：
      * dp[-1][k][0] = dp[i][0][0] = 0
      * dp[-1][k][1] = dp[i][0][1] = Integer.MIN_VALUE
      *
      * 状态转移方程：
-     * dp[i][k][0] = max(dp[i-1][k][0], dp[i-1][k][1] + prices[i])
-     * dp[i][k][1] = max(dp[i-1][k][1], dp[i-1][k-1][0] - prices[i])
+     * dp[i][k][0] = max(dp[i-1][k][0], dp[i-1][k][1] + prices[i])  卖出的状态 = Math.max(昨天已经卖出的状态，昨天持有&&今天卖出的状态)
+     * dp[i][k][1] = max(dp[i-1][k][1], dp[i-1][k-1][0] - prices[i])  买入的状态 = Math.max(昨天买入，昨天未持有&&今天买入的状态)
+     * dp[i-1][k-1][0] - prices[i] ： 昨天卖出股票后，今天买入股票
+     *
      * 解释：今天我没有持有股票，有两种可能：
      * 要么是我昨天就没有持有，然后今天选择 rest，所以我今天还是没有持有；
      * 要么是我昨天持有股票，但是今天我 sell 了，所以我今天没有持有股票了。
@@ -79,7 +83,7 @@ public class maxProfit {
      * 要么我昨天就持有着股票，然后今天选择 rest，所以我今天还持有着股票；
      * 要么我昨天本没有持有，但今天我选择 buy，所以今天我就持有股票了。
      *
-     * 选择 buybuy 的时候，把 kk 减小了 1，当然你也可以在 sellsell 的时候减 11，一样的。
+     * 选择 buy 的时候，把 k 减小了 1，当然你也可以在 sell 的时候减 1，一样的。
      */
 
     /**
@@ -140,18 +144,19 @@ public class maxProfit {
      *
      * dp[i][0] = max(dp[i-1][0], dp[i-1][1] + prices[i])
      * dp[i][1] = max(dp[i-1][1], dp[i-2][0] - prices[i])
+     *  dp[i-2][0] - prices[i] : 上一次卖出股票后的第三天买入股票
      * 解释：第 i 天选择 buy 的时候，要从 i-2 的状态转移，而不是 i-1 。
      *
      */
     public int maxProfitV(int[] prices){
         if (prices == null || prices.length == 0) return 0;
         int n = prices.length;
-        int dp_i_0 = 0, dp_i_1 = Integer.MIN_VALUE;
+        int dp_i_0 = 0, dp_i_1 = Integer.MIN_VALUE; //初始化
         int dp_pre_0 = 0; // 代表 dp[i-2][0]
         for (int i = 0; i < n; i++) {
             int temp = dp_i_0;
-            dp_i_0 = Math.max(dp_i_0, dp_i_1 + prices[i]);
-            dp_i_1 = Math.max(dp_i_1, dp_pre_0 - prices[i]);
+            dp_i_0 = Math.max(dp_i_0, dp_i_1 + prices[i]); //卖出
+            dp_i_1 = Math.max(dp_i_1, dp_pre_0 - prices[i]); //买入
             dp_pre_0 = temp;
         }
         return dp_i_0;
@@ -163,6 +168,7 @@ public class maxProfit {
      * 每次交易要支付手续费，只要把手续费从利润中减去即可
      * dp[i][0] = max(dp[i-1][0], dp[i-1][1] + prices[i])
      * dp[i][1] = max(dp[i-1][1], dp[i-1][0] - prices[i] - fee)
+     * 
      * 解释：相当于买入股票的价格升高了。
      * 在第一个式子里减也是一样的，相当于卖出股票的价格减小了。
      *
@@ -173,8 +179,8 @@ public class maxProfit {
         int dp_i_0 = 0, dp_i_1 = Integer.MIN_VALUE;
         for (int i = 0; i < n; i++) {
             int temp = dp_i_0;
-            dp_i_0 = Math.max(dp_i_0, dp_i_1 + prices[i]);
-            dp_i_1 = Math.max(dp_i_1, temp - prices[i] - fee);
+            dp_i_0 = Math.max(dp_i_0, dp_i_1 + prices[i]);  //卖出
+            dp_i_1 = Math.max(dp_i_1, temp - prices[i] - fee); //买入
         }
         return dp_i_0;
     }

@@ -25,7 +25,7 @@ public class levelOrder {
         while(!queue.isEmpty()){
             List<Integer> levelList = new ArrayList<>();
             int size = queue.size();
-            for (int i=0;i<size;i++){
+            for (int i=0;i<size;i++){ //每一层的个数
                 TreeNode node = queue.poll();
                 levelList.add(node.val);
                 if (node.left != null){

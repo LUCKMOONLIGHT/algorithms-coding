@@ -1,5 +1,6 @@
 package _11.MonotonousStack;
 
+import java.util.Arrays;
 import java.util.Stack;
 
 //84. 柱状图中最大的矩形 Hard
@@ -22,7 +23,7 @@ public class largestRectangleArea {
         int max = Integer.MIN_VALUE;
         Stack<Integer> stack = new Stack<>();
         int n = heights.length;
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i <=n; i++) {
             //判断i是否达到右边界，影响后面的到达右边界的stack弹出，计算逻辑
             int curHeight = i == n ? -1 : heights[i];
             //维持一个单调栈，从栈底到栈顶是从小到大的顺序，如果要进栈的元素比栈顶的值小，将栈顶的值弹出，计算逻辑
@@ -66,11 +67,57 @@ public class largestRectangleArea {
         return maxarea;
 
     }
+
+    public int maximalRectangleII(char[][] matrix) {
+        if (matrix.length == 0) return 0;
+        int m = matrix.length;
+        int n = matrix[0].length;
+
+        int[] left = new int[n]; // initialize left as the leftmost boundary possible
+        int[] right = new int[n];
+        int[] height = new int[n];
+
+        Arrays.fill(right, n); // initialize right as the rightmost boundary possible
+
+        int maxarea = 0;
+        for (int i = 0; i < m; i++) {
+            int cur_left = 0, cur_right = n;
+            // update height
+            for (int j = 0; j < n; j++) {
+                if (matrix[i][j] == '1') height[j]++;//height叠加每一行的高度
+                else height[j] = 0;
+            }
+            // update left
+            for (int j = 0; j < n; j++) {
+                if (matrix[i][j] == '1') left[j] = Math.max(left[j], cur_left);
+                else {
+                    left[j] = 0;
+                    cur_left = j + 1;
+                }
+            }
+            // update right
+            for (int j = n - 1; j >= 0; j--) {
+                if (matrix[i][j] == '1') right[j] = Math.min(right[j], cur_right);
+                else {
+                    right[j] = n;
+                    cur_right = j;
+                }
+            }
+            // update area
+            for (int j = 0; j < n; j++) {
+                maxarea = Math.max(maxarea, (right[j] - left[j]) * height[j]);
+            }
+        }
+            return maxarea;
+    }
+
     public static void main(String[] args) {
-        char[][] matrix = new char[][]{{'1','0','1','0','0'},{'1','0','1','1','1'},{'1','1','1','1','1'},{'1','0','0','1','0'}};
+//        char[][] matrix = new char[][]{{'1','0','1','0','0'},{'1','0','1','1','1'},{'1','1','1','1','1'},{'1','0','0','1','0'}};
+        char[][] matrix1 = new char[][]{{'0', '1'},{'1', '0'}};
         largestRectangleArea largestRectangleArea = new largestRectangleArea();
-//        int res = largestRectangleArea.largestRectangleArea(new int[]{2,1,5,6,2,3});
-        int res = largestRectangleArea.maximalRectangle(matrix);
+//        int res = largestRectangleArea.largestRectangleArea(new int[]{3,1,3,2,2});
+        int res = largestRectangleArea.maximalRectangle(matrix1);
+//        int res = largestRectangleArea.maximalRectangleII(matrix);
         System.out.println(res);
     }
 }
