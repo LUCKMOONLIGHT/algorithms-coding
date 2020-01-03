@@ -21,7 +21,7 @@ public class partitionLabels {
         if(S == null || S.length() == 0) return null;
         int[] last = new int[26];
         for (int i=0;i<S.length();i++){
-            last[S.charAt(i) - 'a'] = i;
+            last[S.charAt(i) - 'a'] = i; //每个字符出现的最大位置
         }
         List<Integer> res = new ArrayList<>();
         int start = -1,end = 0;
@@ -34,4 +34,9 @@ public class partitionLabels {
         }
         return res;
     }
+   public static void main(String[] args){
+        String S = "ababcbacadefegdehijhklij";
+        partitionLabels partitionLabels = new partitionLabels();
+        partitionLabels.partitionLabels(S);
+   }
 }
