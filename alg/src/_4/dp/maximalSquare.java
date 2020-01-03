@@ -9,6 +9,8 @@ package _4.dp;
  * 一维动态规划  if true dp[j]=min(dp[j-1],dp[j],prev)dp[j]=min(dp[j−1],dp[j],prev)
  * 时间复杂度：O(mn)
  * 空间复杂度：O(n)，使用了一个一维数组 dp。
+ *
+ *
  */
 public class maximalSquare {
 
