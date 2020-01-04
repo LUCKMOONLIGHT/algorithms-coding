@@ -20,18 +20,16 @@ public class lengthOfLIS {
         if(len < 2) return len;
         int[] dp = new int[len];
         Arrays.fill(dp,1);
-        for(int i=1;i<len;i++){ //确定数组长度
-            for(int j=0;j<i;j++){ //遍历判断大小
-                if(nums[j] < nums[i]){ //判断与最后一个元素的大小
-                    dp[i] = Math.max(dp[i],dp[j]+1);//满足条件新增一个上升子序列
+        int maxans = dp[0];
+        for(int i=1;i<len;i++){
+            for(int j=0;j<i;j++){
+                if(nums[j] < nums[i]){//在每个可能的最长上升子序列中附加当前元素nums[i]
+                    dp[i] = Math.max(dp[i],dp[j]+1);
                 }
             }
+            maxans = Math.max(maxans,dp[i]);
         }
-        int max = dp[0];
-        for(int k=0;k<len;k++){
-            max = Math.max(max,dp[k]);
-        }
-        return max;
+        return maxans;
     }
 
 

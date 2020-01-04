@@ -2,6 +2,7 @@ package _16.sort;
 
 /**
  * 148. 排序链表 - 链表中的归并排序
+ * 在 O(n log n) 时间复杂度和常数级空间复杂度下，对链表进行排序。
  * 输入: 4->2->1->3
  * 输出: 1->2->3->4
  *
@@ -21,15 +22,15 @@ public class sortList {
     public ListNode mergeSort(ListNode head){
         if (head.next == null) return head;
         ListNode p = head, q = head, pre = null;
-        while (q != null && q.next != null){
+        while (q != null && q.next != null){  //1.快慢指针找中点
             pre = p;
             p = p.next;
             q = q.next.next;
         }
         pre.next = null;
-        ListNode l = mergeSort(head);
+        ListNode l = mergeSort(head);  //2.递归调用mergeSort
         ListNode r = mergeSort(p);
-        return merge(l, r);
+        return merge(l, r);//3.合并两个链表
     }
     public ListNode merge(ListNode l, ListNode r){
         ListNode dummy = new ListNode(0);

@@ -16,15 +16,15 @@ public class findMin {
         //一个元素时，返回其自身
         if (nums.length == 1) return nums[0];
         int l = 0, r = nums.length - 1;
-        //升序的话，返回第一个元素
+        //1.升序的话，返回第一个元素
         if (nums[0] < nums[r]) return nums[0];
         while (l <= r) {
             int mid = l + (r - l) / 2;
             //分别比较前后两个元素，判断是否满足条件
-            if (nums[mid] > nums[mid + 1]) return nums[mid + 1];
-            if (nums[mid - 1] > nums[mid]) return nums[mid];
+            if (nums[mid] > nums[mid + 1]) return nums[mid + 1];//2.找到旋转点
+            if (nums[mid - 1] > nums[mid]) return nums[mid];//2.找到旋转点
             //说明0-mid中出现了先升后将的趋势
-            if (nums[0] > nums[mid]) r = mid - 1;
+            if (nums[0] > nums[mid]) r = mid - 1;//3.在非递增序列中继续二分法
             else l = mid + 1;
         }
         return -1;

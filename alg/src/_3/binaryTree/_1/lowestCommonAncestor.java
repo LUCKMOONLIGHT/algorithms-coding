@@ -28,4 +28,5 @@ public class lowestCommonAncestor {
         }
         return left == null ? right : left; //如果left和right是有一个为空，另一个不为空，假设不为空的那个记为node，此时又两种，要么node是o1或o2中的一个，要么node已经是o1和o2的最近公共祖先节点，此时直接返回node即可。
     }
+
 }

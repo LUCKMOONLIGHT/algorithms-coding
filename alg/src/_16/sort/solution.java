@@ -5,6 +5,18 @@ class Solution {
      * 1.稳定的排序  冒泡排序 插入排序 基数排序
      * 2.不稳定的排序 快速排序 选择排序 堆排序
      */
+
+    /**
+     * 插入排序  O(N2)       O(1)       稳定
+     * 选择排序  O(N2)       O(1)       不稳定
+     * 冒泡排序  O(N2)       O(1)       稳定
+     * 快速排序  O(N*log2N)  O(log2n)   不稳定
+     * 归并排序  O(N*log2N)  O(n)       稳定
+     * 基数排序  O(d(r+n))   O(rd+n)    稳定
+     * 堆排序   O(N*log2N)   O(1)       不稳定
+     *
+     *
+     */
     public int[] sortArray(int[] nums) {
         if(nums.length <=1)return nums;
         //qSort(nums,0,nums.length-1);
