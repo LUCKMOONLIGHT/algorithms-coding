@@ -1,9 +1,8 @@
 package _6.dfs.DFS;
 
 /** 朋友圈总数 - DFS 类似于环岛总数
- * 班上有 N 名学生。其中有些人是朋友，有些则不是。他们的友谊具有是传递性。如果已知 A 是 B 的朋友，B 是 C 的朋友，那么我们可以认为 A 也是 C 的朋友。所谓的朋友圈，是指所有朋友的集合。
- *
- * 给定一个 N * N 的矩阵 M，表示班级中学生之间的朋友关系。如果M[i][j] = 1，表示已知第 i 个和 j 个学生互为朋友关系，否则为不知道。你必须输出所有学生中的已知的朋友圈总数。
+ * 班上有 N 名学生。其中有些人是朋友，有些则不是。他们的友谊具有是传递性。1.如果已知 A 是 B 的朋友，B 是 C 的朋友，那么我们可以认为 A 也是 C 的朋友。所谓的朋友圈，是指所有朋友的集合。
+ *2. 给定一个 N * N 的矩阵 M，表示班级中学生之间的朋友关系。如果M[i][j] = 1，表示已知第 i 个和 j 个学生互为朋友关系，否则为不知道。你必须输出所有学生中的已知的朋友圈总数。
  *
  * 输入:
  * [[1,1,0],
@@ -11,12 +10,15 @@ package _6.dfs.DFS;
  *  [0,0,1]]
  * 输出: 2
  *
- * 思路：因为如果m个人最多m个朋友圈，设置后visited后，相同的朋友圈会检测到visited[i]!=0就会不算数
+ * 思路：无向图连通块的个数
  */
 public class findCircleNum {
+    /**
+     使用一个visited数组, 依次判断每个节点, 如果其未访问, 朋友圈数加1并对该节点进行dfs搜索标记所有访问到的节点
+     **/
     public void dfs(int[][] M, int[] visited, int i) {
         for (int j = 0; j < M.length; j++) { //深度遍历每一个连通块
-            if (M[i][j] == 1 && visited[j] == 0) {
+            if (M[i][j] == 1 && visited[j] == 0) {//本人i与其他人j的朋友圈关系
                 visited[j] = 1;
                 dfs(M, visited, j);
             }
@@ -25,7 +27,7 @@ public class findCircleNum {
     public int findCircleNum(int[][] M) {
         int[] visited = new int[M.length];
         int count = 0;
-        for (int i = 0; i < M.length; i++) { //先遍历每一个连通块，如果连通块没有被访问到，深度遍历连通块，然后++
+        for (int i = 0; i < M.length; i++) { //先遍历每一个连通块(人)，如果连通块没有被访问到，深度遍历连通块，然后++
             if (visited[i] == 0) {
                 dfs(M, visited, i);
                 count++;
@@ -33,8 +35,22 @@ public class findCircleNum {
         }
         return count;
     }
-
+    public static void main(String[] args){
+        int[][] arr = new int[][]{{1,0,1,0},{0,1,0,0},{0,0,1,0},{0,0,0,1}};
+        findCircleNum findCircleNum = new findCircleNum();
+        int res = findCircleNum.findCircleNum(arr);
+        System.out.println(res);
+    }
 }
+
+
+
+//直接DFS会导致无法关联两边的点，会导致多算朋友圈
+//[[1,0,0,1],
+// [0,1,1,0],
+// [0,1,1,1],
+// [1,0,1,1]]
+// ans = 1  DFS-pre = 4
 
 /** 并查集的实现
  * 1.初始化并查集

@@ -9,12 +9,12 @@ package _4.dp;
  */
 public class isPalindromeNum {
         public boolean isPalindrome(int x) {
-            if (x < 0 || (x % 10 == 0 && x != 0)) return false;
+            if (x < 0 || (x % 10 == 0 && x != 0)) return false; //当 x < 0 时，x 不是回文数;除了0，最后一位为0，不是回文数
             int revertedNumber = 0;
-            while (x > revertedNumber) {
+            while (x > revertedNumber) {  //数字翻转一半 x > revertedNumber
                 revertedNumber = revertedNumber * 10 + x % 10;
                 x /= 10;
             }
-            return x == revertedNumber || x == revertedNumber / 10;
+            return x == revertedNumber || x == revertedNumber / 10; //单回文或者双数回文
         }
     }

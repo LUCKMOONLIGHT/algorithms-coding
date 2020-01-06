@@ -10,13 +10,14 @@ package _2.linked;
  * 输出: 1->4->3->2->5->NULL
  *
  */
+
 public class reverseBetween {
     class ListNode{
         int val;
         ListNode next;
         ListNode(int x){val = x;}
     }
-    public ListNode reverseBetween(ListNode head, int m, int n){//原地头插法，反转指定区间的链表
+    public ListNode reverseBetweenII(ListNode head, int m, int n){//原地头插法，反转指定区间的链表
         ListNode dummy = new ListNode(0);
         dummy.next = head;
         ListNode pre = dummy;
@@ -25,7 +26,7 @@ public class reverseBetween {
             pre = pre.next;
         }
         ListNode cur = pre.next;
-        for(int i = m; i < n; i++){
+        for(int i = m; i < n; i++){ //头插法，每次将cur的next节点插入到pre后面
             ListNode next = cur.next;
             cur.next = next.next;
             next.next = pre.next;
