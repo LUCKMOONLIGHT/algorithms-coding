@@ -52,29 +52,24 @@ public class trap {
      * 双指针法
      * 从左右两边的边界往中间不断进行收缩，收缩的过程中，对每个坐标（一维坐标）能接的雨水进行求解
      * 1.while从左到右双指针
-     * 2.求leftmax，计算当前坐标与leftmax的面积，求rightmax，计算当前坐标与rightmax的面积
+     * 2.从左右指针高度小的开始，求leftmax，计算当前坐标与leftmax的面积，求rightmax，计算当前坐标与rightmax的面积
      *
      * @param height
      * @return
      */
     public int trapII(int[] height) {
-        int left = 0, right = height.length - 1;
-        int leftMax = 0, rightMax = 0, res = 0;
-        while (left < right) {
-            if (height[left] <= height[right]) {
-                if (height[left] > leftMax) {
-                    leftMax = height[left];
-                } else {
-                    res += leftMax - height[left];
-                }
-                left++;
-            } else {
-                if (height[right] > rightMax) {
-                    rightMax = height[right];
-                } else {
-                    res += rightMax - height[right];
-                }
-                right--;
+        if(height.length < 3) return 0;
+        int l = 0, r = height.length - 1;
+        int lmax = 0, rmax = 0, res = 0;
+        while(l < r){
+            if(height[l] <= height[r]){
+                lmax = Math.max(lmax, height[l]);
+                res += lmax - height[l];
+                l++;
+            }else{
+                rmax = Math.max(rmax, height[r]);
+                res += rmax - height[r];
+                r--;
             }
         }
         return res;
