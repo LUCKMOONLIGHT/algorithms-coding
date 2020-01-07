@@ -18,32 +18,30 @@ public class findAnagrams {
      * @param p
      * @return
      */
+
+    //双指针，右指针加入source数组，左指针删除source数组
     public List<Integer> findAnagrams(String s, String p) {
-        List<Integer> res = new ArrayList<Integer>();
+        List<Integer> res = new ArrayList<>();
         if(s == null || p == null || s.length() < p.length()) return res;
-        int[] source = new int[256];
         int[] target = new int[256];
-        int left=0, right=0;
+        int[] source = new int[256];
+
         for(char c:p.toCharArray()) target[c]++;
-        while(right < s.length()){
-            if(!valid(source, target)){
-                source[s.charAt(right)]++;
-                right++;
-            }
-            while(valid(source, target) || (right - left) > p.length()){
-                if(valid(source, target)){
-                    res.add(left);
-                }
-                source[s.charAt(left)]--;
-                left++;
+        int l = 0,r = 0;
+        while(r<s.length()){
+            if(!valid(target, source)) source[s.charAt(r++)]++;
+            while(valid(target, source) || (r - l) > p.length()){
+                if(valid(target, source)) res.add(l);
+                source[s.charAt(l++)]--;
             }
         }
         return res;
     }
 
-    public boolean valid(int[] source, int[] target){
-        for(int i=0;i<source.length;i++){
-            if(source[i] != target[i]) return false;
+    //检查target与source的异动字符是否相等
+    public boolean valid(int[] target, int[] source){
+        for(int i=0;i<target.length;i++){
+            if(target[i] != source[i]) return false;
         }
         return true;
     }
