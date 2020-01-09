@@ -14,11 +14,11 @@ public class isSubtree {
         TreeNode(int x){val = x;}
     }
 
-    public boolean isSubtree(TreeNode s, TreeNode t){
+    public boolean isSubtree(TreeNode s, TreeNode t){//两棵树是否为子树关系
         if(s == null || t == null) return s == null && t == null;
-        return isSameTree(s, t) || isSubtree(s.left, t) || isSubtree(s.right, t);
+        return isSameTree(s, t) || isSubtree(s.left, t) || isSubtree(s.right, t);//2.递归判断A,B的值 && A,B左右子树的值
     }
-    private boolean isSameTree(TreeNode s, TreeNode t){
+    private boolean isSameTree(TreeNode s, TreeNode t){ //两颗树完全相等
         if(s == null || t == null) return s == null && t == null;
         return s.val == t.val && isSameTree(s.left, t.left) && isSameTree(s.right, t.right);
     }

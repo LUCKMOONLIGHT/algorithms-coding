@@ -24,4 +24,24 @@ public class rightSideView {
         }
         return res;
     }
+
+    //515. 在每个树行中找最大值
+    public List<Integer> largestValues(TreeNode root) {
+        List<Integer> res = new ArrayList<>();
+        if(root == null) return res;
+        Queue<TreeNode> queue = new LinkedList<TreeNode>();
+        queue.offer(root);
+        while(!queue.isEmpty()){
+            int size = queue.size();
+            int mv = Integer.MIN_VALUE;
+            for(int i=0;i<size;i++){
+                TreeNode cur = queue.poll();
+                mv = Math.max(mv, cur.val);
+                if(cur.left != null) queue.offer(cur.left);
+                if(cur.right != null) queue.offer(cur.right);
+            }
+            res.add(mv);
+        }
+        return res;
+    }
 }

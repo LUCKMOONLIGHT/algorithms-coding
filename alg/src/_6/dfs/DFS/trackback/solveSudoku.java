@@ -12,24 +12,24 @@ package _6.dfs.DFS.trackback;
  *
  * 思路：
  * 1.用三个二维数组记录，该num是否被填充
- * 2.找寻空位置
- * 3.在空位置处进行回溯算法，先进行判断，填充，dfs，再回溯
+ * 2.dfs 判断结束条件
+ * 3.在空位置处进行回溯算法，先进行判断重复，填充，dfs，再回溯
  */
 public class solveSudoku {
     public void solveSudoku(char[][] board) {
         /**
          * 记录某行，某位数字是否已经被摆放
          */
-        boolean[][] row = new boolean[9][10];
+        boolean[][] row = new boolean[9][10];  //9行，每行侯选数为1-9
         /**
          * 记录某列，某位数字是否已经被摆放
          */
-        boolean[][] col = new boolean[9][10];
+        boolean[][] col = new boolean[9][10];//9列，每行候选数为1-9
         /**
          * 记录某 3x3 宫格内，某位数字是否已经被摆放
          */
-        boolean[][] block = new boolean[9][10];
-
+        boolean[][] block = new boolean[9][10];//9个宫格，每个宫格候选数为1-9
+        //标记为已存在的数
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
                 if (board[i][j] != '.') {
@@ -45,9 +45,10 @@ public class solveSudoku {
     }
 
     private boolean dfs(char[][] board, boolean[][] row, boolean[][] col, boolean[][] block, int i, int j) {
-        // 找寻空位置
+        // 非空位情况
         while (board[i][j] != '.') {
-            if (++j >= 9) {
+            j++;//列移动
+            if (j >= 9) {
                 i++;
                 j = 0;
             }
@@ -55,17 +56,18 @@ public class solveSudoku {
                 return true;
             }
         }
+        //空位情况
         for (int num = 1; num <= 9; num++) {
-            int blockIndex = i / 3 * 3 + j / 3;
-            if (!row[i][num] && !col[j][num] && !block[blockIndex][num]) {
+            int blockIndex = i / 3 * 3 + j / 3;//第n个宫格
+            if (!row[i][num] && !col[j][num] && !block[blockIndex][num]) { //如果没有出现过
                 // 递归
                 board[i][j] = (char) ('0' + num);
                 row[i][num] = true;
                 col[j][num] = true;
                 block[blockIndex][num] = true;
-                if (dfs(board, row, col, block, i, j)) {
+                if (dfs(board, row, col, block, i, j)) { //填上num能够返回true
                     return true;
-                } else {
+                } else {//否则还原，试试其他数字
                     // 回溯
                     row[i][num] = false;
                     col[j][num] = false;
