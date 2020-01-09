@@ -18,15 +18,23 @@ public class findSubsequences {
     }
     public void dfs(int[] nums, int preNum, int start, List<List<Integer>> res, List<Integer> list){
         if(list.size() >= 2){
-            res.add(new ArrayList<>(list));
+            res.add(new ArrayList<>(list));  //允许2个及其2个以上的递增组合子序列
         }
         Set<Integer> hashset = new HashSet<>();
         for(int i=start;i<nums.length;i++){
-            if(hashset.contains(nums[i]) || nums[i] < preNum) continue;
+            //限制不同层的重复元素nums[i] == nums[i - 1]
+            //我们需要减去的是同一层的重复元素,但不同层是可以相同的
+            if(hashset.contains(nums[i]) || nums[i] < preNum) continue;  //不满足递增条件且被重复过的直接跳过
             list.add(nums[i]);
-            hashset.add(nums[i]);
+            hashset.add(nums[i]); //控制重复
             dfs(nums, nums[i], i+1, res, list);
             list.remove(list.size() -1);
         }
+    }
+
+    public static void main(String[] args){
+        int[] arr = new int[]{4, 6, 7, 7};
+        findSubsequences findSubsequences = new findSubsequences();
+        List<List<Integer>> res = findSubsequences.findSubsequences(arr);
     }
 }
