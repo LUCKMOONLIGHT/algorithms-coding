@@ -1,5 +1,7 @@
 package _9.search;
 
+import java.util.Stack;
+
 /**
  * 33. 搜索旋转排序数组
  * 假设按照升序排序的数组在预先未知的某个点上进行了旋转。
@@ -9,6 +11,20 @@ package _9.search;
  * 你的算法时间复杂度必须是 O(log n) 级别。
  */
 public class search {
+
+    //二分查找 O(logn) O(1)
+    public int search(int[] nums, int target) {
+        Stack<String> stack = new Stack<>();
+        if(nums == null || nums.length == 0) return -1;
+        int l = 0, r = nums.length - 1, mid;
+        while(l <= r){
+            mid = l + (r - l)/2;
+            if(nums[mid] == target) return mid;
+            if(nums[mid] > target) r = mid -1;
+            else l = mid + 1;
+        }
+        return -1;
+    }
     /**
      * O(logn) 二分法
      * 1.mid 直接等于target
@@ -19,16 +35,16 @@ public class search {
      * @param target
      * @return
      */
-    public int search(int[] nums, int target) {
+    public int searchI(int[] nums, int target) {
         if(nums == null || nums.length == 0) return -1;
         int l=0,r=nums.length - 1;
         while (l <= r){
             int mid = l + (r-l)/2;
             if (nums[mid] == target) return mid;
-            else if(nums[mid] >= nums[l]){ //鉴别递增区间
+            else if(nums[mid] >= nums[l]){ //判断中间节点于l节点的大小，当为递增区间时，在递增区间二分法
                 if (nums[l] <= target && target < nums[mid]) r=mid - 1;
                 else l = mid + 1;
-            }else{
+            }else{//当为递减区间时，在后面的递增区间用二分法
                 if(nums[mid] < target && target <= nums[r]) l = mid + 1;
                 else r = mid - 1;
             }
@@ -62,23 +78,22 @@ public class search {
         while (l <= r){
             int mid = l+(r-l)/2;
             if (nums[mid] == target) return true;
-            if(nums[mid] == nums[r] && nums[l] == nums[mid]) {//元素重复，缩小长度
+            if(nums[mid] == nums[r] && nums[l] == nums[mid]) {//当中左和中右相等时，元素重复，缩小区间
                 l++;
                 r--;
-            }else if(nums[l] <= nums[mid]){ //在有序段中进行二分法
+            }else if(nums[l] <= nums[mid]){ //前半段为有序段时，在前半段进行二分查找
                 if (nums[l] <= target && target < nums[mid]) r = mid -1;
                 else l = mid + 1;
-            }else{
+            }else{//后半段有序时，在后半段进行有序查找
                 if (nums[mid] < target && target <= nums[r]) l=mid + 1;
                 else r = mid - 1;
             }
         }
         return false;
     }
-
     public static void main(String[] args) {
         search search = new search();
-        boolean b = search.searchII(new int[]{2,5,6,0,0,1,2},0);
+        int b = search.search(new int[]{-1,0,3,5,9,12},2);
         System.out.println(b);
     }
 }

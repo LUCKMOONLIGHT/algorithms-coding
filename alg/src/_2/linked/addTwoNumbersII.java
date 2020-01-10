@@ -14,6 +14,9 @@ public class addTwoNumbersII {
         ListNode(int x) {val = x;}
     }
 
+    //1.先将两个链表保存到栈中
+    //2.将链表和保存到栈中
+    //3.从栈中取出链表
     public ListNode addTwoNumbersII(ListNode l1, ListNode l2){
         if(l1 == null || l2 == null){
             return l1 == null ? l2:l1;
