@@ -5,6 +5,18 @@ package _12.Math;
 //返回被除数 dividend 除以除数 divisor 得到的商
 public class divide {
     //不许用除法，那就用减法；除法的本质就是计算被除数中包含几个除数。如果被除数中包含N个除数，则商就是N。
+
+    /**
+     * 1.被除数为0 返回0
+     * 2.被除数为最大值，除数为-1，返回最小值
+     * 3.判断最后的结果是正是负
+     * 4.递归倍数减去除数得到结果
+     * 5.如果被除数小于除数，返回0
+     * 6.如果被除数能够减去除数的倍数，递归减去除数的倍数
+     * @param dividend
+     * @param divisor
+     * @return
+     */
     public int divide(int dividend, int divisor) { //被除数 除数
         if (dividend == 0) {
             return 0;
