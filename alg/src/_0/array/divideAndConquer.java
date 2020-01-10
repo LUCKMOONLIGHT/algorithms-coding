@@ -1,4 +1,4 @@
-package _0.meta;
+package _0.array;
 
 /**
  * 分治法
