@@ -9,6 +9,7 @@ import java.util.Set;
  */
 public class singleNumber {
     //对所有数字进行异或运算，得到唯一的那个元素
+    //异或具有交换律，所有重复的元素异或后为0,0^x=x
     public int singleNumber(int[] nums) {
         int res = 0;
         for(int num:nums){
@@ -57,4 +58,21 @@ public class singleNumber {
         }
         return res;
     }
+    //260. 只出现一次的数字 III
+    //使用异或 O(n) O(1)
+    public int[] singleNumberIIII(int[] nums) {
+        // difference between two numbers (x and y) which were seen only once
+        int bitmask = 0;
+        for (int num : nums) bitmask ^= num;
+
+        // rightmost 1-bit diff between x and y
+        int diff = bitmask & (-bitmask);
+
+        int x = 0;
+        // bitmask which will contain only x
+        for (int num : nums) if ((num & diff) != 0) x ^= num;
+
+        return new int[]{x, bitmask^x};
+    }
+
 }
