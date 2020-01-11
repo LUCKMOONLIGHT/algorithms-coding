@@ -8,8 +8,9 @@ public class diameterOfBinaryTree {
     public int diameterOfBinaryTree(TreeNode root) {
         ans = 1;
         depth(root);
-        return ans - 1;
+        return ans - 1; //最长路径长度 = 最长路径的点数 - 1
     }
+    //求最长路径的点数
     public int depth(TreeNode node) {
         if (node == null) return 0;
         int L = depth(node.left);
