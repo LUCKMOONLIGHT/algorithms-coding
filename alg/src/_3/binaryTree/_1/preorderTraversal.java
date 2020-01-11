@@ -30,7 +30,7 @@ public class preorderTraversal {
             while(!stack.isEmpty()){
                 TreeNode tmp = stack.pop();
                 list.add(tmp.val);
-                if (tmp.right != null){
+                if (tmp.right != null){ //先右节点,再左节点，出栈的时候先左再右
                     stack.push(tmp.right);
                 }
                 if(tmp.left != null){
