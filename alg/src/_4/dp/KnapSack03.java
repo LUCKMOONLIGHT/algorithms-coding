@@ -51,9 +51,9 @@ public class KnapSack03 {
         int N = weight.length;
         //动态规划
         int[] dp = new int[C+1];
-        for(int i=1;i<N+1;i++){
-            //顺序实现,从当前物品的容量开始到最大容量
-            for(int j=weight[i-1];j<C+1;j++){
+        for(int i=1;i<N+1;i++){ // 遍历物品的容量
+
+            for(int j=weight[i-1];j<C+1;j++){ //顺序实现,从当前物品的容量开始到最大容量
                 dp[j] = Math.max(dp[j-weight[i-1]]+value[i-1],dp[j]);
             }
         }

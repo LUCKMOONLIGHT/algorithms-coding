@@ -58,9 +58,9 @@ public class KnapSack01 {
         //动态规划
         int N = w.length;
         int[] dp = new int[C+1];
-        for(int i=1;i<N+1;i++){//物品的数目
+        for(int i=1;i<N+1;i++){//遍历物品的容量
             //逆序实现，防止被覆盖
-            for(int j=C;j>=w[i-1];j--){//背包的容量
+            for(int j=C;j>=w[i-1];j--){//逆序 背包的容量 - 物品所需容量
                 dp[j] = Math.max(dp[j-w[i-1]]+v[i-1],dp[j]);
             }
         }
