@@ -6,8 +6,8 @@ public class hasPathSum {
     //思路：1.当前节点为空 返回false 2.递归：目标值减去当前节点值，递归左右子树 3.临界点：当叶子节点是判断当前目标值是否满足
     public boolean hasPathSum(TreeNode root, int sum) {
         if(root == null) return false;
-        sum -= root.val;
-        if((root.left == null) && (root.right == null)) return (sum == 0);
-        return hasPathSum(root.left, sum) || hasPathSum(root.right, sum);
+        sum -= root.val; //状态变换
+        if((root.left == null) && (root.right == null)) return (sum == 0);  //边界值
+        return hasPathSum(root.left, sum) || hasPathSum(root.right, sum);  //递归
     }
 }

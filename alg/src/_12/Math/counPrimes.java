@@ -12,7 +12,7 @@ import java.util.List;
  *
  * 1.排除所有不是素数的；素数的倍数都不是素数
  */
-public class counPromes {
+public class counPrimes {
     public int counPrimes(int n){
         Boolean[] bool = new Boolean[n];
         Arrays.fill(bool, true);//所有标记位素数
@@ -37,7 +37,7 @@ public class counPromes {
         for (int i=3;i<=n;i++){
             int temp = (int) Math.sqrt(i) + 1;
             for (int j=2;j<=temp;j++){
-                if (i % j == 0) break;
+                if (i % j == 0) break; //如果能被1和自身外的数整除的话
                 if (j == temp) prime.add(i);
             }
         }
