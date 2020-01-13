@@ -1,4 +1,4 @@
-package _4.dp;
+package _15.series.Game;
 
 import java.util.Scanner;
 
@@ -22,7 +22,7 @@ public class stoneGame {
             for(int i=1; i<=n; i++){
                 array[i] = sca.nextInt(); //输入参数
             }
-            int[] sum = new int[n+1];  //当前i次取值的总和
+            int[] sum = new int[n+1];  //当前数组长度为i的总和
             sum[0] = 0;
             for(int i=1; i<=n; i++){
                 sum[i] = sum[i-1] + array[i];
