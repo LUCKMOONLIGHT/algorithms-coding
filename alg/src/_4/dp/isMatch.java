@@ -8,16 +8,16 @@ public class isMatch {
         boolean[][] dp = new boolean[m+1][n+1];
         dp[0][0] = true;
         for(int i=2;i<=n;i+=2){
-            if(p.charAt(i-1) == '*') dp[0][i] = dp[0][i-2];
+            if(p.charAt(i-1) == '*') dp[0][i] = dp[0][i-2]; //如果为*的话，可以取0匹配，可以抵消
         }
         for(int i=1;i<=m;i++){
             for(int j=1;j<=n;j++){
                 char sc = s.charAt(i-1);
                 char pc = p.charAt(j-1);
-                if(sc == pc || pc == '.') dp[i][j] = dp[i-1][j-1];
+                if(sc == pc || pc == '.') dp[i][j] = dp[i-1][j-1]; //如果可以匹配上
                 else if(pc == '*'){
-                    if(dp[i][j-2]) dp[i][j] = true;
-                    else if(sc == p.charAt(j-1) || p.charAt(j-1) == '.') dp[i][j] = dp[i-1][j];
+                    if(dp[i][j-2]) dp[i][j] = true; //0匹配时
+                    else if(sc == p.charAt(j-1) || p.charAt(j-1) == '.') dp[i][j] = dp[i-1][j]; //多个匹配时
                 }
             }
         }

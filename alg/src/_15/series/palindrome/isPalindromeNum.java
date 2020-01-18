@@ -1,4 +1,4 @@
-package _4.dp;
+package _15.series.palindrome;
 
 /**
  * 9. 回文数  - 方法：反转一半数字
