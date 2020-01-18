@@ -12,3 +12,5 @@
 32. 最长有效括号  <栈，双指针>  1.(push,否则pop i-peek 2.{ left++ } right++ 左右迭代一次 求max
 45. 跳跃游戏 II  贪心算法  每次在跳跃范围内找跳跃最远的数
 71. 简化路径   栈  1.split . .. "" "str" push pop stringbuilder.append
+114. 二叉树展开为链表   深度优先搜索   1.将左子树插入到右子树的地方  2.将原来的右子树接到左子树的最右边节点  3.考虑新的右子树的根节点，一直重复上边的过程，直到新的右子树为 null
+51. N皇后   回溯问题    1.备忘录 col master slave剪枝  2.convert2board replace Q 3.满足条件

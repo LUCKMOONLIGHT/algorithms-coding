@@ -13,7 +13,8 @@ import java.util.Stack;
  *
  * 思路：参照数独，全排列
  * 使用哈希表分别记录 “列状态” 、 “主对角线状态” 、 “副对角线状态”
- * 使用数组分别记录 “列状态” 、 “主对角线状态” 、 “副对角线状态”
+ *
+ * 思路：每一行每个棋子都有四种放法，使用条件剪枝，使用备忘录标记重复
  */
 public class solveNQueens {
 
@@ -24,13 +25,13 @@ public class solveNQueens {
         }
 
         int[] nums = new int[n];
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) { //候选位置
             nums[i] = i;
         }
 
-        Set<Integer> col = new HashSet<>();
-        Set<Integer> master = new HashSet<>();
-        Set<Integer> slave = new HashSet<>();
+        Set<Integer> col = new HashSet<>();  //列状态
+        Set<Integer> master = new HashSet<>(); //主对角线状态
+        Set<Integer> slave = new HashSet<>();  //副对角线状态
         Stack<Integer> stack = new Stack<>();
 
         backtrack(nums, 0, n, col, master, slave, stack, res);
@@ -44,7 +45,7 @@ public class solveNQueens {
                            Stack<Integer> stack,
                            List<List<String>> res) {
 
-        if (row == n) {
+        if (row == n) {  //满足条件
             List<String> board = convert2board(stack, n);
             res.add(board);
             return;
@@ -52,7 +53,7 @@ public class solveNQueens {
 
         // 针对每一列，尝试是否可以放置
         for (int i = 0; i < n; i++) {
-            if (!col.contains(i) && !master.contains(row + i) && !slave.contains(row - i)) {
+            if (!col.contains(i) && !master.contains(row + i) && !slave.contains(row - i)) { //剪枝
                 stack.add(nums[i]);
                 col.add(i);
                 master.add(row + i);
@@ -70,9 +71,9 @@ public class solveNQueens {
 
     private List<String> convert2board(Stack<Integer> stack, int n) {
         List<String> board = new ArrayList<>();
-        for (Integer num : stack) {
+        for (Integer num : stack) { //每行每一个Q的候选填位置
             StringBuilder stringBuilder = new StringBuilder();
-            for (int i = 0; i < n; i++) {
+            for (int i = 0; i < n; i++) { //每行填充.
                 stringBuilder.append(".");
             }
             stringBuilder.replace(num, num + 1, "Q");
