@@ -69,8 +69,7 @@ public class isUglyIII {
     }
 
     public long gcd(long p, long q) { //最大公约数
-        if(p == 0)
-            return q;
+        if(p == 0) return q;
         return gcd(q % p, p);
     }
 }
