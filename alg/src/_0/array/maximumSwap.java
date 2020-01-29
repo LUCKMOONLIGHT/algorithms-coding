@@ -8,23 +8,21 @@ package _0.array;
 public class maximumSwap {
     //思路：
     // 1.将num转换成char数组便于取值
-    //
     //2.将每个数字出现的位置标记在last[10]中
-    //
     //3.从左到右迭代每一个数字，用后面出现的大数来替换，替换成功立即返回
     public int maximumSwap(int num) {
         if(num <=10) return num;
-        char[] arr = String.valueOf(num).toCharArray();
-        int[] last = new int[10];
-        for(int i=0;i<arr.length;i++) last[arr[i] - '0'] = i;
+        char[] arr = String.valueOf(num).toCharArray();//候选数
+        int[] last = new int[10];//标记出现位置
+        for(int i=0;i<arr.length;i++) last[arr[i] - '0'] = i;//某数最后出现位置
 
         for(int i=0;i<arr.length;i++){
             for(int j=9;j>arr[i] - '0';j--){
-                if(last[j] > i){
+                if(last[j] > i){//如果某数在i后面出现，说明需要交换
                     char tmp = arr[i];
                     arr[i] = arr[last[j]];
                     arr[last[j]] = tmp;
-                    return Integer.valueOf(new String(arr));
+                    return Integer.valueOf(new String(arr));//如果交换了直接返回
                 }
             }
         }

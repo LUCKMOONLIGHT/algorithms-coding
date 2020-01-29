@@ -8,14 +8,16 @@ public class productExceptSelf {
     public int[] productExceptSelf(int[] nums) {
         int[] res = new int[nums.length];
         int k=1;
+        //左迭代
         for(int i=0;i<nums.length;i++){
-            res[i] = k;
-            k = k * nums[i];
+            res[i] = k;//1 1 2 6
+            k = k * nums[i];//1 2 6 24
         }
         k = 1;
+        //右迭代
         for(int i=nums.length - 1;i>=0;i--){
-            res[i] = res[i] * k;
-            k = k * nums[i];
+            res[i] = res[i] * k; //24 12 8 6
+            k = k * nums[i];//4 12 24 24
         }
         return res;
     }

@@ -1,6 +1,5 @@
 package _12.Math;
 
-import sun.reflect.generics.tree.Tree;
 
 import java.util.ArrayList;
 import java.util.Arrays;

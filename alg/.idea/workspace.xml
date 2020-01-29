@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea08b256-5d04-43bf-b4ca-f77fdff4ce2e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/all" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_0/array/distributeCandies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_0/array/distributeCandies.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_0/array/findDisappearedNumbers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_0/array/findDisappearedNumbers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all" beforeDir="false" afterPath="$PROJECT_DIR$/all" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_0/array/generate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_0/array/generate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_0/array/maximumSwap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_0/array/maximumSwap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_0/array/productExceptSelf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_0/array/productExceptSelf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_12/Math/countSmaller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_12/Math/countSmaller.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +45,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1580110020990</updated>
-      <workItem from="1580110023680" duration="3212000" />
+      <workItem from="1580110023680" duration="9023000" />
     </task>
     <servers />
   </component>
@@ -62,5 +61,9 @@
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="496" y="371" key="com.intellij.ide.util.TipDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1580110027709" />
+    <state x="505" y="250" width="670" height="676" key="search.everywhere.popup" timestamp="1580266085458">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="505" y="250" width="670" height="676" key="search.everywhere.popup/0.23.1680.1027@0.23.1680.1027" timestamp="1580266085458" />
   </component>
 </project>
