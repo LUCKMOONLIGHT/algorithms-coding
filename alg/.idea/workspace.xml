@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ea08b256-5d04-43bf-b4ca-f77fdff4ce2e" name="Default Changelist" comment="">
+    <list default="true" id="ea08b256-5d04-43bf-b4ca-f77fdff4ce2e" name="Default Changelist" comment="alg">
+      <change afterPath="$PROJECT_DIR$/src/_1/stack/nextGreaterElements3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/all" beforeDir="false" afterPath="$PROJECT_DIR$/all" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_1/stack/MyQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_1/stack/MyQueue.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/_1/stack/MyStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_1/stack/MyStack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_1/stack/evalRPN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_1/stack/evalRPN.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_1/stack/isValid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_1/stack/isValid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_1/stack/longestValidParentheses.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_1/stack/longestValidParentheses.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_1/stack/nextGreaterElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_1/stack/nextGreaterElement.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,12 +33,35 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="_1.stack" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="nextGreaterElement" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="_1.stack.nextGreaterElement" />
+      <module name="alg" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="_1.stack.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.nextGreaterElement" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -57,6 +80,10 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="alg" />
+    <option name="LAST_COMMIT_MESSAGE" value="alg" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="589" y="347" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1580185346472">
       <screen x="0" y="23" width="1680" height="1027" />
@@ -66,10 +93,26 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="409" y="11" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1580373247109" />
-    <state x="270" y="0" key="SettingsEditor" timestamp="1580301450575">
+    <state width="1493" height="214" key="GridCell.Tab.0.bottom" timestamp="1580386988258">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="270" y="0" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1580301450575" />
+    <state width="1493" height="214" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1580386988258" />
+    <state width="1493" height="214" key="GridCell.Tab.0.center" timestamp="1580386988258">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="214" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1580386988258" />
+    <state width="1493" height="214" key="GridCell.Tab.0.left" timestamp="1580386988256">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="214" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1580386988256" />
+    <state width="1493" height="214" key="GridCell.Tab.0.right" timestamp="1580386988258">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="214" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1580386988258" />
+    <state x="270" y="0" key="SettingsEditor" timestamp="1580390212371">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="270" y="0" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1580390212371" />
     <state x="496" y="371" key="com.intellij.ide.util.TipDialog" timestamp="1580110027709">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
@@ -78,9 +121,14 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="562" y="335" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.834@0.0.1536.834" timestamp="1580373163045" />
-    <state x="505" y="250" width="670" height="676" key="search.everywhere.popup" timestamp="1580266085458">
-      <screen x="0" y="23" width="1680" height="1027" />
+    <state x="0" y="0" width="782" height="834" key="find.popup" timestamp="1580388139783">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
+    <state x="0" y="0" width="782" height="834" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1580388139783" />
+    <state x="462" y="184" width="672" height="549" key="search.everywhere.popup" timestamp="1580388193888">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="462" y="184" width="672" height="549" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1580388193888" />
     <state x="505" y="250" width="670" height="676" key="search.everywhere.popup/0.23.1680.1027@0.23.1680.1027" timestamp="1580266085458" />
   </component>
 </project>
