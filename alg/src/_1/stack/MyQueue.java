@@ -4,6 +4,7 @@ import java.util.Stack;
 /*https://leetcode-cn.com/problems/implement-stack-using-queues/*/
 
 /**
+ * 225.用栈模拟队列
  * 1.pop 当out为空，in不为空时，将in输出至out，然后out的pop
  * 2.push 直接push到in
  * 3.empty in和out都不为空时

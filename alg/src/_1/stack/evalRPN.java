@@ -6,6 +6,7 @@ import java.util.Stack;
 /**
  * 150. 逆波兰表达式求值 Medium https://leetcode-cn.com/problems/evaluate-reverse-polish-notation/
  *  遇到数字压入栈, 遇到操作符,弹出栈顶两个元素操作
+ *  ["2", "1", "+", "3", "*"]  9   ((2 + 1) * 3) = 9
  */
 public class evalRPN {
     public static void main(String[] args) {

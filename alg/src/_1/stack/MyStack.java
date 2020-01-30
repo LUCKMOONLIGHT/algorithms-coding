@@ -5,58 +5,38 @@ import java.util.Queue;
 //https://leetcode-cn.com/problems/implement-queue-using-stacks/
 
 /**
- * 1.pop  data不为null时，data输出给help，留最后一个用于输出pop，然后交换data与help
- * 2.peek data不为null时，data输出给help，留最后一个用于输出peek，然后peek也加入data，swap
- * 3.push 直接add到data
- * 4.empty data的size不为0
+ * 1.a为输入队列  b为输出队列
+ * 2.push 首先输入a队列中，然后拼接上b队列，交换a，b队列
  */
 class MyStack {
-
-    private Queue<Integer> data;
-    private Queue<Integer> help;
+    private Queue<Integer> a;//输入队列
+    private Queue<Integer> b;//输出队列
 
     public MyStack() {
-        data = new LinkedList<>();
-        help = new LinkedList<>();
+        a = new LinkedList<>();
+        b = new LinkedList<>();
     }
 
-
-    public void push(int pushInt) {
-        data.add(pushInt);
-    }
-
-    public int top() {
-        if (data.isEmpty()) {
-            throw new RuntimeException("Stack is empty!");
-        }
-        while (data.size() != 1) {
-            help.add(data.poll());
-        }
-        int res = data.poll();
-        help.add(res);
-        swap();
-        return res;
+    public void push(int x) {
+        a.offer(x); //此时a总为空
+        // 将b队列中元素全部转给a队列
+        while(!b.isEmpty())
+            a.offer(b.poll());
+        // 交换a和b,使得a队列没有在push()的时候始终为空队列
+        Queue temp = a;
+        a = b;
+        b = temp;
     }
 
     public int pop() {
-        if (data.isEmpty()) {
-            throw new RuntimeException("Stack is empty!");
-        }
-        while (data.size() > 1) {
-            help.add(data.poll());
-        }
-        int res = data.poll();
-        swap();
-        return res;
+        return b.poll();
     }
 
-    private void swap() {
-        Queue<Integer> temp = help;
-        help = data;
-        data = temp;
+    public int top() {
+        return b.peek();
     }
 
     public boolean empty() {
-        return data.size() == 0;
+        return b.isEmpty();
     }
 }

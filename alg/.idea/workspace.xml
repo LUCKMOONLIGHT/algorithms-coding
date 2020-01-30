@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea08b256-5d04-43bf-b4ca-f77fdff4ce2e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/all" beforeDir="false" afterPath="$PROJECT_DIR$/all" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_1/stack/MyQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_1/stack/MyQueue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_1/stack/MyStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_1/stack/MyStack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_1/stack/evalRPN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_1/stack/evalRPN.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_1/stack/isValid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_1/stack/isValid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_1/stack/longestValidParentheses.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_1/stack/longestValidParentheses.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +62,10 @@
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="589" y="347" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1680.1027@0.23.1680.1027" timestamp="1580185346472" />
+    <state x="409" y="11" key="CommitChangelistDialog2" timestamp="1580373247109">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="409" y="11" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1580373247109" />
     <state x="270" y="0" key="SettingsEditor" timestamp="1580301450575">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -66,6 +74,10 @@
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="496" y="371" key="com.intellij.ide.util.TipDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1580110027709" />
+    <state x="562" y="335" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1580373163045">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="562" y="335" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.834@0.0.1536.834" timestamp="1580373163045" />
     <state x="505" y="250" width="670" height="676" key="search.everywhere.popup" timestamp="1580266085458">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>

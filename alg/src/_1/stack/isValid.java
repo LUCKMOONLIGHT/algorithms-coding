@@ -10,10 +10,10 @@ import java.util.Stack;
  */
 public class isValid {
     public boolean isValid(String s) {
-        if (s == null || s.length() == 0) {
+        if (s == null || s.length() == 0) { //如果输入为空，有效匹配
             return true;
         }
-        if (s.length() % 2 == 1) {
+        if (s.length() % 2 == 1) {//如果长度不为偶数，无效匹配
             return false;
         }
         Map<Character, Character> map = new HashMap();
@@ -27,7 +27,7 @@ public class isValid {
             if (s.charAt(i) == '(' || s.charAt(i) == '{' || s.charAt(i) == '[') {
                 stack.push(s.charAt(i));
             } else {
-                //当遇到比括号时，出栈
+                //栈顶为上一个入栈元素，判断当前元素与栈顶元素是否相同，相同则有效匹配
                 if (!stack.empty() && stack.peek() != null && map.get(s.charAt(i)).equals(stack.peek())) {
                     stack.pop();
                 } else {
@@ -35,7 +35,7 @@ public class isValid {
                 }
             }
         }
-        //结果判断栈是否为空
+        //结果判断栈是否为空，为空则完全匹配
         return stack.empty();
     }
 }
