@@ -11,9 +11,9 @@ public class simplifyPath {
         Stack<String> stack = new Stack<>();
 
         for (int i = 0; i < s.length; i++) {
-            if (!stack.isEmpty() && s[i].equals(".."))
+            if (!stack.isEmpty() && s[i].equals(".."))//返回上一个
                 stack.pop();
-            else if (!s[i].equals("") && !s[i].equals(".") && !s[i].equals(".."))
+            else if (!s[i].equals("") && !s[i].equals(".") && !s[i].equals(".."))//入栈
                 stack.push(s[i]);
         }
         if (stack.isEmpty())
@@ -21,7 +21,7 @@ public class simplifyPath {
 
         StringBuffer res = new StringBuffer();
         for (int i = 0; i < stack.size(); i++) {
-            res.append("/" + stack.get(i));
+            res.append("/" + stack.get(i));//从头开始拼接
         }
         return res.toString();
     }

@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Stack;
 
 /**
- * 2. 两链表做加法
+ * 445. 两数相加 II
  * 1.计算时要保证最右边的数对齐 -> 使用栈存放链表中的每个值，进行右对齐
  */
 public class addTwoNumbersII {

@@ -2,13 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea08b256-5d04-43bf-b4ca-f77fdff4ce2e" name="Default Changelist" comment="alg">
-      <change afterPath="$PROJECT_DIR$/src/_1/stack/nextGreaterElements3.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/all" beforeDir="false" afterPath="$PROJECT_DIR$/all" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_1/stack/MyStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_1/stack/MyStack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_1/stack/nextGreaterElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_1/stack/nextGreaterElement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_1/stack/simplifyPath.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_1/stack/simplifyPath.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_2/linked/addTwoNumbers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_2/linked/addTwoNumbers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_2/linked/addTwoNumbersII.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_2/linked/addTwoNumbersII.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_2/linked/deleteDuplicates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_2/linked/deleteDuplicates.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_2/linked/deleteNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_2/linked/deleteNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_2/linked/getIntersectionNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_2/linked/getIntersectionNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_2/linked/hasCycle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_2/linked/hasCycle.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,10 +128,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="0" y="0" width="782" height="834" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1580388139783" />
-    <state x="462" y="184" width="672" height="549" key="search.everywhere.popup" timestamp="1580388193888">
+    <state x="462" y="184" width="672" height="549" key="search.everywhere.popup" timestamp="1580390765471">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="462" y="184" width="672" height="549" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1580388193888" />
+    <state x="462" y="184" width="672" height="549" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1580390765471" />
     <state x="505" y="250" width="670" height="676" key="search.everywhere.popup/0.23.1680.1027@0.23.1680.1027" timestamp="1580266085458" />
   </component>
 </project>

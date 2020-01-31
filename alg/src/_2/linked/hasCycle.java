@@ -11,7 +11,8 @@ public class hasCycle {
     }
 
     /**
-     * 1.判断是否有环
+     * 141. 环形链表
+     * 判断链表中是否有环
      * @param head
      * @return
      */
@@ -30,7 +31,8 @@ public class hasCycle {
         }
         return true;
     }
-    /**找环入口
+    /**142. 环形链表 II
+     * 给定一个链表，返回链表开始入环的第一个节点。 如果链表无环，则返回 null。
      * 2.Hashset保存ListNode，检查相同结点
      */
     public ListNode hasCycleII(ListNode head){
@@ -42,9 +44,10 @@ public class hasCycle {
         }
         return null;
     }
-    /**找环入口
+    /**
+     * 142. 环形链表 II
+     * 找环入口
      * 3.快慢指针（Floyd 算法）
-     *
      * 1.fast slow指针先环中相遇
      * 2.head slow指针同时出发，相遇点为环的入口点
      */
@@ -66,5 +69,28 @@ public class hasCycle {
         return head;
     }
 
+    //查找环的的长度
+    //第二次相遇的时候快指针比慢指针正好又多走了一圈
+    public int hasCycleIIII(ListNode head){
+        if(head == null && head.next == null) return 0;
+        ListNode slow = head;
+        ListNode fast = head.next;
+        //第一次相遇，查找环
+        while(slow.next != null && fast.next.next != null){
+            if(fast == slow) break;
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        slow = slow.next;
+        fast = fast.next.next;
+        int cnt = 1;
+        //第二次相遇，计算环的长度
+        while(slow != fast){
+            slow = slow.next;
+            fast = fast.next.next;
+            cnt ++;
+        }
+        return cnt;
+    }
 
 }

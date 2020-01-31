@@ -14,9 +14,11 @@ public class deleteNode {
         ListNode next;
         ListNode(int x){x = val;}
     }
+    //1.在删除结点之上，将当前的值修改为下一结点的值，删除后继节点
     public void deleteNode(ListNode node){
         if(node == null) return ;
         node.val = node.next.val;
         node.next = node.next.next;
     }
+    //2.直接删除后继结点
 }
