@@ -6,7 +6,7 @@ import java.util.Stack;
 
 //25. K 个一组翻转链表
 //给你一个链表，每 k 个节点一组进行翻转，请你返回翻转后的链表。
-//如果节点总数不是 k 的整数倍，那么请将最后剩余的节点保持原有顺序。
+//如果节点总数不是 k 的整数倍，那么请将最后剩余的节点保持原有顺序。（小于k个的不反转）
 public class reverseKGroup {
     public ListNode reverseKGroup(ListNode head, int k) {
         Stack<ListNode> stack = new Stack<ListNode>();

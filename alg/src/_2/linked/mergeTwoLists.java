@@ -1,7 +1,7 @@
 package _2.linked;
 
 /**
- * 合并两个有序链表
+ * 21.合并两个有序链表
  * 1.创建一个head及其node
  * 2.遍历，对比l1和l2，将小的连接到node上，最后返回head.next
  */

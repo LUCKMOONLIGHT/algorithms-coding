@@ -1,7 +1,8 @@
 package _2.linked;
 
 /**
- * 两两交换链表中的节点 Medium
+ * 24. 两两交换链表中的节点 Medium
+ * 给定 1->2->3->4, 你应该返回 2->1->4->3
  */
 public class swapPairs {
     class ListNode{
@@ -13,8 +14,8 @@ public class swapPairs {
     public ListNode swapPairs1(ListNode head){
         ListNode dummy = new ListNode(0);
         dummy.next = head;
-        ListNode pre = dummy.next;
-        while(pre.next !=null || pre.next.next != null){
+        ListNode pre = dummy;
+        while(pre.next !=null && pre.next.next != null){
             ListNode node1 = pre.next;
             ListNode node2 = node1.next;
             ListNode next = node2.next;

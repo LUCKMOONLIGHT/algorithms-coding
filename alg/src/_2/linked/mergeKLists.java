@@ -30,13 +30,14 @@ public class mergeKLists {
 
         ListNode dummyHead = new ListNode(0);
         ListNode curr = dummyHead;
+        //从小到大排列
         PriorityQueue<ListNode> pq = new PriorityQueue<>(new Comparator<ListNode>() {
             @Override
             public int compare(ListNode o1, ListNode o2) {
                 return o1.val - o2.val;
             }
         });
-        //将每个链表加入优先队列中
+        //将每个链表的头指针加入优先队列中
         for (ListNode list : lists) {
             if (list == null) {
                 continue;
@@ -45,7 +46,7 @@ public class mergeKLists {
         }
 
         while (!pq.isEmpty()) {
-            //从优先队列中输出链表节点，拼接到curr后面，然后将节点的后继节点加入到优先队列
+            //从优先队列中输出链表头节点，拼接到curr后面，然后将节点的后继节点加入到优先队列
             ListNode nextNode = pq.poll();
             curr.next = nextNode;
             curr = curr.next;

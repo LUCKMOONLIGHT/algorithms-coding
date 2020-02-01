@@ -2,8 +2,10 @@ package _2.linked;
 
 //143.重排链表
 //给定链表 1->2->3->4, 重新排列为 1->4->2->3.
-//给定链表 1->2->3->4->5, 重新排列为 1->5->2->4->3
+//给定链表 1->2->3->4->5, 重新排列为 1->5->2->4->
+// L0→Ln→L1→Ln-1→L2→Ln-2→。。。。。。
 public class reorderList {
+    //思路：1.使用快慢指针找到链表的中心结点  2.将原始链表按照中心链表分割为两个链表，并将右链表反转  3.原地合并两个链表，将右链表插入到左链表
     public void reorderList(ListNode head) {
         if(head == null){
             return ;
@@ -39,18 +41,19 @@ public class reorderList {
         return slow;
     }
 
-    //2. 通过递归反转链表
-    public ListNode reverse(ListNode head) {
-        if (head == null || head.next == null) {
-            return head;
+    //2.反转链表
+    public ListNode reverse(ListNode head){
+        ListNode cur = head, next, pre = null;
+        while(cur != null){
+            next = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = next;
         }
-        ListNode last = reverse(head.next);
-        head.next.next = head;
-        head.next = null;
-        return last;
+        return pre;
     }
 
-    //3. 合并两个链表，将右链表插入到左链表
+    //3. 原地合并两个链表，将右链表插入到左链表
     public void merge(ListNode left, ListNode right){
         ListNode leftTemp;
         ListNode rightTemp;

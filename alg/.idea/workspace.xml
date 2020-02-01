@@ -2,16 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea08b256-5d04-43bf-b4ca-f77fdff4ce2e" name="Default Changelist" comment="alg">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/all" beforeDir="false" afterPath="$PROJECT_DIR$/all" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_1/stack/simplifyPath.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_1/stack/simplifyPath.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_2/linked/addTwoNumbers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_2/linked/addTwoNumbers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_2/linked/addTwoNumbersII.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_2/linked/addTwoNumbersII.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_2/linked/deleteDuplicates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_2/linked/deleteDuplicates.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_2/linked/deleteNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_2/linked/deleteNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_2/linked/getIntersectionNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_2/linked/getIntersectionNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_2/linked/hasCycle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_2/linked/hasCycle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_2/linked/isPalindromeIII.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_2/linked/isPalindromeIII.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_2/linked/mergeKLists.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_2/linked/mergeKLists.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_2/linked/mergeTwoLists.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_2/linked/mergeTwoLists.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_2/linked/nextPermutation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_0/array/nextPermutation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_2/linked/removeNthFromEnd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_2/linked/removeNthFromEnd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_2/linked/reorderList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_2/linked/reorderList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_2/linked/reverseBetween.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_2/linked/reverseBetween.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_2/linked/reverseKGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_2/linked/reverseKGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_2/linked/reverseList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_2/linked/reverseList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_2/linked/rotateRight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_2/linked/rotateRight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_2/linked/swapPairs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_2/linked/swapPairs.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +35,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -92,6 +98,10 @@
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="589" y="347" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1680.1027@0.23.1680.1027" timestamp="1580185346472" />
+    <state x="548" y="302" width="439" height="239" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1580463323871">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="548" y="302" width="439" height="239" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.834@0.0.1536.834" timestamp="1580463323871" />
     <state x="409" y="11" key="CommitChangelistDialog2" timestamp="1580373247109">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -112,6 +122,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1493" height="214" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1580386988258" />
+    <state x="587" y="140" key="RollbackChangesDialog" timestamp="1580529150518">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="587" y="140" key="RollbackChangesDialog/0.0.1536.834@0.0.1536.834" timestamp="1580529150518" />
     <state x="270" y="0" key="SettingsEditor" timestamp="1580390212371">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -124,6 +138,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="562" y="335" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.834@0.0.1536.834" timestamp="1580373163045" />
+    <state x="0" y="0" width="1236" height="819" key="dock-window-1" timestamp="1580542056890">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="0" y="0" width="1236" height="819" key="dock-window-1/0.0.1536.834@0.0.1536.834" timestamp="1580542056890" />
     <state x="0" y="0" width="782" height="834" key="find.popup" timestamp="1580388139783">
       <screen x="0" y="0" width="1536" height="834" />
     </state>

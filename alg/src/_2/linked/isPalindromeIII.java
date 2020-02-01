@@ -2,7 +2,7 @@ package _2.linked;
 
 import java.util.List;
 
-//回文链表 Easy 采用空间复杂度O（1）的解法
+//234. 回文链表 easy 采用空间复杂度O（1）的解法
 //1.如果链表head || head.next 为空，返回true
 //2.slow fast 分别到mid和链表末端
 //3.反转右链表 reverseList mid  cur, next, pre
@@ -15,6 +15,7 @@ public class isPalindromeIII {
     }
     public boolean isPalindromeIII(ListNode head){
         if(head == null || head.next == null) return true;
+        //快慢指针找中间结点
         ListNode slow = head;
         ListNode fast = head;
         while(slow != null && fast != null){
@@ -24,6 +25,7 @@ public class isPalindromeIII {
         ListNode mid = slow.next;
         slow.next = null;
 
+        //反转结点
         ListNode right = reverseList(mid);
         ListNode left = head;
 
@@ -35,6 +37,7 @@ public class isPalindromeIII {
         return true;
     }
 
+    //反转链表
     public ListNode reverseList(ListNode head){
         ListNode cur = head, next, pre = null;
         while(cur != null){
