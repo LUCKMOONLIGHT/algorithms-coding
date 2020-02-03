@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 根据前序和中序遍历序列构造二叉树
+ * 105. 从前序与中序遍历序列构造二叉树
  *
  * 1.前序中左起第一位1肯定是根结点，我们可以据此找到中序中根结点的位置rootin；
  * 2.中序中根结点左边就是左子树结点，右边就是右子树结点，即[左子树结点，根结点，右子树结点]，我们就可以得出左子树结点个数为int left = rootin - leftin;；
@@ -15,6 +15,9 @@ import java.util.Map;
  * 6.左子树：root->left = pre_order(前序左子树范围，中序左子树范围，前序序列，中序序列);；
  * 7.右子树：root->right = pre_order(前序右子树范围，中序右子树范围，前序序列，中序序列);。
  * 8.每一层递归都要返回当前根结点root；
+ *
+ *
+ * 找中序遍历的根节点的长度
  */
 public class buildTreeDFS {
     class TreeNode{
@@ -29,18 +32,36 @@ public class buildTreeDFS {
     public TreeNode buildTree(int[] preOrder, int[] inOrder){
         if(preOrder == null || inOrder == null || preOrder.length != inOrder.length) return null;
         for (int i=0;i<inOrder.length;i++){
-            hashmap.put(inOrder[i], i);
+            hashmap.put(inOrder[i], i);//中序的值及其每个值对应的位置
         }
         return buildDFSTree(preOrder, 0, preOrder.length - 1, inOrder, 0, inOrder.length - 1);
     }
 
     private TreeNode buildDFSTree(int[] preOrder, int preStart, int preEnd, int[] inOrder, int inPre, int inEnd){
         if(preStart > preEnd || inPre > inEnd) return null;
-        int mid = hashmap.get(preOrder[preStart]);
+        int mid = hashmap.get(preOrder[preStart]);//通过hashmap来查找根结点对用的位置，省去了查找的时间
         if (mid < 0) return null;
         TreeNode root = new TreeNode(preOrder[preStart]);
         root.left = buildDFSTree(preOrder, preStart + 1, preStart + (mid - inPre), inOrder, inPre, mid - 1);
         root.right = buildDFSTree(preOrder, preStart + (mid - inPre) + 1, preEnd, inOrder, mid + 1, inEnd);
         return root;
+    }
+
+
+    //先序遍历+中序遍历 找根节点
+    public TreeNode buildTreeI(int[] preorder, int[] inorder) {
+        if(preorder == null || inorder == null || preorder.length != inorder.length) return null;
+        return dfs(preorder, inorder, 0, preorder.length - 1, 0, inorder.length - 1);
+    }
+
+    public TreeNode dfs(int[] preorder, int[] inorder, int so, int eo, int si, int ei){
+        if(so > eo || si > ei) return null;
+        TreeNode cur = new TreeNode(preorder[so]);
+        if(so == eo) return cur;
+        int index = 0;
+        while(inorder[index] != preorder[so]) index++;
+        cur.left = dfs(preorder, inorder, so+1, so + (index - si), si, index-1);
+        cur.right = dfs(preorder, inorder, so + (index - si)+1, eo, index+1, ei);
+        return cur;
     }
 }

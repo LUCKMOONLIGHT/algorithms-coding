@@ -2,21 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea08b256-5d04-43bf-b4ca-f77fdff4ce2e" name="Default Changelist" comment="alg">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/all" beforeDir="false" afterPath="$PROJECT_DIR$/all" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_2/linked/isPalindromeIII.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_2/linked/isPalindromeIII.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_2/linked/mergeKLists.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_2/linked/mergeKLists.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_2/linked/mergeTwoLists.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_2/linked/mergeTwoLists.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_2/linked/nextPermutation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_0/array/nextPermutation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_2/linked/removeNthFromEnd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_2/linked/removeNthFromEnd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_2/linked/reorderList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_2/linked/reorderList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_2/linked/reverseBetween.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_2/linked/reverseBetween.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_2/linked/reverseKGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_2/linked/reverseKGroup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_2/linked/reverseList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_2/linked/reverseList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_2/linked/rotateRight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_2/linked/rotateRight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_2/linked/swapPairs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_2/linked/swapPairs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_3/binaryTree/_1/averageOfLevels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_3/binaryTree/_1/averageOfLevels.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_3/binaryTree/_1/buildTreeDFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_3/binaryTree/_1/buildTreeDFS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_3/binaryTree/_1/buildTreeDFSII.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_3/binaryTree/_1/buildTreeDFSII.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_3/binaryTree/_1/buildTreeDFSIII.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_3/binaryTree/_1/buildTreeDFSIII.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,6 +98,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="409" y="11" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1580373247109" />
+    <state x="549" y="173" key="FileChooserDialogImpl" timestamp="1580704367378">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="549" y="173" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1580704367378" />
     <state width="1493" height="214" key="GridCell.Tab.0.bottom" timestamp="1580386988258">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -122,6 +118,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1493" height="214" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1580386988258" />
+    <state x="408" y="115" key="NewModule_or_Project.wizard" timestamp="1580704408196">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="408" y="115" key="NewModule_or_Project.wizard/0.0.1536.834@0.0.1536.834" timestamp="1580704408196" />
     <state x="587" y="140" key="RollbackChangesDialog" timestamp="1580529150518">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -146,10 +146,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="0" y="0" width="782" height="834" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1580388139783" />
-    <state x="462" y="184" width="672" height="549" key="search.everywhere.popup" timestamp="1580390765471">
+    <state x="462" y="184" width="672" height="549" key="search.everywhere.popup" timestamp="1580725844901">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="462" y="184" width="672" height="549" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1580390765471" />
+    <state x="462" y="184" width="672" height="549" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1580725844901" />
     <state x="505" y="250" width="670" height="676" key="search.everywhere.popup/0.23.1680.1027@0.23.1680.1027" timestamp="1580266085458" />
   </component>
 </project>

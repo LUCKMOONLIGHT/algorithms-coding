@@ -4,21 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 中序后序遍历构造二叉树
- * class Solution(object):
- *     def buildTree(self, inorder, postorder):
- *         """
- *         :type inorder: List[int]
- *         :type postorder: List[int]
- *         :rtype: TreeNode
- *         """
- *         if not postorder:
- *             return None
- *         root = TreeNode(postorder[-1])#创建树
- *         n = inorder.index(root.val)
- *         root.left = self.buildTree(inorder[:n],postorder[:n])
- *         root.right = self.buildTree(inorder[n+1:],postorder[n:-1])
- *         return root
+ * 106. 从中序与后序遍历序列构造二叉树
  */
 public class buildTreeDFSII {
     class TreeNode{
@@ -43,7 +29,7 @@ public class buildTreeDFSII {
     private TreeNode buildDFSIITree(int[] inOrder, int inPre, int inEnd, int[] postOrder, int postPre, int postEnd){
         if (inPre > inEnd || postPre > postEnd) return null;
         TreeNode root = new TreeNode(postOrder[postEnd]);
-        int mid = hashmap.get(postOrder[postEnd]);
+        int mid = hashmap.get(postOrder[postEnd]);//找根节点的位置
         if (mid < 0 ) return null;
         root.left = buildDFSIITree(inOrder, inPre, mid -1, postOrder, postPre, postPre + (mid - inPre));
         root.right = buildDFSIITree(inOrder, mid + 1, inEnd, postOrder, postPre + (mid - inPre) + 1, postEnd - 1);
