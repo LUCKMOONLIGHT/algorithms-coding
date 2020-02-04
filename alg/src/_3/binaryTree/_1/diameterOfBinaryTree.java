@@ -3,20 +3,21 @@ package _3.binaryTree._1;
 //543. 二叉树的直径 - 简单 最长路径
 //类似于最大路径和
 //这里是求边的个数
+//思路：求左右子树的最大深度，最大值为左右子树最大深度+1，返回
 public class diameterOfBinaryTree {
     int ans;
     public int diameterOfBinaryTree(TreeNode root) {
-        ans = 1;
-        depth(root);
+        ans = 1;//默认结点数为1
+        depth(root); // 迭代树
         return ans - 1; //最长路径长度 = 最长路径的点数 - 1
     }
     //求最长路径的点数
     public int depth(TreeNode node) {
-        if (node == null) return 0;
-        int L = depth(node.left);
-        int R = depth(node.right);
-        ans = Math.max(ans, L+R+1);  //全局节点的直径
-        return Math.max(L, R) + 1;  //当前节点的直径
+        if (node == null) return 0; // 如果当前结点为空，返回0
+        int L = depth(node.left);  //左子树的深度
+        int R = depth(node.right);  //右子树的深度
+        ans = Math.max(ans, L + R + 1);  //全局最大结点数
+        return Math.max(L, R) + 1;  //当前最大结点数
     }
 
     //687. 最长同值路径
@@ -31,7 +32,7 @@ public class diameterOfBinaryTree {
         if (node == null) return 0;
         int left = dfs(node.left);
         int right = dfs(node.right);
-        int arrowLeft = 0, arrowRight = 0;
+        int arrowLeft = 0, arrowRight = 0; //left和right有可能会改变，使用新的地址保存值
         if (node.left != null && node.left.val == node.val) {  //要求同值
             arrowLeft = left + 1;
         }

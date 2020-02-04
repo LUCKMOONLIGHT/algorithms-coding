@@ -5,9 +5,7 @@
       <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/all" beforeDir="false" afterPath="$PROJECT_DIR$/all" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_3/binaryTree/_1/buildTreeDFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_3/binaryTree/_1/buildTreeDFS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_3/binaryTree/_1/buildTreeDFSII.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_3/binaryTree/_1/buildTreeDFSII.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_3/binaryTree/_1/buildTreeDFSIII.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_3/binaryTree/_1/buildTreeDFSIII.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_3/binaryTree/_1/diameterOfBinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_3/binaryTree/_1/diameterOfBinaryTree.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
