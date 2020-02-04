@@ -5,7 +5,6 @@
       <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/all" beforeDir="false" afterPath="$PROJECT_DIR$/all" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_3/binaryTree/_1/averageOfLevels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_3/binaryTree/_1/averageOfLevels.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/_3/binaryTree/_1/buildTreeDFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_3/binaryTree/_1/buildTreeDFS.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/_3/binaryTree/_1/buildTreeDFSII.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_3/binaryTree/_1/buildTreeDFSII.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/_3/binaryTree/_1/buildTreeDFSIII.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_3/binaryTree/_1/buildTreeDFSIII.java" afterDir="false" />
@@ -34,7 +33,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -126,10 +125,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="587" y="140" key="RollbackChangesDialog/0.0.1536.834@0.0.1536.834" timestamp="1580529150518" />
-    <state x="270" y="0" key="SettingsEditor" timestamp="1580390212371">
+    <state x="270" y="0" key="SettingsEditor" timestamp="1580781065938">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="270" y="0" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1580390212371" />
+    <state x="270" y="0" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1580781065938" />
     <state x="496" y="371" key="com.intellij.ide.util.TipDialog" timestamp="1580110027709">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
@@ -142,10 +141,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="0" y="0" width="1236" height="819" key="dock-window-1/0.0.1536.834@0.0.1536.834" timestamp="1580542056890" />
-    <state x="0" y="0" width="782" height="834" key="find.popup" timestamp="1580388139783">
+    <state x="-3" y="-5" width="782" height="834" key="find.popup" timestamp="1580782431197">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="0" y="0" width="782" height="834" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1580388139783" />
+    <state x="-3" y="-5" width="782" height="834" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1580782431197" />
     <state x="462" y="184" width="672" height="549" key="search.everywhere.popup" timestamp="1580725844901">
       <screen x="0" y="0" width="1536" height="834" />
     </state>

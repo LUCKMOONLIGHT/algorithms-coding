@@ -48,20 +48,19 @@ public class buildTreeDFS {
     }
 
 
-    //先序遍历+中序遍历 找根节点
     public TreeNode buildTreeI(int[] preorder, int[] inorder) {
         if(preorder == null || inorder == null || preorder.length != inorder.length) return null;
         return dfs(preorder, inorder, 0, preorder.length - 1, 0, inorder.length - 1);
     }
 
-    public TreeNode dfs(int[] preorder, int[] inorder, int so, int eo, int si, int ei){
-        if(so > eo || si > ei) return null;
-        TreeNode cur = new TreeNode(preorder[so]);
-        if(so == eo) return cur;
-        int index = 0;
-        while(inorder[index] != preorder[so]) index++;
-        cur.left = dfs(preorder, inorder, so+1, so + (index - si), si, index-1);
-        cur.right = dfs(preorder, inorder, so + (index - si)+1, eo, index+1, ei);
+    public TreeNode dfs(int[] preorder, int[] inorder, int preStart, int preEnd, int inPre, int inEnd){
+        if(preStart > preEnd || inPre > inEnd) return null;
+        TreeNode cur = new TreeNode(preorder[preStart]);//根据前序遍历创建根节点
+        if(preStart == preEnd) return cur;
+        int index = inPre; //从中序遍历开始迭代搜索，查找根节点，确定左子树mid-1，(mid - inPre) - 1和右子树的长度
+        while(inorder[index] != preorder[preStart]) index++; //在中序遍历中查找根节点，以确定左子树和右子树的长度
+        cur.left = dfs(preorder, inorder, preStart+1, preStart + (index - inPre), inPre ,index-1);
+        cur.right = dfs(preorder, inorder, preStart + (index - inPre)+1, preEnd, index+1, inEnd);
         return cur;
     }
 }
