@@ -7,7 +7,7 @@ public class hasPathSum {
     public boolean hasPathSum(TreeNode root, int sum) {
         if(root == null) return false;
         sum -= root.val; //状态变换
-        if((root.left == null) && (root.right == null)) return (sum == 0);  //边界值
+        if((root.left == null) && (root.right == null)) return (sum == 0);  //到了边界值后，不能继续迭代，判断是否满足条件
         return hasPathSum(root.left, sum) || hasPathSum(root.right, sum);  //递归
     }
 }

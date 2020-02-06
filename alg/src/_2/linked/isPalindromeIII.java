@@ -13,39 +13,44 @@ public class isPalindromeIII {
         ListNode next;
         ListNode(int x){val = x;}
     }
-    public boolean isPalindromeIII(ListNode head){
-        if(head == null || head.next == null) return true;
-        //快慢指针找中间结点
-        ListNode slow = head;
-        ListNode fast = head;
-        while(slow != null && fast != null){
-            slow = slow.next;
-            fast = fast.next.next;
-        }
-        ListNode mid = slow.next;
-        slow.next = null;
 
-        //反转结点
-        ListNode right = reverseList(mid);
-        ListNode left = head;
 
-        while(left != null && right != null){
-            if (left.val != right.val) return false;
-            left = left.next;
-            right = right.next;
+    public boolean isPalindrome(ListNode head) {
+        if(head == null) return true;
+        ListNode first = half(head); //快慢指针找中间节点
+        ListNode second = reverse(first.next); //反转结点
+        //迭代判断是否为回文
+        ListNode p = head;
+        ListNode q = second;
+        boolean res = true;
+        while(res && q != null){
+            if(p.val != q.val) res = false;
+            p = p.next;
+            q = q.next;
         }
-        return true;
+
+        first.next = reverse(second);
+        return res;
     }
-
-    //反转链表
-    public ListNode reverseList(ListNode head){
-        ListNode cur = head, next, pre = null;
+    //反转链表，返回的是右链表的尾结点
+    public ListNode reverse(ListNode head){
+        ListNode pre = null, cur = head;
         while(cur != null){
-            next = cur.next;
+            ListNode next = cur.next;
             cur.next = pre;
             pre = cur;
             cur = next;
         }
         return pre;
+    }
+    //快慢指针找中间结点
+    public ListNode half(ListNode head){
+        ListNode slow = head;
+        ListNode fast = head;
+        while(fast.next != null && fast.next.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
     }
 }

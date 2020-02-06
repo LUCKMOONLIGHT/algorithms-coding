@@ -39,10 +39,11 @@ public class generateTrees {
             all_tree.add(null);
             return all_tree;
         }
-
+        //迭代当前节点的可能取值
         for(int i=s;i<=e;i++){
             List<TreeNode> left = dfs(s, i-1);
             List<TreeNode> right = dfs(i+1, e);
+            //迭代左右子树的可能取值
             for(TreeNode l:left){
                 for(TreeNode r:right){
                     TreeNode cur = new TreeNode(i);
