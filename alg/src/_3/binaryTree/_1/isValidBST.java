@@ -15,8 +15,8 @@ public class isValidBST {
         Stack<TreeNode> stack = new Stack();
         double inorder = - Double.MAX_VALUE;
 
-        while (!stack.isEmpty() || root != null) {
-            while (root != null) {
+        while (!stack.isEmpty() || root != null) {//栈不为null，出栈
+            while (root != null) {//当前结点不为null，入栈
                 stack.push(root);
                 root = root.left;
             }

@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Queue;
 
 /**
- * 二叉树的层次遍历
+ * 102.二叉树的层次遍历
  * 1.采用队列，先进先出，每层在遍历的时候，判断下其左右结点是否为null，不断叠加到queue中
  * 2.弄一个levelList装每一层的元素，每一层结束后，装到resList，返回resList
  */
@@ -39,4 +39,27 @@ public class levelOrder {
         }
         return res;
     }
+
+
+    //107.二叉树的层次遍历 II
+    //思路:res插入时每次都插入到队首位置
+    public List<List<Integer>> levelOrderBottom(TreeNode root) {
+        List<List<Integer>> res = new ArrayList<>();
+        if(root == null) return res;
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        while(!queue.isEmpty()){
+            List<Integer> list = new ArrayList<>();
+            int size = queue.size();
+            for(int i=0;i<size;i++){
+                TreeNode node = queue.poll();
+                list.add(node.val);
+                if(node.left != null) queue.offer(node.left);
+                if(node.right != null) queue.offer(node.right);
+            }
+            res.add(0, list);
+        }
+        return res;
+    }
+
 }

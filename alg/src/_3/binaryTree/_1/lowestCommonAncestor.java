@@ -1,7 +1,7 @@
 package _3.binaryTree._1;
 
 /**
- *  二叉树的最近公共祖先 LeetCode 左神P153 [Medium]
+ *  236.二叉树的最近公共祖先 LeetCode 左神P153 [Medium]
  *  给定一棵二叉树, 找到该树中两个指定节点的最近公共祖先。
  *  后序遍历，先从左右子节点上找
  *  1,如果发现cur等于null,或者o1,o2。则返回cur.
@@ -28,5 +28,7 @@ public class lowestCommonAncestor {
         }
         return left == null ? right : left; //如果left和right是有一个为空，另一个不为空，假设不为空的那个记为node，此时又两种，要么node是o1或o2中的一个，要么node已经是o1和o2的最近公共祖先节点，此时直接返回node即可。
     }
+
+    //235.二叉搜索树的最近公共祖先
 
 }

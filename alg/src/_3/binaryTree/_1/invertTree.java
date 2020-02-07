@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 /**
- * 翻转二叉树
+ * 226.翻转二叉树
  *
  * 前序遍历翻转
  */
@@ -16,7 +16,7 @@ public class invertTree {
         TreeNode(int x){val = x;}
     }
 
-
+    //层次遍历翻转左右子树
     public TreeNode invertTree(TreeNode root){
         if (root == null) return null;
         Queue<TreeNode> queue = new LinkedList<>();

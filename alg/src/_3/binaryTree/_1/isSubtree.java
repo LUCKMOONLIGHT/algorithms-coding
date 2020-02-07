@@ -1,6 +1,7 @@
 package _3.binaryTree._1;
 
 /**
+ * 572. 另一个树的子树
  * 判断B树是不是A树的子树
  *
  * 1.递归判断B是不是A相同 || B是不是跟A的子树相同
@@ -20,6 +21,6 @@ public class isSubtree {
     }
     private boolean isSameTree(TreeNode s, TreeNode t){ //两颗树完全相等
         if(s == null || t == null) return s == null && t == null;
-        return s.val == t.val && isSameTree(s.left, t.left) && isSameTree(s.right, t.right);
+        return s.val == t.val && isSameTree(s.left, t.left) && isSameTree(s.right, t.right);//判断当前结点&&左子树&&右子树
     }
 }

@@ -1,7 +1,7 @@
 package _3.binaryTree._1;
 
 /**
- * 在二叉搜索树中查找第K小的数
+ * 230.在二叉搜索树中查找第K小的数
  * 二叉搜索树-左小右大，按照左中右遍历的话，为从小到大的顺序
  */
 public class kthSmallest {
@@ -21,7 +21,7 @@ public class kthSmallest {
         if(root == null) return;
         kthSmallestInOrder(root.left, k);
         count ++;
-        if(k == count){
+        if(k == count){ //如果次数相等，标记value返回
             value = root.val;
             return ;
         }

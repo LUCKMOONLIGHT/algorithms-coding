@@ -19,51 +19,25 @@ public class postorderTraversal {
         TreeNode(int x){val = x;}
     }
 
-    public List<Integer> postorderTraversal(TreeNode root){
-        List<Integer> res = new ArrayList<>();
-        if (root != null){
-            Stack<TreeNode> s1 = new Stack<>();
-            Stack<TreeNode> s2 = new Stack<>();
-            s1.push(root);
-            while(!s1.isEmpty()){
-                root = s1.pop();
-                s2.push(root);
-
-                if(root.right != null){
-                    s1.push(root.right);
-                }
-                if (root.left != null){
-                    s1.push(root.left);
-                }
-
-            }
-            while(!s2.isEmpty()){
-                res.add(s2.pop().val);
-            }
-        }
-        return res;
-    }
-
-    //前序遍历 出栈访问顺序为：根右左  逆序插入res 为：左右中
-    public List<Integer> postorderTraversalII(TreeNode root) {
+    public List<Integer> postorderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList<Integer>();
-        if(root == null)
+        if (root == null)
             return res;
-        Stack<TreeNode> stack = new Stack<TreeNode>();
+        Stack<TreeNode> stack = new Stack<TreeNode>(); //先将左子树入栈后将右子树入栈，先将右子树出栈插入到首部，后将左子树出栈插入到首部
         stack.push(root);
-        while(!stack.isEmpty()){
+        while (!stack.isEmpty()) {
             TreeNode node = stack.pop();
-            if(node.left != null) stack.push(node.left);//和传统先序遍历不一样，先将左结点入栈
-            if(node.right != null) stack.push(node.right);//后将右结点入栈
-            res.add(0,node.val);                        //逆序添加结点值
+            if (node.left != null) stack.push(node.left);//和传统先序遍历不一样，先将左结点入栈
+            if (node.right != null) stack.push(node.right);//后将右结点入栈
+            res.add(0, node.val);                        //逆序添加结点值，插入到首部位置
         }
         return res;
     }
 
     //递归写法   左右中
-    public List<Integer> res = new ArrayList<Integer>();
     public List<Integer> postorderTraversalIII(TreeNode root) {
-        if(root == null)
+        List<Integer> res = new ArrayList<Integer>();
+            if(root == null)
             return res;
         postorderTraversal(root.left);
         postorderTraversal(root.right);
