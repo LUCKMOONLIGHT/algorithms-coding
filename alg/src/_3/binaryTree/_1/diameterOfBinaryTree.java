@@ -42,4 +42,15 @@ public class diameterOfBinaryTree {
         ans = Math.max(ans, arrowLeft + arrowRight);  //全局最长
         return Math.max(arrowLeft, arrowRight); //当前节点最长
     }
+
+    //124.二叉树的最大路径和
+    int ret = 0;
+    private int getMax(TreeNode r) {
+        if(r == null) return 0;
+        int left = Math.max(0, getMax(r.left)); // 如果子树路径和为负则应当置0表示最大路径不包含子树
+        int right = Math.max(0, getMax(r.right));
+        ret = Math.max(ret, r.val + left + right); // 全局的最大路径和
+        return Math.max(left, right) + r.val; //当前节点的最大路径和
+    }
+
 }
