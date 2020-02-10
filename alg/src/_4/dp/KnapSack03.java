@@ -22,7 +22,8 @@ public class KnapSack03 {
                 if(weight[i-1] > j)
                     dp[i][j] = dp[i-1][j];
                 else
-                    dp[i][j] = Math.max(dp[i-1][j],dp[i][j-weight[i-1]]+value[i-1]); //向i种物品时的背包添加第i种物品
+                    dp[i][j] = Math.max(dp[i-1][j],dp[i][j-weight[i-1]]+value[i-1]); //已经选择了i种物品时的背包添加第i种物品
+                //dp[i][j-weight[i-1]]+value[i-1] 已经选择了i中物品的基础上，再继续选择第i种物品   1/n
             }
         }
         //则容量为V的背包能够装入物品的最大值为
@@ -46,6 +47,9 @@ public class KnapSack03 {
      * 思路：
      * 只用一个一维数组记录状态，dp[i]表示容量为i的背包所能装入物品的最大价值
      * 用顺序来实现
+     * for 1 ... N   物品数
+     *     for w[i-1] ... C  容量数
+     * 从前往后循环，每次取到的状态都会和前面的状态或多或少都有重叠，这样就刚好的满足了，每种物品无限取得要求了
      */
     public static int completePack2(int[] weight,int[] value, int C){
         int N = weight.length;
@@ -54,6 +58,7 @@ public class KnapSack03 {
         for(int i=1;i<N+1;i++){ // 遍历物品的容量
 
             for(int j=weight[i-1];j<C+1;j++){ //顺序实现,从当前物品的容量开始到最大容量
+                //用新数据来覆盖新数据，如果已经拿了n种物品了，如果再拿一个价值会更大，则继续拿
                 dp[j] = Math.max(dp[j-weight[i-1]]+value[i-1],dp[j]);
             }
         }

@@ -1,4 +1,4 @@
-package _4.dp;
+package _8.greed;
 
 import java.util.Arrays;
 

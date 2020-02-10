@@ -28,6 +28,7 @@ public class KnapSack01 {
                     dp[i][j] = dp[i-1][j];
                 else
                     dp[i][j] = Math.max(dp[i-1][j],dp[i-1][j-w[i-1]]+v[i-1]);
+                //dp[i-1][j-w[i-1]]+v[i-1] 未选择第i件物品的基础上选择第i件wup 0/1
             }
         }
         //则容量为V的背包能够装入物品的最大值为
@@ -52,7 +53,13 @@ public class KnapSack01 {
      * 0-1背包的优化解法
      * 思路：
      * 只用一个一维数组记录状态，dp[i]表示容量为i的背包所能装入物品的最大价值
-     * 用逆序来实现
+     * for 1 ... N   物品数
+     *     for C ... w[i-1]  容量数逆序
+     *
+     * dp[i]只与i-1状态有关，只需要用一维数组来保存i-1的状态
+     * dp[j] = Math.max(dp[j-w[i-1]]+v[i-1],dp[j])
+     * 只有逆序遍历才能保证，求i时刻dp[j]时，dp[j-w[i-1]]时i-1时刻的值
+     * 如果正序遍历时，前面f[0],f[1]...f[c-1]都已经改变，里面存的都不是i-1时刻的值
      */
     public static int knapSackII(int[] w, int[] v, int C) {
         //动态规划
