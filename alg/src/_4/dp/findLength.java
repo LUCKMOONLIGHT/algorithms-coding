@@ -8,6 +8,7 @@ package _4.dp;
  * B: [3,2,1,4,7]
  * 3
  *  [3, 2, 1]
+ *
  */
 public class findLength {
     public int findLength(int[] A, int[] B) {
@@ -16,11 +17,12 @@ public class findLength {
         int res = 0;
         if(A == null || n == 0 || B == null || m == 0) return 0;
         int[][] dp = new int[n+1][m+1];
+        //填表格
         for(int i=1;i<=n;i++){
             for(int j=1;j<=m;j++){
-                if(A[i-1] == B[j-1]){
+                if(A[i-1] == B[j-1]){ //如果当前两个元素相等
                     dp[i][j] = dp[i-1][j-1] + 1;
-                    res = Math.max(res, dp[i][j]);
+                    res = Math.max(res, dp[i][j]);//保存最大值
                 }
             }
         }

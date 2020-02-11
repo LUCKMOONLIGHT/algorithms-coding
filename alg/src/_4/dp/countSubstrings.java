@@ -23,9 +23,9 @@ public class countSubstrings {
         }
         int n = s.length();
         int result = 0;
-        boolean[][] dp = new boolean[n][n];
-        for(int end = 0; end < n; end++){
-            for(int start = 0; start <= end; start++){
+        boolean[][] dp = new boolean[n][n]; //作为备忘录
+        for(int end = 0; end < n; end++){ //end结束
+            for(int start = 0; start <= end; start++){ //start开始长度
                 if(start == end){
                     dp[start][end] = true;
                     result++;

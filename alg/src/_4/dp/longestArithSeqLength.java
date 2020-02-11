@@ -19,8 +19,8 @@ public class longestArithSeqLength {
         int max = 0;
         for (int i = 1 ; i < A.length; i++) {
             for (int j = 0; j < i; j++) {
-                int step = A[i] - A[j] + 10000; //将插值移位
-                if (dp[j][step] > 0) {
+                int step = A[i] - A[j] + 10000; //将插值移位,说明j，i之间等差step
+                if (dp[j][step] > 0) {//存在等差为step的数列子串
                     dp[i][step] = Math.max(dp[j][step] + 1, dp[i][step]);//等同于最长上升子序列的思路
                 } else {
                     dp[i][step] = 2; //最短为2

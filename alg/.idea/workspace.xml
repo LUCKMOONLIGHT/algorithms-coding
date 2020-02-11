@@ -2,19 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea08b256-5d04-43bf-b4ca-f77fdff4ce2e" name="Default Changelist" comment="alg">
+      <change afterPath="$PROJECT_DIR$/src/_0/array/lengthOfLongestSubstring.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_0/array/longestCommonPrefix.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/all" beforeDir="false" afterPath="$PROJECT_DIR$/all" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_4/dp/KnapSack01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_4/dp/KnapSack01.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_4/dp/KnapSack02.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_4/dp/KnapSack02.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_4/dp/KnapSack03.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_4/dp/KnapSack03.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_4/dp/canJump.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_4/dp/canJump.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_4/dp/canPartition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_4/dp/canPartition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_4/dp/coinChange.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_4/dp/coinChange.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_4/dp/countSubstrings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_4/dp/countSubstrings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_4/dp/findLength.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_4/dp/findLength.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_4/dp/isMatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_4/dp/isMatch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_4/dp/lengthOfLIS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_4/dp/lengthOfLIS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_4/dp/lengthOfLongestSubstring.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_4/dp/lengthOfLongestSubstring.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_4/dp/longestArithSeqLength.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_4/dp/longestArithSeqLength.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_4/dp/longestPalindrome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_4/dp/longestPalindrome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_4/dp/longestPalindromeI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_4/dp/longestPalindromeI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_4/dp/longestPalindromeSubseq.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_4/dp/longestPalindromeSubseq.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -39,6 +53,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="_0.array" />
       <recent name="_8.greed" />
       <recent name="_1.stack" />
     </key>
@@ -144,14 +159,14 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="0" y="0" width="1236" height="819" key="dock-window-1/0.0.1536.834@0.0.1536.834" timestamp="1580542056890" />
-    <state x="-3" y="-5" width="782" height="834" key="find.popup" timestamp="1581175742741">
+    <state x="-3" y="-5" width="782" height="834" key="find.popup" timestamp="1581407454121">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="-3" y="-5" width="782" height="834" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1581175742741" />
-    <state x="462" y="184" width="672" height="549" key="search.everywhere.popup" timestamp="1581175595306">
+    <state x="-3" y="-5" width="782" height="834" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1581407454121" />
+    <state x="462" y="184" width="672" height="549" key="search.everywhere.popup" timestamp="1581413023696">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="462" y="184" width="672" height="549" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1581175595306" />
+    <state x="462" y="184" width="672" height="549" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1581413023696" />
     <state x="505" y="250" width="670" height="676" key="search.everywhere.popup/0.23.1680.1027@0.23.1680.1027" timestamp="1580266085458" />
   </component>
 </project>

@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * 最长上升子序列 - 序列不要求连续   nums[i] > nums[j]  dp[i] = Math.max(dp[i],dp[j]+1)
+ * 300. 最长上升子序列 - 序列不要求连续   nums[i] > nums[j]  dp[i] = Math.max(dp[i],dp[j]+1)
  * 给定一个无序的整数数组，找到其中最长上升子序列的长度。
  *
  * 思路：从顶至下 动态规划
@@ -21,8 +21,8 @@ public class lengthOfLIS {
         int[] dp = new int[len];
         Arrays.fill(dp,1);
         int maxans = dp[0];
-        for(int i=1;i<len;i++){
-            for(int j=0;j<i;j++){
+        for(int i=1;i<len;i++){ //总长度
+            for(int j=0;j<i;j++){//子串长度
                 if(nums[j] < nums[i]){//在每个可能的最长上升子序列中附加当前元素nums[i]
                     dp[i] = Math.max(dp[i],dp[j]+1);
                 }

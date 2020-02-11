@@ -3,72 +3,58 @@ package _4.dp;
 //10. 正则表达式匹配 - difficult
 //'.' 匹配任意单个字符
 //'*' 匹配零个或多个前面的那一个元素
+//**注意：'*'匹配零个前面那一个元素即为删除前一个元素** 删除前一个||匹配一次前面那一个元素||匹配二次前面那一个元素
+//ab, abc*  TRUE  ab, abc** FALSE
+//s = "aa"
+//p = "a*"
+//输出: true
+
+
+//思路：
+//如果 p.charAt(j) == s.charAt(i) || p.charAt(j) == '.' : dp[i][j] = dp[i-1][j-1]；
+//如果 p.charAt(j) == '*'：
+//如果 p.charAt(j-1) != s.charAt(i) && p.charAt(j - 1) != '.' : dp[i][j] = dp[i][j-2] //in this case, a* only counts as empty
+//如果 p.charAt(i-1) == s.charAt(i) || p.charAt(i-1) == '.'：
+//dp[i][j] = dp[i-1][j] //in this case, a* counts as multiple a
+//or dp[i][j] = dp[i][j-1] // in this case, a* counts as single a
+//or dp[i][j] = dp[i][j-2] // in this case, a* counts as empty
+//
 public class isMatch {
-    public boolean isMatchI(String s, String p) {
-        if (s == null || p == null) return false;
-
-        int m = s.length(), n = p.length();
-        boolean[][] dp = new boolean[m + 1][n + 1];
-        dp[0][0] = true;
-
-        //"" 和p的匹配关系初始化，a*a*a*a*a*这种能够匹配空串，其他的是都是false。
-        //  奇数位不管什么字符都是false，偶数位为* 时则: dp[0][i] = dp[0][i - 2]
-        for (int i = 2; i <= n; i+= 2) {
-            if (p.charAt(i - 1) == '*') {
-                dp[0][i] = dp[0][i - 2];
+    public boolean isMatch(String s,String p){
+        if (s == null || p == null) {  //只要有一个为空，匹配不上
+            return false;
+        }
+        boolean[][] dp = new boolean[s.length() + 1][p.length() + 1];
+        dp[0][0] = true;//dp[i][j] 表示 s 的前 i 个是否能被 p 的前 j 个匹配
+        for (int i = 0; i < p.length(); i++) { // here's the p's length, not s's
+            if (p.charAt(i) == '*') { //i start with 1
+                dp[0][i + 1] = dp[0][i - 1]; // here's y axis should be i+1,a* counts as empty
             }
         }
-        for (int i = 1; i <= m; i++) {
-            for (int j = 1; j <= n; j++) {
-                char sc = s.charAt(i - 1);
-                char pc = p.charAt(j - 1);
-                if (sc == pc || pc == '.') {
-                    dp[i][j] = dp[i - 1][j - 1];
-                } else if (pc == '*') {
-                    if (dp[i][j - 2]) {
-                        dp[i][j] = true;
-                    } else if (sc == p.charAt(j - 2) || p.charAt(j - 2) == '.') {
-                        dp[i][j] = dp[i - 1][j];
+        for (int i = 0; i < s.length(); i++) {
+            for (int j = 0; j < p.length(); j++) {
+                if (p.charAt(j) == '.' || p.charAt(j) == s.charAt(i)) {//如果是任意元素 或者是对于元素匹配
+                    dp[i + 1][j + 1] = dp[i][j];
+                }
+                if (p.charAt(j) == '*') {
+                    if (p.charAt(j - 1) != s.charAt(i) && p.charAt(j - 1) != '.') {//如果前一个元素不匹配 且不为任意元素
+                        dp[i + 1][j + 1] = dp[i + 1][j - 1];
+                    } else {
+                        dp[i + 1][j + 1] = (dp[i + 1][j] || dp[i][j + 1] || dp[i + 1][j - 1]);
+                            /*
+                            dp[i][j] = dp[i-1][j] // 多个字符匹配的情况
+                            or dp[i][j] = dp[i][j-1] // 单个字符匹配的情况
+                            or dp[i][j] = dp[i][j-2] // 没有匹配的情况
+                             */
+
                     }
                 }
             }
         }
-        return dp[m][n];
+        return dp[s.length()][p.length()];
     }
 
-//    if (s == null || p == null) return false;
-//
-//    int m = s.length(), n = p.length();
-//    boolean[][] dp = new boolean[m + 1][n + 1];//dp[i][j] 表示 s 的前 i 个是否能被 p 的前 j 个匹配
-//    dp[0][0] = true;
-//
-//    //basecase:空串的初始化 "" 和p的匹配关系初始化，a*a*a*a*a*这种能够匹配空串，其他的是都是false。
-//    //  奇数位不管什么字符都是false，偶数位为* 时则: dp[0][i] = dp[0][i - 2]
-//        for (int i = 2; i <= n; i+= 2) {
-//        if (p.charAt(i - 1) == '*') {
-//            dp[0][i] = dp[0][i - 2]; //偶数位为*，就可以把当前的*和前一个字符删除掉,看前面两个字符的结果即可
-//        }
-//    }
-//
-//        for (int i = 1; i <= m; i++) {
-//        for (int j = 1; j <= n; j++) {
-//            char sc = s.charAt(i - 1);//当前字符串
-//            char pc = p.charAt(j - 1);//模式字符串
-//            if (sc == pc || pc == '.') { //1.当字符匹配或者p为.时，能够匹配
-//                dp[i][j] = dp[i - 1][j - 1];
-//            } else if (pc == '*') {//
-//                if (dp[i][j - 2]) {//0个匹配;2.1如果p当前为*时,前两个字符能够匹配,则当前必定也能匹配 (### ###b*)
-//                    dp[i][j] = true;
-//                } else if (sc == p.charAt(j - 2) || p.charAt(j - 2) == '.') {//2.2.前一个字符能够匹配或者前字符为万能匹配时 (##b , ###b *)，或者 ( ##b , ### . * ) (aa a*)
-//                    dp[i][j] = dp[i - 1][j];//2.3 多个字符匹配的情况,（###bbbbbbbb，###b*） 此时i-1向前移动
-//                }
-//            }
-//        }
-//    }
-//
-//        return dp[m][n];
-
-    //通配符匹配II  给定一个字符串 (s) 和一个字符模式 (p) ，实现一个支持 '?' 和 '*' 的通配符匹配。
+    //44.通配符匹配  给定一个字符串 (s) 和一个字符模式 (p) ，实现一个支持 '?' 和 '*' 的通配符匹配。
     //'?' 可以匹配任何单个字符。
     //'*' 可以匹配任意字符串（包括空字符串）。       与10题的区别：'*' 匹配零个或多个前面的那一个元素
     //双指针 利用两个指针进行遍历  3ms O(n) O(1)
@@ -129,7 +115,7 @@ public class isMatch {
         dp[0][0] = true;
         for (int j = 1; j < p.length() + 1; j++) {
             if (p.charAt(j - 1) == '*') {
-                dp[0][j] = dp[0][j - 1];
+                dp[0][j] = dp[0][j - 1]; // * is Empty
             }
         }
         for (int i = 1; i < s.length() + 1; i++) {
@@ -137,7 +123,7 @@ public class isMatch {
                 if (s.charAt(i - 1) == p.charAt(j - 1) || p.charAt(j - 1) == '?') {
                     dp[i][j] = dp[i - 1][j - 1];
                 } else if (p.charAt(j - 1) == '*') {
-                    dp[i][j] = dp[i][j - 1] || dp[i - 1][j];
+                    dp[i][j] = dp[i][j - 1] || dp[i - 1][j];  // * 代表的是 空字符 || 非空字符
                 }
             }
         }

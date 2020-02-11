@@ -19,16 +19,18 @@ public class coinChange {
     /**
      * 可以看成是一个完全背包问题。用一个完全背包装满指定的金额
      * 只有能够凑成dp[j-coin],才能凑成dp[j] wordBreak
+     * dp[j] 总金额为j所需要的最少硬币个数
+     * 状态转移方程为 dp[j] = Math.min(dp[j], dp[j-coins[i]]+1)
      */
     public int coinChangeI(int[] coins, int amount) {
         if(coins == null || coins.length == 0) return 0; //边界条件判断
         if(amount == 0) return 0;
         int[] dp  = new int[amount + 1];
-        Arrays.fill(dp,1,dp.length,Integer.MAX_VALUE); //初始化数组
+        Arrays.fill(dp,1,dp.length,Integer.MAX_VALUE); //初始化数组  dp[0]=0
         for(int i=0;i<coins.length;i++){  //遍历每一个硬币
             for(int j=coins[i];j<=amount;j++){ //从硬币面值到目标值amount
                 if(dp[j - coins[i]] != Integer.MAX_VALUE){ //条件判断：当能够凑成dp[j-coin]时，dp[j]一定能够凑成
-                    dp[j] = Math.min(dp[j], dp[j - coins[i]] + 1);//状态转移方程：不适用的情况下和使用的情况下的最小硬币数
+                    dp[j] = Math.min(dp[j], dp[j - coins[i]] + 1);//状态转移方程：使用的情况下和使用的情况下的最小硬币数
                 }
             }
         }
