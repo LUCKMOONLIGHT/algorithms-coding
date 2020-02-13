@@ -1,4 +1,4 @@
-package _4.dp;
+package _3.binaryTree._1;
 
 /**
  * 124. 二叉树中的最大路径和
@@ -29,10 +29,4 @@ public class maxPathSum {
         ret = Math.max(ret, r.val + left + right); // 判断在该节点包含左右子树的路径和是否大于当前最大路径和
         return Math.max(left, right) + r.val;
     }
-}
-class TreeNode{
-    int val;
-    TreeNode left;
-    TreeNode right;
-    TreeNode(int val){ this.val = val;}
 }

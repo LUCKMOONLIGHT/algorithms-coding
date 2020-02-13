@@ -2,21 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea08b256-5d04-43bf-b4ca-f77fdff4ce2e" name="Default Changelist" comment="alg">
-      <change afterPath="$PROJECT_DIR$/src/_0/array/lengthOfLongestSubstring.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_0/array/longestCommonPrefix.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/all" beforeDir="false" afterPath="$PROJECT_DIR$/all" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_4/dp/coinChange.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_4/dp/coinChange.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_4/dp/countSubstrings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_4/dp/countSubstrings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_4/dp/findLength.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_4/dp/findLength.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_4/dp/isMatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_4/dp/isMatch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_4/dp/lengthOfLIS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_4/dp/lengthOfLIS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_4/dp/lengthOfLongestSubstring.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_4/dp/lengthOfLongestSubstring.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_4/dp/longestArithSeqLength.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_4/dp/longestArithSeqLength.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_4/dp/longestPalindrome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_4/dp/longestPalindrome.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_4/dp/longestPalindromeI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_4/dp/longestPalindromeI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_4/dp/longestPalindromeSubseq.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_4/dp/longestPalindromeSubseq.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_4/dp/maxPathSum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_3/binaryTree/_1/maxPathSum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_4/dp/minDistance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_4/dp/minDistance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_4/dp/minPathSum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_4/dp/minPathSum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_4/dp/minRefuelStops.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_4/dp/minRefuelStops.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_4/dp/minimumTotal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_4/dp/minimumTotal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_4/dp/numDecodings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_4/dp/numDecodings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_4/dp/numDistinct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_4/dp/numDistinct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_4/dp/partitionII.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_4/dp/partitionII.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_4/dp/shortestPalindrome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_4/dp/shortestPalindrome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_4/dp/superEggDrop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_4/dp/superEggDrop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_4/dp/uniquePaths.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_4/dp/uniquePaths.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_4/dp/wordBreak.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_4/dp/wordBreak.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

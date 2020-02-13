@@ -1,7 +1,7 @@
 package _4.dp;
 
 /**
- * 不同路径（UniquePaths） - 动态规划
+ * 62.不同路径（UniquePaths） - 动态规划
  *
  * 题目：机器人位于m*n的左上角，每次只能向下或者向右移动一步。到达网络的右下角，总共有多少条路径
  *
@@ -37,6 +37,7 @@ public class uniquePaths {
         }
         obstacleGrid[0][0] = 1;
         //初始化第一行和第一列，如果当前为0，上一个为1，初始化为1，否则为0
+        //初始化，如果当前结点为0，能走，当前的状态由上一个位置的状态决定，如果为1不能走，当前的状态为0
         for (int i = 1; i < R; i++) {
             obstacleGrid[i][0] = (obstacleGrid[i][0] == 0 && obstacleGrid[i - 1][0] == 1) ? 1 : 0;
         }
@@ -82,7 +83,7 @@ public class uniquePaths {
                 }
             }
         }
-        return dfs(grid, r, c, sum);
+        return dfs(grid, r, c, sum);  //sum要走的数  rc起始位置  当遇到2时，sum是否走完
     }
 
 

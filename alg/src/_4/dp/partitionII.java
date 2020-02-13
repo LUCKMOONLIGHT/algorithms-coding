@@ -3,7 +3,7 @@ package _4.dp;
 import java.util.Arrays;
 
 /**
- *  分割回文串 II - 动态规划
+ *  132.分割回文串 II - 动态规划
  * 给定一个字符串 s，将 s 分割成一些子串，使每个子串都是回文串。返回符合要求的最少分割次数。
  *
  * 思路：
@@ -22,13 +22,14 @@ public class partitionII {
             for(int j = 0; j < i; j++){ //从0开始判断子串
                 if(isPal(s.substring(j, i))){ //假如是回文的话
                     f[i] = Math.min(f[j] + 1, f[i]);//总长字符串的分割数等于最小子串分割数+1
+                    System.out.println(f[i]);
                 }
             }
         }
         return f[n];
     }
 
-    boolean isPal(String s){
+    boolean isPal(String s){  //指针碰撞
         int left = 0, right = s.length() - 1;
         while(left < right){
             if(s.charAt(left++) != s.charAt(right--)){

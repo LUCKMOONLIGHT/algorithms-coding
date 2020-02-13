@@ -47,7 +47,7 @@ public class superEggDrop {
         if(N == 0 || N == 1 || K == 1) return N;
 
         int imin = N;
-        for (int i=1;i<=N;i++){
+        for (int i=1;i<=N;i++){ //N 楼层数  K鸡蛋数
             int imax = Math.max(superEggDrop1(K, N - i), superEggDrop1(K - 1, i - 1));//# 最坏情况下的递归和状态转移
             imin = Math.min(imin, 1 + imax);  //至少：返回这个状态下的最优结果
         }
@@ -164,7 +164,7 @@ public class superEggDrop {
         public int superEggDrop(int K, int N) {
             int[][] dp = new int[K + 1][N + 1];
             for (int m = 1; m <= N; m++) {
-                dp[0][m] = 0; // zero egg
+                dp[0][m] = 0; // zero egg 最多测数0层
                 for (int k = 1; k <= K; k++) {
                     //如果鸡蛋碎了，为了使 dp[i][j] 测出的层数最多，我们当然希望 i-1 个鸡蛋在后面的 j-1 次尝试中测出的层数最多，这是一个子问题，即 dp[i-1][j-1]
                     //如果鸡蛋没碎，我们同样要用 i 个鸡蛋在 j-1 次尝试中测出最多的层数，即 dp[i][j-1]

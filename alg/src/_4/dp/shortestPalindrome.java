@@ -11,8 +11,8 @@ package _4.dp;
  * 解法1：（只能再字符串的开头插入字符） 从字符串开头找到最大的回文子串，然后反转剩余的子串并附加到开头
  * 字符串 \text{“abcbabcab”}“abcbabcab”。从开头找到的最大回文子串是 \text{“abcba”}“abcba”，剩下的部分是 \text{“bcab”}“bcab”。
  * 因此要求的字符串是 \text{“bcab”}“bcab” 的反转（= \text{“bacb”}“bacb”）+ 原字符串（ = \text{“abcbabcab”}“abcbabcab”）= \text{“bacbabcbabcab”}“bacbabcbabcab”
- *def shortestPalindrome(self, s: str) -> str:
- *         r = s[::-1]
+ *def shortestPalindrome(self, s: str) -> str:  abcbabcab
+ *         r = s[::-1]    r:bacbabcba s:abcbabcab
  *         for i in range(len(s) + 1):
  *             if s.startswith(r[i:]):
  *                 return r[:i] + s

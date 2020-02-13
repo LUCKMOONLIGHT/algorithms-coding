@@ -26,9 +26,9 @@ public class minimumTotal {
         //从底至上
         //状态转移：最小路径和为 下一层相邻节点的最小路径 + 当前路径
         for (int i = triangle.size()-1; i>=0; i--){
-            List<Integer> curTr = triangle.get(i);
+            List<Integer> curTr = triangle.get(i); //获取每一行的值
             for(int j = 0 ; j< curTr.size(); j++){
-                dp[i][j] = Math.min(dp[i+1][j], dp[i+1][j+1]) + curTr.get(j);
+                dp[i][j] = Math.min(dp[i+1][j], dp[i+1][j+1]) + curTr.get(j); //当前结点最大路径为当前路径值+连接两个结点的路径值
             }
         }
         return dp[0][0];
