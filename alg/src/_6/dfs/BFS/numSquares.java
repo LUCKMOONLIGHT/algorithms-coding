@@ -21,20 +21,16 @@ import java.util.Queue;
  */
 public class numSquares {
     public int getNumSquares1(int n){
-        int[] dp = new int[n+1];
-        dp[0] = 0;
-        dp[1] = 1;
-        for (int i=2;i<=n;i++){
-            int tmp = Integer.MAX_VALUE;
-            for (int j=1;j<i;j++){
-                tmp = Math.min(tmp, dp[i - j*j]);
+        int[] dp = new int[n + 1]; // 默认初始化值都为0
+        for (int i = 1; i <= n; i++) {
+            dp[i] = i; // 最坏的情况就是每次+1
+            for (int j = 1; i - j * j >= 0; j++) {
+                dp[i] = Math.min(dp[i], dp[i - j * j] + 1); // 动态转移方程，如果当前的dp[i-j*j]的最小平方个数存在的话，dp[i]在此基础上直接+1
             }
-            dp[i] = tmp + 1;
         }
         return dp[n];
-
     }
-
+    //BFS层次遍历
     public int getNumSquares2(int n){
         List<Integer> sequence = getSequence(n);
         Queue<Integer> queue = new LinkedList<>();

@@ -5,23 +5,22 @@
       <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/all" beforeDir="false" afterPath="$PROJECT_DIR$/all" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_4/dp/maxPathSum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_3/binaryTree/_1/maxPathSum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_4/dp/minDistance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_4/dp/minDistance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_4/dp/minPathSum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_4/dp/minPathSum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_4/dp/minRefuelStops.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_4/dp/minRefuelStops.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_4/dp/minimumTotal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_4/dp/minimumTotal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_4/dp/numDecodings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_4/dp/numDecodings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_4/dp/numDistinct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_4/dp/numDistinct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_4/dp/partitionII.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_4/dp/partitionII.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_4/dp/shortestPalindrome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_4/dp/shortestPalindrome.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_4/dp/superEggDrop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_4/dp/superEggDrop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_4/dp/uniquePaths.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_4/dp/uniquePaths.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_4/dp/wordBreak.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_4/dp/wordBreak.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_5/pointer/banner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_5/pointer/banner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_5/pointer/lastSubstring.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_5/pointer/lastSubstring.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_5/pointer/minSubArrayLen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_5/pointer/minSubArrayLen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_5/pointer/mySqrt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_5/pointer/mySqrt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_5/pointer/sortColors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_5/pointer/sortColors.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_5/pointer/twoSum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_5/pointer/twoSum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_6/dfs/BFS/getShortestPath.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_6/dfs/BFS/getShortestPath.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_6/dfs/BFS/numSquares.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_6/dfs/BFS/numSquares.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="alg" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -49,7 +48,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -103,9 +102,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="alg" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="589" y="347" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1580185346472">
-      <screen x="0" y="23" width="1680" height="1027" />
+    <state x="539" y="263" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1582084329741">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
+    <state x="539" y="263" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.834@0.0.1536.834" timestamp="1582084329741" />
     <state x="589" y="347" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1680.1027@0.23.1680.1027" timestamp="1580185346472" />
     <state x="548" y="302" width="439" height="239" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1580463323871">
       <screen x="0" y="0" width="1536" height="834" />
@@ -143,10 +143,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="587" y="140" key="RollbackChangesDialog/0.0.1536.834@0.0.1536.834" timestamp="1580529150518" />
-    <state x="270" y="0" key="SettingsEditor" timestamp="1580781065938">
+    <state x="270" y="0" key="SettingsEditor" timestamp="1582091862339">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="270" y="0" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1580781065938" />
+    <state x="270" y="0" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1582091862339" />
     <state x="496" y="371" key="com.intellij.ide.util.TipDialog" timestamp="1580110027709">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
@@ -168,5 +168,16 @@
     </state>
     <state x="462" y="184" width="672" height="549" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1581413023696" />
     <state x="505" y="250" width="670" height="676" key="search.everywhere.popup/0.23.1680.1027@0.23.1680.1027" timestamp="1580266085458" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/_5/pointer/minSubArrayLen.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -1,5 +1,6 @@
 package _5.pointer;
 
+//三色灯
 public class sortColors {
     public void getsortColors(int[] colors){
         if (colors == null || colors.length == 0){

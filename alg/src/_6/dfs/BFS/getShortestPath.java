@@ -21,11 +21,6 @@ import java.util.Queue;
  * 解释: 一个最短转换序列是 "hit" -> "hot" -> "dot" -> "dog" -> "cog",
  *      返回它的长度 5。
  *
- * 来源：力扣（LeetCode）
- * 链接：https://leetcode-cn.com/problems/word-ladder
- * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
- *
- *
  * 解析：
  * 1。拥有一个startnode 和 endnode ，希望利用一些中间节点（单词）从 start node 到 end node，中间节点是 wordList 给定的单词。我们对这个单词接龙每个步骤的唯一条件是相邻单词只可以改变一个字母
  * 2.将问题抽象在一个无向无权图中，每个单词作为节点，差距只有一个字母的两个单词之间连一条边。问题变成找到从起点到终点的最短路径，如果存在的话。因此可以使用广度优先搜索方法
@@ -74,7 +69,7 @@ public class getShortestPath {
             }
             return graphic;
         }
-        //判断是否连接
+        //判断是否连接（根据不同字母的个数判断）
         private boolean isConnect(String s1, String s2) {
             int diffCnt = 0;
             for (int i = 0; i < s1.length() && diffCnt <= 1; i++) {

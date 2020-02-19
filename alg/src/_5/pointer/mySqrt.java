@@ -10,8 +10,8 @@ public class mySqrt {
         if(x <= 1) return x;
         while(max - min > 1){
             int m = (max + min) / 2;
-            if(x / m < m) max = m;
-            else min = m;
+            if(x / m < m) max = m; //除m大了，缩小m的范围
+            else min = m;//增大m的范围
         }
         return min;
     }

@@ -16,6 +16,7 @@ import java.util.Map;
  * 2.双指针
  */
 public class twoSum {
+    //hashmap保存每个值，及其出现的位置
    public int[] twoSum(int[] nums, int target){
        Map<Integer, Integer> hashmap = new HashMap<>();
        for (int i=0;i<nums.length;i++){
@@ -29,7 +30,7 @@ public class twoSum {
        }
        throw new IllegalArgumentException("No two sum solution");
    }
-
+    //排序后，双指针，左右搜索，但是这样子，原来的nums位置就变了
     int[] twoSum2(int[] nums, int target) {
         Arrays.sort(nums);
         int left = 0, right = nums.length - 1;
