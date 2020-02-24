@@ -38,47 +38,11 @@ public class mypow {
         double res = 1;
         double base = x;
         for(long i=N;i>0;i/=2){//遍历N，每次把指数缩小一半
-            if(i % 2 == 1){ //如果指数为奇数
+            if(i % 2 == 1) //如果二进制位为奇数
                 res *= base;
-            }
             base *= base;//底数变大为原来的平方
         }
         return res;
-    }
-
-    /**
-     * 暴力法
-     * @param x
-     * @param n
-     * @return
-     */
-    public double myPow2(double x, int n) {
-        long N = n;
-        if (N < 0) {
-            x = 1 / x;
-            N = -N;
-        }
-        double ans = 1;
-        for (long i = 0; i < N; i++)
-            ans = ans * x;
-        return ans;
-    }
-
-    /**
-     * 折半计算
-     * @param x
-     * @param n
-     * @return
-     */
-    public double myPow4(double x, int n) {
-        double res = 1.0;
-        for(int i = n; i != 0; i /= 2){
-            if(i % 2 != 0){
-                res *= x;
-            }
-            x *= x;
-        }
-        return  n < 0 ? 1 / res : res;
     }
 
 }

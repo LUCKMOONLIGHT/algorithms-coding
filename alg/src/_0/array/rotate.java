@@ -69,4 +69,19 @@ public class rotate {
         }
     }
 
+    //面试题11. 旋转数组的最小数字
+    //[3,4,5,1,2] 1    [2,2,2,0,1] 0
+    //思路；1.二分法，mid节点与r节点比较，判断为递增的区间，最小数字在左边，为递减的区间，最小数字在右边，相同大小，右指针减小，返回左指针位置
+    public int minArray(int[] numbers) {
+        if(numbers.length == 1) return numbers[0];
+        int l = 0, r = numbers.length - 1;
+        while(l < r){
+            int mid = l+(r-l)/2;
+            if(numbers[mid] < numbers[r]) r = mid;
+            else if(numbers[mid] > numbers[r]) l = mid + 1;
+            else r--;
+        }
+        return numbers[l];
+    }
+
 }

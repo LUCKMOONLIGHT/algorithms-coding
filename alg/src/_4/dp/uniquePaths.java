@@ -91,7 +91,7 @@ public class uniquePaths {
         if(i < 0 || i >= g.length || j < 0 || j >= g[0].length || g[i][j] == -1) {
             return 0;
         }
-
+        //找到终点，如果到达终点时，已经访问了所有，返回一条路径
         if(g[i][j] == 2) return 0 == sum ? 1 : 0;
         int fix = 0;
         g[i][j] = -1;//当前路径已访问
