@@ -21,4 +21,23 @@ public class deleteNode {
         node.next = node.next.next;
     }
     //2.直接删除后继结点
+
+    //面试题18. 删除链表的节点
+    //给定单向链表的头指针和一个要删除的节点的值，定义一个函数删除该节点。
+    //节点位置  1.第一个  2.中间  3.末尾
+
+    //head = [4,5,1,9], val = 1      [4,5,9]
+
+    public ListNode deleteNode(ListNode head, int val) {
+        if(head == null) return head;
+        ListNode cur = head;
+        ListNode pre = null;
+        if(cur.val == val) return head.next;  //第一个位置
+        while(cur.val != val) {
+            pre = cur;
+            cur = cur.next;
+        }
+        pre.next = pre.next.next;//中间位置和最后一个位置
+        return head;
+    }
 }

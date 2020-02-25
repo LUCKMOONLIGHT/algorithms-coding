@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea08b256-5d04-43bf-b4ca-f77fdff4ce2e" name="Default Changelist" comment="alg">
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all" beforeDir="false" afterPath="$PROJECT_DIR$/all" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_12/Math/printNumbers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_12/Math/printNumbers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_2/linked/deleteNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_2/linked/deleteNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_4/dp/isMatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_4/dp/isMatch.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,14 +183,16 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="0" y="0" width="1236" height="819" key="dock-window-1/0.0.1536.834@0.0.1536.834" timestamp="1580542056890" />
-    <state x="-3" y="-5" width="782" height="834" key="find.popup" timestamp="1582532877972">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state x="-3" y="-5" width="782" height="864" key="find.popup" timestamp="1582636233899">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="-3" y="-5" width="782" height="834" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1582532877972" />
-    <state x="462" y="184" width="672" height="549" key="search.everywhere.popup" timestamp="1582548881263">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state x="-3" y="-5" width="782" height="864" key="find.popup/0.0.1536.864@0.0.1536.864" timestamp="1582636233899" />
+    <state x="462" y="191" width="672" height="569" key="search.everywhere.popup" timestamp="1582641987445">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="462" y="184" width="672" height="549" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1582548881263" />
+    <state x="462" y="191" width="672" height="569" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1582641987445" />
     <state x="505" y="250" width="670" height="676" key="search.everywhere.popup/0.23.1680.1027@0.23.1680.1027" timestamp="1580266085458" />
   </component>
   <component name="XDebuggerManager">
@@ -196,21 +202,6 @@
           <url>file://$PROJECT_DIR$/src/_5/pointer/minSubArrayLen.java</url>
           <line>29</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/_12/Math/printNumbers.java</url>
-          <line>26</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/_12/Math/printNumbers.java</url>
-          <line>47</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/_12/Math/printNumbers.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

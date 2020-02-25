@@ -27,7 +27,7 @@ public class isMatch {
         boolean[][] dp = new boolean[s.length() + 1][p.length() + 1];
         dp[0][0] = true;//dp[i][j] 表示 s 的前 i 个是否能被 p 的前 j 个匹配
         for (int i = 0; i < p.length(); i++) { // here's the p's length, not s's
-            if (p.charAt(i) == '*') { //i start with 1
+            if (p.charAt(i) == '*') { //'*'最小从第2个字符开始
                 dp[0][i + 1] = dp[0][i - 1]; // here's y axis should be i+1,a* counts as empty
             }
         }
@@ -37,10 +37,10 @@ public class isMatch {
                     dp[i + 1][j + 1] = dp[i][j];
                 }
                 if (p.charAt(j) == '*') {
-                    if (p.charAt(j - 1) != s.charAt(i) && p.charAt(j - 1) != '.') {//如果前一个元素不匹配 且不为任意元素
-                        dp[i + 1][j + 1] = dp[i + 1][j - 1];
+                    if (p.charAt(j - 1) != s.charAt(i) && p.charAt(j - 1) != '.') {//如果前一个元素不匹配，且不为任意元素，（关键）s[i] == p[j-1]
+                        dp[i + 1][j + 1] = dp[i + 1][j - 1];//当前结果等于前前字符匹配的结果
                     } else {
-                        dp[i + 1][j + 1] = (dp[i + 1][j] || dp[i][j + 1] || dp[i + 1][j - 1]);
+                        dp[i + 1][j + 1] = (dp[i + 1][j] || dp[i][j + 1] || dp[i + 1][j - 1]); //单个多个没有字符匹配的情况
                             /*
                             dp[i][j] = dp[i-1][j] // 多个字符匹配的情况
                             or dp[i][j] = dp[i][j-1] // 单个字符匹配的情况
@@ -96,7 +96,7 @@ public class isMatch {
         return true;
     }
 
-    //动态规划  12 ms
+    //动态规划  12 ms  40ms
     //dp[i][j]表示s到i位置,p到j位置是否匹配!
 
     /**
@@ -111,18 +111,18 @@ public class isMatch {
      * 其中： dp[i-1][j],表示*代表非空任何字符,例如abcd,ab*         dp[i][j-1],表示*代表是空字符,例如ab,ab*
      */
     public boolean isMatchII2(String s, String p) {
-        boolean[][] dp = new boolean[s.length() + 1][p.length() + 1];
+        boolean[][] dp = new boolean[s.length() + 1][p.length() + 1]; //字符串s[:i]p[:j]是否匹配
         dp[0][0] = true;
-        for (int j = 1; j < p.length() + 1; j++) {
-            if (p.charAt(j - 1) == '*') {
+        for (int j = 1; j < p.length()+1; j++) {//* 有可能为第一个字符，因此j需从1开始
+            if (p.charAt(j-1) == '*') {//初始时,*可以匹配任意字符串，包括空字符串
                 dp[0][j] = dp[0][j - 1]; // * is Empty
             }
         }
         for (int i = 1; i < s.length() + 1; i++) {
             for (int j = 1; j < p.length() + 1; j++) {
-                if (s.charAt(i - 1) == p.charAt(j - 1) || p.charAt(j - 1) == '?') {
+                if (s.charAt(i - 1) == p.charAt(j - 1) || p.charAt(j - 1) == '?') { //前两个字符相等时  （关键）s[i-1] == p[j-1]
                     dp[i][j] = dp[i - 1][j - 1];
-                } else if (p.charAt(j - 1) == '*') {
+                } else if (p.charAt(j - 1) == '*') {//当前字符为*时（1.空字符  2.匹配非空字符）
                     dp[i][j] = dp[i][j - 1] || dp[i - 1][j];  // * 代表的是 空字符 || 非空字符
                 }
             }
