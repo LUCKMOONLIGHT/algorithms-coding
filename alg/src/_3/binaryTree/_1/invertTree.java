@@ -6,7 +6,7 @@ import java.util.Queue;
 /**
  * 226.翻转二叉树
  *
- * 前序遍历翻转
+ * 翻转一棵二叉树。
  */
 public class invertTree {
     class TreeNode{
@@ -31,4 +31,6 @@ public class invertTree {
         }
         return root;
     }
+
+
 }

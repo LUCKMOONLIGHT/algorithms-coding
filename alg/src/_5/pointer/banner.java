@@ -38,4 +38,16 @@ public class banner {
         A[i] = A[j];
         A[j] = temp;
     }
+
+
+    //面试题21. 调整数组顺序使奇数位于偶数前面
+    public int[] exchange(int[] nums) {
+        if(nums == null || nums.length == 0) return nums;
+        int l = 0, r = nums.length - 1, i = 0;
+        while(l < r){
+            if(nums[i] % 2 == 1) swap(nums, l++, i++);
+            else swap(nums, i, r--);
+        }
+        return nums;
+    }
 }

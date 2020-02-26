@@ -15,12 +15,16 @@ public class isSubtree {
         TreeNode(int x){val = x;}
     }
 
-    public boolean isSubtree(TreeNode s, TreeNode t){//两棵树是否为子树关系
-        if(s == null || t == null) return s == null && t == null;
-        return isSameTree(s, t) || isSubtree(s.left, t) || isSubtree(s.right, t);//2.递归判断A,B的值 && A,B左右子树的值
+    //[10,12,6,8,3,11]
+    //[10,12,6,8]  true
+    public boolean isSubStructure(TreeNode A, TreeNode B) {  //先序遍历判断字数结构，中左右
+        if(A == null || B == null) return false;  //如果有一棵树为null，不成立false
+        return isSame(A, B) || isSubStructure(A.left, B) || isSubStructure(A.right, B); //一个条件成立即可
     }
-    private boolean isSameTree(TreeNode s, TreeNode t){ //两颗树完全相等
-        if(s == null || t == null) return s == null && t == null;
-        return s.val == t.val && isSameTree(s.left, t.left) && isSameTree(s.right, t.right);//判断当前结点&&左子树&&右子树
+
+    public boolean isSame(TreeNode A, TreeNode B){
+        if(B == null) return true; //如果B子树迭代完成，true
+        if(A == null) return false;//如果B子树未迭代完成，A迭代完成，false
+        return A.val == B.val && isSame(A.left, B.left) && isSame(A.right, B.right);//子树相等同时成立
     }
 }

@@ -29,7 +29,7 @@ public class isNumber {
         没有A的话, 必须有B
     */
 
-    //扫描字符串时的索引
+    //扫描字符串时的索引   3ms
     int i=0;
     public boolean isNumber(String s) {
         //input check
