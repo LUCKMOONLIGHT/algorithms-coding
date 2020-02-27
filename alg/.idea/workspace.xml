@@ -4,13 +4,7 @@
     <list default="true" id="ea08b256-5d04-43bf-b4ca-f77fdff4ce2e" name="Default Changelist" comment="alg">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/all" beforeDir="false" afterPath="$PROJECT_DIR$/all" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_12/Math/isNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_12/Math/isNumber.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_3/binaryTree/_1/invertTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_3/binaryTree/_1/invertTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_3/binaryTree/_1/isSubtree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_3/binaryTree/_1/isSubtree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_3/binaryTree/_1/isSymmetric.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_3/binaryTree/_1/isSymmetric.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_3/binaryTree/_1/postorderTraversal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_3/binaryTree/_1/postorderTraversal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_5/pointer/banner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_5/pointer/banner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_7/strhash/spiralOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_7/strhash/spiralOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_3/binaryTree/_1/hasPathSum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_3/binaryTree/_1/hasPathSum.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,10 +186,10 @@
     </state>
     <state x="-3" y="-5" width="782" height="834" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1582730445069" />
     <state x="-3" y="-5" width="782" height="864" key="find.popup/0.0.1536.864@0.0.1536.864" timestamp="1582636233899" />
-    <state x="462" y="184" width="672" height="549" key="search.everywhere.popup" timestamp="1582729864589">
+    <state x="462" y="184" width="672" height="549" key="search.everywhere.popup" timestamp="1582774544680">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="462" y="184" width="672" height="549" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1582729864589" />
+    <state x="462" y="184" width="672" height="549" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1582774544680" />
     <state x="462" y="191" width="672" height="569" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1582641987445" />
     <state x="505" y="250" width="670" height="676" key="search.everywhere.popup/0.23.1680.1027@0.23.1680.1027" timestamp="1580266085458" />
   </component>
