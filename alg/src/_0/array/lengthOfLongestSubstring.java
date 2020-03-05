@@ -31,8 +31,9 @@ public class lengthOfLongestSubstring {
     }
 
     /**
+     * 3. 无重复字符的最长子串
      * 如果字符数超过26个字母的情况下，使用map进行保存character integer
-     * 记录最近的一个不重复位置start
+     * 记录最近的一个不重复位置start   "abcabcbb"   012
      * @param s
      * @return
      */
@@ -45,11 +46,17 @@ public class lengthOfLongestSubstring {
         for(int i=0;i<n;i++){
             char c = s.charAt(i);
             if(map.containsKey(c)){
-                start = Math.max(start, map.get(c)); //最近一次不重复出现的起始位置
+                //如果范围i,j内有重复元素，直接跳出i,j范围，并将i变为j+1
+                start = Math.max(start, map.get(c));
             }
-            res = Math.max(res, i - start + 1);//最长不重复字符
-            map.put(c, i+1);
+            res = Math.max(res, i - start + 1);  //减去多了加回来
+            map.put(c, i+1);  //保存当前元素的下一个元素，如果有重复的话，直接跳到起始重复元素的下一个元素
         }
         return res;
+    }
+
+    public static void main(String[] args) {
+        lengthOfLongestSubstring lengthOfLongestSubstring = new lengthOfLongestSubstring();
+        lengthOfLongestSubstring.lengthOfLongestSubstringII("abcabcbb");
     }
 }

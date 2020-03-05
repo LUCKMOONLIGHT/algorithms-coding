@@ -10,6 +10,12 @@ import java.util.Queue;
 //序列化
 //1.层次遍历访问TreeNode，当节点不为null时，当前值加入queue中，否则加入null
 //2.while queue，将结果进行拼接
+
+//反序列化
+//1.去除字符串数组括号，判空，字符转数组转换为Queue
+//2.while迭代，第一个节点作为root，将root加入queue
+//3.当root不为null，当前字符不为null，转换为左子树，左子树加入到queue
+//4.继续出队列，当前字符不为null，转换为右子树，右子树加入到queue
 public class serialize {
 
     // Encodes a tree to a single string.

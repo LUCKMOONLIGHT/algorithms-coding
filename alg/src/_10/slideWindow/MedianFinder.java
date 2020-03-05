@@ -16,7 +16,9 @@ public class MedianFinder {
     PriorityQueue<Double> maxHeap;
     /** 初始化大小根堆*/
     public MedianFinder() {
+        //默认((o1, o2) -> o1 - o2) 小根堆 从小到大排序
         minHeap = new PriorityQueue<>();
+        //((o1, o2) -> o1 - o2) 只适用于Integer，Double型需要重写compare方法
         maxHeap = new PriorityQueue<>(new Comparator<Double>() {
             @Override
             public int compare(Double o1, Double o2) {
@@ -34,6 +36,8 @@ public class MedianFinder {
     /**
      * 1.添加元素到小根堆
      * 2.保持平衡
+     * 3.满足小根堆的堆顶值大于大根堆的堆顶值
+     * 4.保持平衡
      * @param num
      */
     public void addNum(int num) {

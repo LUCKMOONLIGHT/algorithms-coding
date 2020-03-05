@@ -47,7 +47,7 @@ public class medianSlidingWindow {
         for (int i =0; i < nums.length; i++){
             minHeap.offer((double) nums[i]);//每回合将元素放入小根堆
 
-            //移除窗口外的值
+            //移除窗口外的值，判断maxHeap与minHeap哪个包含contains了num，remove
             if (minHeap.size() + maxHeap.size() > k){
                 if (minHeap.contains((double) nums[i-k])){
                     minHeap.remove((double)nums[i-k]);
@@ -56,6 +56,9 @@ public class medianSlidingWindow {
                 }
             }
             //维持平衡，保证1.maxHeap[1....size-1] <= maxHeap[0] <= minHeap[0] <= minHeap[1....size-1] 2.Math.abs(maxHeap.size()- minHeap.size()) <= 1
+            //1.大小根堆的数量相差不为1
+            //2.小根堆的堆顶的值大于大根堆堆顶的值
+            //3.大小根堆的数量相差不为1
             if (minHeap.size() - maxHeap.size() > 1){
                 maxHeap.offer(minHeap.poll());
             }

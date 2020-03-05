@@ -20,12 +20,30 @@ public class findKthLargest {
         for (int num:nums){
             heap.offer(num);
             if (heap.size() > k){//当数量超过k时，输出堆顶
-                heap.poll();
+                heap.poll();  //每次poll的都是当前数组中的最小数，最后堆中保留的是k-n大的数，输出堆顶即可
             }
         }
         return heap.poll();
     }
 
+
+    //面试题40. 最小的k个数
+    //arr = [0,1,2,1], k = 1 [0]
+    //arr = [3,2,1], k = 2  [1,2] 或者 [2,1]
+    //思路：大根堆存放数字，每次输出最多的元素，留在队列里面的都是小数
+    public int[] getLeastNumbers(int[] arr, int k) {
+        PriorityQueue<Integer> maxHeap = new PriorityQueue<>((o1, o2) -> o2 - o1);
+        for(int num:arr){
+            maxHeap.offer(num);
+            if(maxHeap.size() > k) maxHeap.poll();
+        }
+        int[] res = new int[maxHeap.size()];
+        int i = 0;
+        while(maxHeap.size() > 0){
+            res[i++] = maxHeap.poll();
+        }
+        return res;
+    }
     /*final PriorityQueue<Integer> q ;
     final int k;
     public KthLargest(int k, int[] nums) {
