@@ -52,4 +52,21 @@ public class lengthOfLongestSubstring {
         }
         return res;
     }
+
+
+    //面试题50. 第一个只出现一次的字符
+    //思路：map标记出现次数，for循环找第一次出现的字符
+    public char firstUniqChar(String s) {
+        if(s == null || s.length() == 0 || "".equals(s)) return ' ';
+        Map<Character, Integer> map = new HashMap<>();
+        for(int i=0;i<s.length();i++){
+            char c = s.charAt(i);
+            map.put(c, map.getOrDefault(c, 0) + 1);
+        }
+        for(int i=0;i<s.length();i++){
+            char c = s.charAt(i);
+            if(map.get(c) == 1) return c;
+        }
+        return ' ';
+    }
 }

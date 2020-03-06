@@ -2,85 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea08b256-5d04-43bf-b4ca-f77fdff4ce2e" name="Default Changelist" comment="alg">
+      <change afterPath="$PROJECT_DIR$/src/_0/array/findContinuousSequence.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_3/binaryTree/_1/isBalanced.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/all" beforeDir="false" afterPath="$PROJECT_DIR$/all" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/alg/_0/array/lengthOfLongestSubstring.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/alg/_0/array/lengthOfLongestSubstring.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/alg/_10/slideWindow/MedianFinder$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/alg/_10/slideWindow/MedianFinder$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/alg/_10/slideWindow/MedianFinder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/alg/_10/slideWindow/MedianFinder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/alg/_10/slideWindow/medianSlidingWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/alg/_10/slideWindow/medianSlidingWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/alg/_12/Math/printNumbers.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/alg/_12/Math/printNumbers.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/alg/_18/PriorityQueue/findKthLargest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/alg/_18/PriorityQueue/findKthLargest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/alg/_2/linked/deleteNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/alg/_2/linked/deleteNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/alg/_3/binaryTree/_1/hasPathSum.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/alg/_3/binaryTree/_1/hasPathSum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/alg/_3/binaryTree/_1/isSubtree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/alg/_3/binaryTree/_1/isSubtree.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/alg/_3/binaryTree/_1/isSymmetric$TreeNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/alg/_3/binaryTree/_1/isSymmetric$TreeNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/alg/_3/binaryTree/_1/isSymmetric.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/alg/_3/binaryTree/_1/isSymmetric.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/alg/_3/binaryTree/_1/postorderTraversal$TreeNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/alg/_3/binaryTree/_1/postorderTraversal$TreeNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/alg/_3/binaryTree/_1/postorderTraversal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/alg/_3/binaryTree/_1/postorderTraversal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/alg/_4/dp/fib.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/alg/_4/dp/fib.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/alg/_5/pointer/banner.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/alg/_5/pointer/banner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/alg/_6/dfs/DFS/existI$Trie.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/alg/_6/dfs/DFS/existI$TrieNode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/alg/_6/dfs/DFS/existI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/alg/_6/dfs/DFS/findCircleNum.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/alg/_6/dfs/DFS/findCircleNum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/alg/_6/dfs/DFS/lexicalOrder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/alg/_6/dfs/DFS/lexicalOrder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/alg/_6/dfs/DFS/trackback/canPartitionKSubsets.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/alg/_6/dfs/DFS/trackback/combinationSum.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/alg/_6/dfs/DFS/trackback/combinationSum2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/alg/_6/dfs/DFS/trackback/combinationSum3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/alg/_6/dfs/DFS/trackback/combinationSum4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/alg/_6/dfs/DFS/trackback/combine.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/alg/_6/dfs/DFS/trackback/findSubsequences.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/alg/_6/dfs/DFS/trackback/generateParenthesis.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/alg/_6/dfs/DFS/trackback/isValidSudoku.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/alg/_6/dfs/DFS/trackback/letterCombinations.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/alg/_6/dfs/DFS/trackback/partition.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/alg/_6/dfs/DFS/trackback/permute.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/alg/_6/dfs/DFS/trackback/permuteI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/alg/_6/dfs/DFS/trackback/permuteII.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/alg/_6/dfs/DFS/trackback/restoreIpAddresses.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/alg/_6/dfs/DFS/trackback/solveNQueens.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/alg/_6/dfs/DFS/trackback/solveSudoku.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/alg/_6/dfs/DFS/trackback/subsets.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/alg/_6/dfs/DFS/trackback/subsetsWithDup.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/alg/_6/dfs/DFS/trackback/totalNQueens.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/alg/_6/dfs/DFS/trackback/wordSubsets.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/alg/_7/strhash/spiralOrder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/alg/_7/strhash/spiralOrder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/alg/_8/greed/maxSubArray.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/alg/_8/greed/maxSubArray.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_0/array/lengthOfLongestSubstring.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_0/array/lengthOfLongestSubstring.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_10/slideWindow/MedianFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_10/slideWindow/MedianFinder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_10/slideWindow/medianSlidingWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_10/slideWindow/medianSlidingWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_18/PriorityQueue/findKthLargest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_18/PriorityQueue/findKthLargest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_3/binaryTree/_1/serialize.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_3/binaryTree/_1/serialize.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_4/dp/fib.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_4/dp/fib.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_6/dfs/DFS/existI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_6/dfs/DFS/findCircleNum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_6/dfs/DFS/findCircleNum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_6/dfs/DFS/lexicalOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_6/dfs/DFS/lexicalOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_6/dfs/DFS/maxAreaOfIsland.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_6/dfs/DFS/maxAreaOfIsland.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_6/dfs/DFS/minBlackArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_6/dfs/DFS/minBlackArea.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_6/dfs/DFS/solveSurroundedArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_6/dfs/DFS/solveSurroundedArea.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_6/dfs/DFS/trackback/canPartitionKSubsets.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_6/dfs/trackback/canPartitionKSubsets.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_6/dfs/DFS/trackback/combinationSum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_6/dfs/trackback/combinationSum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_6/dfs/DFS/trackback/combinationSum2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_6/dfs/trackback/combinationSum2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_6/dfs/DFS/trackback/combinationSum3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_6/dfs/trackback/combinationSum3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_6/dfs/DFS/trackback/combinationSum4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_6/dfs/trackback/combinationSum4.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_6/dfs/DFS/trackback/combine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_6/dfs/trackback/combine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_6/dfs/DFS/trackback/findSubsequences.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_6/dfs/trackback/findSubsequences.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_6/dfs/DFS/trackback/generateParenthesis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_6/dfs/trackback/generateParenthesis.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_6/dfs/DFS/trackback/isValidSudoku.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_6/dfs/trackback/isValidSudoku.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_6/dfs/DFS/trackback/letterCombinations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_6/dfs/trackback/letterCombinations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_6/dfs/DFS/trackback/partition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_6/dfs/trackback/partition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_6/dfs/DFS/trackback/permute.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_6/dfs/DFS/trackback/permuteI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_6/dfs/trackback/permuteI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_6/dfs/DFS/trackback/permuteII.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_6/dfs/trackback/permuteII.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_6/dfs/DFS/trackback/restoreIpAddresses.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_6/dfs/trackback/restoreIpAddresses.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_6/dfs/DFS/trackback/solveNQueens.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_6/dfs/trackback/solveNQueens.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_6/dfs/DFS/trackback/solveSudoku.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_6/dfs/trackback/solveSudoku.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_6/dfs/DFS/trackback/subsets.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_6/dfs/trackback/subsets.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_6/dfs/DFS/trackback/subsetsWithDup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_6/dfs/trackback/subsetsWithDup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_6/dfs/DFS/trackback/totalNQueens.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_6/dfs/trackback/totalNQueens.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_6/dfs/DFS/trackback/wordSubsets.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_6/dfs/trackback/wordSubsets.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_8/greed/maxSubArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_8/greed/maxSubArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/alg/_4/dp/lengthOfLongestSubstring.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/alg/_4/dp/lengthOfLongestSubstring.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_17/bitoperation/singleNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_17/bitoperation/singleNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_3/binaryTree/_1/isValidBST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_3/binaryTree/_1/isValidBST.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_4/dp/lengthOfLongestSubstring.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_4/dp/lengthOfLongestSubstring.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_9/search/search.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_9/search/search.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +60,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.lengthOfLongestSubstring">
+  <component name="RunManager" selected="Application.search">
     <configuration name="lengthOfLongestSubstring" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="_0.array.lengthOfLongestSubstring" />
       <module name="alg" />
@@ -169,8 +100,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="search" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="_0.array.search" />
+      <module name="alg" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="_0.array.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.search" />
         <item itemvalue="Application.lengthOfLongestSubstring" />
         <item itemvalue="Application.printNumbers" />
         <item itemvalue="Application.nextGreaterElement" />
@@ -204,10 +149,10 @@
     </state>
     <state x="539" y="263" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.834@0.0.1536.834" timestamp="1582084329741" />
     <state x="589" y="347" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1680.1027@0.23.1680.1027" timestamp="1580185346472" />
-    <state x="548" y="302" width="439" height="239" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1580463323871">
+    <state x="548" y="302" width="439" height="239" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1583471362502">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="548" y="302" width="439" height="239" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.834@0.0.1536.834" timestamp="1580463323871" />
+    <state x="548" y="302" width="439" height="239" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.834@0.0.1536.834" timestamp="1583471362502" />
     <state x="409" y="11" key="CommitChangelistDialog2" timestamp="1580373247109">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -220,38 +165,38 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="549" y="173" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1580704367378" />
-    <state width="1493" height="265" key="GridCell.Tab.0.bottom" timestamp="1583401656758">
+    <state width="1493" height="265" key="GridCell.Tab.0.bottom" timestamp="1583467791652">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="265" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1583401656758" />
-    <state width="1493" height="265" key="GridCell.Tab.0.center" timestamp="1583401656758">
+    <state width="1493" height="265" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1583467791652" />
+    <state width="1493" height="265" key="GridCell.Tab.0.center" timestamp="1583467791652">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="265" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1583401656758" />
-    <state width="1493" height="265" key="GridCell.Tab.0.left" timestamp="1583401656758">
+    <state width="1493" height="265" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1583467791652" />
+    <state width="1493" height="265" key="GridCell.Tab.0.left" timestamp="1583467791651">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="265" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1583401656758" />
-    <state width="1493" height="265" key="GridCell.Tab.0.right" timestamp="1583401656758">
+    <state width="1493" height="265" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1583467791651" />
+    <state width="1493" height="265" key="GridCell.Tab.0.right" timestamp="1583467791652">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="265" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1583401656758" />
-    <state width="1493" height="265" key="GridCell.Tab.1.bottom" timestamp="1583401657120">
+    <state width="1493" height="265" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1583467791652" />
+    <state width="1493" height="265" key="GridCell.Tab.1.bottom" timestamp="1583467791652">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="265" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1583401657120" />
-    <state width="1493" height="265" key="GridCell.Tab.1.center" timestamp="1583401657120">
+    <state width="1493" height="265" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1583467791652" />
+    <state width="1493" height="265" key="GridCell.Tab.1.center" timestamp="1583467791652">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="265" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1583401657120" />
-    <state width="1493" height="265" key="GridCell.Tab.1.left" timestamp="1583401657120">
+    <state width="1493" height="265" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1583467791652" />
+    <state width="1493" height="265" key="GridCell.Tab.1.left" timestamp="1583467791652">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="265" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1583401657120" />
-    <state width="1493" height="265" key="GridCell.Tab.1.right" timestamp="1583401657120">
+    <state width="1493" height="265" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1583467791652" />
+    <state width="1493" height="265" key="GridCell.Tab.1.right" timestamp="1583467791652">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="265" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1583401657120" />
+    <state width="1493" height="265" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1583467791652" />
     <state x="408" y="115" key="NewModule_or_Project.wizard" timestamp="1580704408196">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -276,15 +221,15 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="0" y="0" width="1236" height="819" key="dock-window-1/0.0.1536.834@0.0.1536.834" timestamp="1580542056890" />
-    <state x="-3" y="-5" width="782" height="834" key="find.popup" timestamp="1583396752873">
+    <state x="-3" y="-5" width="782" height="834" key="find.popup" timestamp="1583474300128">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="-3" y="-5" width="782" height="834" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1583396752873" />
+    <state x="-3" y="-5" width="782" height="834" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1583474300128" />
     <state x="-3" y="-5" width="782" height="864" key="find.popup/0.0.1536.864@0.0.1536.864" timestamp="1582636233899" />
-    <state x="462" y="184" width="672" height="549" key="search.everywhere.popup" timestamp="1583400967989">
+    <state x="462" y="184" width="672" height="549" key="search.everywhere.popup" timestamp="1583475534632">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="462" y="184" width="672" height="549" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1583400967989" />
+    <state x="462" y="184" width="672" height="549" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1583475534632" />
     <state x="462" y="191" width="672" height="569" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1582641987445" />
     <state x="505" y="250" width="670" height="676" key="search.everywhere.popup/0.23.1680.1027@0.23.1680.1027" timestamp="1580266085458" />
   </component>

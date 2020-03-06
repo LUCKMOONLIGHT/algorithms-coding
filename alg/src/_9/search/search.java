@@ -72,7 +72,7 @@ public class search {
      * @param target
      * @return
      */
-    public boolean searchII(int[] nums, int target) {
+    public boolean searchnumberII(int[] nums, int target) {
         if (nums == null || nums.length == 0) return false;
         int l=0, r=nums.length - 1;
         while (l <= r){
@@ -95,5 +95,62 @@ public class search {
         search search = new search();
         int b = search.search(new int[]{-1,0,3,5,9,12},2);
         System.out.println(b);
+    }
+
+
+    //面试题53 - I. 在排序数组中查找数字 I
+    //输入: nums = [5,7,7,8,8,10], target = 8
+    //输出: 2
+    //思路：二分法 1.找最左边的pod  2.找最右边的pos 3.rpos-lpos+1
+    public int searchnumberI(int[] nums, int target) {
+        int lo = 0, hi = nums.length - 1, lpos = -1, rpos = -1;
+        //找最左边的pos
+        while(lo <= hi){
+            int mid = lo + (hi - lo) / 2;
+            //如果存在target，那么hi一定指向最左边target的前一个pos，lo则一定指向target的下标
+            if(nums[mid] >= target){
+                hi = mid - 1;
+            }else{
+                lo = mid + 1;
+            }
+        }
+        lpos = lo;
+        lo = 0;
+        hi = nums.length - 1;
+        //找最右边的pos
+        while(lo <= hi){
+            int mid = lo + (hi - lo) / 2;
+            if(nums[mid] <= target){
+                lo = mid + 1;
+            }else{
+                hi = mid - 1;
+            }
+        }
+        rpos = hi;
+        return rpos - lpos + 1;
+    }
+
+//    public static void main(String[] args) {
+//        _0.array.search search = new _0.array.search();
+//        int res = search.search(new int[]{5,7,7,8,8,10}, 8);
+//        System.out.println(res);
+//    }
+
+
+    //面试题53 - II. 0～n-1中缺失的数字
+    //
+    //一个长度为n-1的递增排序数组中的所有数字都是唯一的，并且每个数字都在范围0～n-1之内。
+    // 在范围0～n-1内的n个数字中有且只有一个数字不在该数组中，请找出这个数字。
+    //输入: [0,1,2,3,4,5,6,7,9]
+    //输出: 8
+    //思路:二分法，判断nums[mid] = mid，表示左边不缺失，移动l，否则表示左边缺失，移动r，返回l
+    public int missingNumber(int[] nums) {
+        int l = 0, r = nums.length - 1;
+        while(l <= r){
+            int mid = l + (r - l) / 2;
+            if(nums[mid] == mid) l = mid + 1;
+            else r = mid - 1;
+        }
+        return l;
     }
 }

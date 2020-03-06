@@ -27,4 +27,23 @@ public class isValidBST {
         }
         return true;
     }
+
+
+    //面试题54. 二叉搜索树的第k大节点
+    //思路：右中左遍历，为递减顺序，计数器每次减一
+    public int kthLargest(TreeNode root, int k) {
+        //中序遍历为从小到大顺序
+        Stack<TreeNode> stack = new Stack();
+        while (!stack.isEmpty() || root != null) {//栈不为null，出栈
+            while (root != null) {//当前结点不为null，入栈
+                stack.push(root);
+                root = root.right;
+            }
+            root = stack.pop();
+            k--;
+            if (k==0) return root.val;
+            root = root.left;
+        }
+        return -1;
+    }
 }
