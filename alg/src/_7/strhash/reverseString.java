@@ -1,5 +1,7 @@
 package _7.strhash;
 
+import java.util.PriorityQueue;
+
 /**
  * 344. 反转字符串
  *  编写一个函数，其作用是将输入的字符串反转过来。输入字符串以字符数组 char[] 的形式给出。
@@ -42,6 +44,40 @@ public class reverseString {
             i += k;
         }
         return String.valueOf(s_arr);
+    }
+
+    //面试题58 - I. 翻转单词顺序
+    //split 逆序for StringBuilder
+    public String reverseWords(String s) {
+        String[] strs = s.trim().split(" ");//删除字符串的头尾空白符
+        StringBuilder sb = new StringBuilder();
+        int j = 0;
+        for(int i=strs.length - 1;i>=0;i--){
+            if("".equals(strs[i])) continue; //空字符串不添加
+            sb.append(strs[i].trim());
+            if(i != 0) {
+                sb.append(" ");  //末尾不添加空字符串
+            }
+
+        }
+        return sb.toString();
+    }
+
+    public int[] maxSlidingWindow(int[] nums, int k) {
+        PriorityQueue<Integer> queue = new PriorityQueue<>((o1, o2) -> (o2 - o1));
+        int[] res = new int[nums.length - 2];
+        int j = 0;
+        for(int i = 0;i<nums.length;i++){
+            queue.offer(nums[i]);
+            if(i<k-1) continue;
+            res[j++] = queue.peek();
+            queue.remove(nums[i-k+1]);
+        }
+        return res;
+    }
+    public static void main(String[] args) {
+        reverseString reverseString = new reverseString();
+        reverseString.reverseWords("  hello world!  ");
     }
 
     public void reverseArr(char[] arr , int from , int end){

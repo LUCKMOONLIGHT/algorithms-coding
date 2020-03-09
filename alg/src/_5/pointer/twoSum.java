@@ -24,7 +24,7 @@ public class twoSum {
        }
        for (int i=0;i<nums.length;i++){
            int v = target - nums[i];
-           if(hashmap.containsKey(v) && hashmap.get(v) != i){
+           if(hashmap.containsKey(v) && hashmap.get(v) != i){ //包含此数，但是不是当前的位置，表示找到了两个不同的数
                return new int[] {i, hashmap.get(v)};
            }
        }

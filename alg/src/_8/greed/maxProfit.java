@@ -28,7 +28,7 @@ public class maxProfit {
         if (prices == null || prices.length == 0) return 0;
         int minPrice = Integer.MAX_VALUE;
         int maxProfit = 0;
-        for (int num:prices){
+        for (int num:prices){//当前num，减去历史最小价格
             minPrice = Math.min(minPrice, num);
             maxProfit = Math.max(maxProfit, num - minPrice);
         }
