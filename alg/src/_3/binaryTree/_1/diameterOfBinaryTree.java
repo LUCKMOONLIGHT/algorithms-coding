@@ -4,6 +4,10 @@ package _3.binaryTree._1;
 //类似于最大路径和
 //这里是求边的个数
 //思路：求左右子树的最大深度，最大值为左右子树最大深度+1，返回
+//一条路径的长度为该路径经过的节点数减一，
+//所以求直径（即求路径长度的最大值）等效于求路径经过节点数的最大值减一
+//该节点为根的子树的深度max(L,R)+1
+//该节点的dnode值为L+R+1
 public class diameterOfBinaryTree {
     int ans;
     public int diameterOfBinaryTree(TreeNode root) {
@@ -13,11 +17,11 @@ public class diameterOfBinaryTree {
     }
     //求最长路径的点数
     public int depth(TreeNode node) {
-        if (node == null) return 0; // 如果当前结点为空，返回0
+        if (node == null) return 0; // 访问到空节点了，返回0
         int L = depth(node.left);  //左子树的深度
         int R = depth(node.right);  //右子树的深度
-        ans = Math.max(ans, L + R + 1);  //全局最大结点数
-        return Math.max(L, R) + 1;  //当前最大结点数
+        ans = Math.max(ans, L + R + 1);  //计算d_node即L+R+1 并更新ans
+        return Math.max(L, R) + 1;  //返回该节点为根的子树的深度
     }
 
     //687. 最长同值路径

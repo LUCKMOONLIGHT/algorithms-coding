@@ -5,10 +5,10 @@ package _3.binaryTree._1;
  *  236.二叉树的最近公共祖先 LeetCode 左神P153 [Medium]
  *  给定一棵二叉树, 找到该树中两个指定节点的最近公共祖先。
  *  后序遍历，先从左右子节点上找
- *  1,如果发现cur等于null,或者o1,o2。则返回cur.
-*       2,如果left和right都为空，说明cur整棵子树都没有发现过o1 和o2,返回null.
-*       3.如果left和right都不为空，说明左子树上发现过o1 和 o2，右子树上也发现过o1 和o2，说明o1 向上与o2向上的过程中，首次在cur相遇，返回cur.
-*       4,如果left和right是有一个为空，另一个不为空，假设不为空的那个记为node，此时又两种可能，要么node是o1或o2中的一个，要么node已经是o1和o2的最近公共祖先节点，此时直接返回node即可。
+ *  若left为NULL，因为题目保证有解，所以答案必在右边
+ * 若left不为NULL，则看right是否为NULL，若right为NULL， 则答案一定是左边这个left。
+ * 若左右都不为NULL， 说明root在中间，p和q在两边。该根结点一定是最近公共祖先
+ *
  */
 public class lowestCommonAncestor {
     class TreeNode{
@@ -23,10 +23,14 @@ public class lowestCommonAncestor {
 
         TreeNode left = lowestCommonAncestor(cur.left, p, q); //返回的结点，可能是null、pq和公共祖先结点
         TreeNode right = lowestCommonAncestor(cur.right, p, q);
-
+//        if (!left) return right;
+//        if (!right) return left;
+//
+//        return root;
         if(left != null && right != null){ //如果左右都存在，就说明pq都出现了，这就是，公共祖先
             return cur;
         }
+
         return left == null ? right : left; //否则我们返回已经找到的那个值（存储在left，与right中），p或者q
     }
 
