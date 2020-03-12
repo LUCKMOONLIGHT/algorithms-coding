@@ -131,14 +131,14 @@ class Solution {
         if(l < r){
             int temp = arr[l];
             while(l < r){
-                while(l < r && arr[r] >= temp) r--;
+                while(l < r && arr[r] >= temp) r--;  //从右边开始
                 if(l < r) arr[l] = arr[r];
                 while(l < r && arr[l] < temp) l++;
                 if(l < r) arr[r] = arr[l];
             }
             arr[l] = temp;
-            qSort(arr,s,l);
-            qSort(arr,l + 1, e);
+            qSort(arr,s,l);  //左半边递归
+            qSort(arr,l + 1, e); //右半边递归
         }
     }
 

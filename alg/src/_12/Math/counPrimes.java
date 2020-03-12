@@ -17,8 +17,8 @@ public class counPrimes {
         Boolean[] bool = new Boolean[n];
         Arrays.fill(bool, true);//所有标记位素数
         for (int i=2;i*i < n;i++){
-            if (bool[i]){ //素数的倍数都不是素数
-                for(int j=i*i;j<n;j+=i){
+            if (bool[i]){ //如果某位为素数
+                for(int j=i*i;j<n;j+=i){//素数的倍数都不是素数
                     bool[j] = false;
                 }
             }
