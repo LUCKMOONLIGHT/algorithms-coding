@@ -33,7 +33,7 @@ public class deleteNode {
         ListNode cur = head;
         ListNode pre = null;
         if(cur.val == val) return head.next;  //第一个位置
-        while(cur.val != val) {
+        while(cur.next != null && cur.val != val) {
             pre = cur;
             cur = cur.next;
         }

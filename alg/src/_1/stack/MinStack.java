@@ -18,7 +18,7 @@ public class MinStack {
         public void push(int x) {
             data.push(x);
             if(helper.isEmpty() || helper.peek() >= x){
-                helper.add(x);
+                helper.add(x); // 维护一个递减栈
             }else helper.add(helper.peek());
         }
 

@@ -18,7 +18,7 @@ class MyStack {
     }
 
     public void push(int x) {
-        a.offer(x); //此时a为空
+        a.offer(x); //此时a为空，a中的元素要排列到栈顶
         // 将b队列中元素全部转给a队列
         while(!b.isEmpty())
             a.offer(b.poll());

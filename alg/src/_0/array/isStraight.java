@@ -17,7 +17,7 @@ public class isStraight {
             }else{
                 if(nums[i] == nums[i+1]) return false;//如果不为0而且重复的话，false
                 if(nums[i+1] - nums[i] != 1){//如果相差大于1的话，记录差异
-                    diff += nums[i+1] - nums[i] - 1;
+                    diff += nums[i+1] - nums[i] - 1; //记录大于1的差异
                 }
             }
         }

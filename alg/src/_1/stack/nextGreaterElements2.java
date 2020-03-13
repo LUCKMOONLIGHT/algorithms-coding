@@ -26,7 +26,7 @@ public class nextGreaterElements2 {
             while(!stack.isEmpty() && nums[stack.peek()] < num){
                 resArr[stack.pop()] = num;
             }
-            if(i < n) stack.push(i);//维护一个单调递减栈，候选数字
+            if(i < n) stack.push(i);//维护一个单调递增栈的下标位置
         }
         return resArr;
     }

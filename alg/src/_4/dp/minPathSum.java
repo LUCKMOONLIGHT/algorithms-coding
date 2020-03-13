@@ -10,16 +10,18 @@ package _4.dp;
  *
  *  i+1，i+1 i,i  之间只有两条路可以走
  *  一条是向上；一条是向左  grid(i,j)=grid(i,j)+min(grid(i+1,j),grid(i,j+1))
+ *
+ *  思路：从下至上，在原数组上进行修改
  */
 public class minPathSum {
     public int minPathSum(int[][] grid) {
         for (int i = grid.length - 1; i >= 0; i--) {
             for (int j = grid[0].length - 1; j >= 0; j--) {
-                if(i == grid.length - 1 && j != grid[0].length - 1)
+                if(i == grid.length - 1 && j != grid[0].length - 1)  //i不能加1了
                     grid[i][j] = grid[i][j] +  grid[i][j + 1];
-                else if(j == grid[0].length - 1 && i != grid.length - 1)
+                else if(j == grid[0].length - 1 && i != grid.length - 1)//j不能加1了
                     grid[i][j] = grid[i][j] + grid[i + 1][j];
-                else if(j != grid[0].length - 1 && i != grid.length - 1)
+                else if(j != grid[0].length - 1 && i != grid.length - 1)//i，j都可以加1
                     grid[i][j] = grid[i][j] + Math.min(grid[i + 1][j], grid[i][j + 1]);
             }
         }

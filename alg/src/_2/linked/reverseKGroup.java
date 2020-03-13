@@ -28,8 +28,8 @@ public class reverseKGroup {
                 p.next = stack.pop();
                 p = p.next;
             }
-            p.next = tmp; //不足k个的直接添加到p末尾
-            head = tmp;
+            p.next = tmp; //连接剩余结点
+            head = tmp; //更新tmp的位置
         }
         return dummy.next;
     }

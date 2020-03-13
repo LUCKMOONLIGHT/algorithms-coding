@@ -3,6 +3,7 @@ package _0.array;
 //连续子数组的最大和
 //思路：1.临时子数组的最大和:要么当前元素最大，要么加上当前元素和最大
 //      2.保存全局子数组的最大和
+//子数组要么是加上当前元素，要么就是从当前原始开始，求最大值arr[i] > curSum + arr[i]
 public class findGreatestSumOfSubArray {
     public static int findGreatestSumOfSubArray(int[] arr) {
         if (arr == null || arr.length < 1) {

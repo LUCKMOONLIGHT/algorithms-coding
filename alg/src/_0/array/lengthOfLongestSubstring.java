@@ -31,9 +31,8 @@ public class lengthOfLongestSubstring {
     }
 
     /**
-     * 3. 无重复字符的最长子串
      * 如果字符数超过26个字母的情况下，使用map进行保存character integer
-     * 记录最近的一个不重复位置start   "abcabcbb"   012
+     * 记录最近的一个不重复位置start
      * @param s
      * @return
      */
@@ -46,17 +45,44 @@ public class lengthOfLongestSubstring {
         for(int i=0;i<n;i++){
             char c = s.charAt(i);
             if(map.containsKey(c)){
-                //如果范围i,j内有重复元素，直接跳出i,j范围，并将i变为j+1
-                start = Math.max(start, map.get(c));
+                start = Math.max(start, map.get(c)); //最近一次不重复出现的起始位置
             }
-            res = Math.max(res, i - start + 1);  //减去多了加回来
-            map.put(c, i+1);  //保存当前元素的下一个元素，如果有重复的话，直接跳到起始重复元素的下一个元素
+            res = Math.max(res, i - start + 1);//最长不重复字符
+            map.put(c, i+1);
         }
         return res;
     }
 
-    public static void main(String[] args) {
-        lengthOfLongestSubstring lengthOfLongestSubstring = new lengthOfLongestSubstring();
-        lengthOfLongestSubstring.lengthOfLongestSubstringII("abcabcbb");
+
+    //面试题50. 第一个只出现一次的字符
+    //思路：map标记出现次数，for循环找第一次出现的字符
+    public char firstUniqChar(String s) {
+        if(s == null || s.length() == 0 || "".equals(s)) return ' ';
+        Map<Character, Integer> map = new HashMap<>();
+        for(int i=0;i<s.length();i++){
+            char c = s.charAt(i);
+            map.put(c, map.getOrDefault(c, 0) + 1);
+        }
+        for(int i=0;i<s.length();i++){
+            char c = s.charAt(i);
+            if(map.get(c) == 1) return c;
+        }
+        return ' ';
+    }
+
+    public char firstUniqCharII(String s) {
+        if (s.equals("")) return ' ';
+        //创建‘a'-'z'的字典
+        int[] target = new int[26];
+        //第一次遍历，将字符统计到字典数组
+        for (int i = 0; i < s.length(); i++) {
+            target[s.charAt(i) - 'a']++;
+        }
+        //第二次遍历，从字典数组获取次数
+        for (int i = 0; i < s.length(); i++) {
+            if (target[s.charAt(i) - 'a'] == 1) return s.charAt(i);
+        }
+
+        return ' ';
     }
 }

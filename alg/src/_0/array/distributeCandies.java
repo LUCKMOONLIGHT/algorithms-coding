@@ -2,7 +2,12 @@ package _0.array;
 
 import java.util.Arrays;
 //575. 分糖果I
-//给定一个偶数长度的数组，其中不同的数字代表着不同种类的糖果，
+//输入: candies = [1,1,2,2,3,3]
+//输出: 3
+//解析: 一共有三种种类的糖果，每一种都有两个。
+//     最优分配方案：妹妹获得[1,2,3],弟弟也获得[1,2,3]。这样使妹妹获得糖果的种类数最多。
+//
+// 给定一个偶数长度的数组，其中不同的数字代表着不同种类的糖果，
 // 每一个数字代表一个糖果。
 // 你需要把这些糖果平均分给一个弟弟和一个妹妹。返回妹妹可以获得的最大糖果的种类数。
 //时间复杂度：O(nlogn)。排序需要 O(nlogn) 的时间。
@@ -44,10 +49,10 @@ public class distributeCandies {
         int[] ans = new int[num_people];
         int i;
         for (i = 0; candies > 0; i++) {
-            ans[i % num_people] += i + 1;
-            candies -= i + 1;  //如果减去数后负数
+            ans[i % num_people] += i + 1; //加上上一轮自己分发的糖果数
+            candies -= i + 1;  //糖果总数减去已经分发的糖果数，如果减去数后负数
         }
-        ans[(i - 1) % num_people] += candies; //原地加上这个负数
+        ans[(i - 1) % num_people] += candies; //原地加上这个负数，退出for循环的时候i+1了，因此此处减一
         return ans;
     }
 }

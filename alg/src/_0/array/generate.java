@@ -13,11 +13,11 @@ public class generate {
         if(numRows == 0) return res;
         res.add(new ArrayList<>());
         res.get(0).add(1);//预置1
-        for(int i=1;i<numRows;i++){
+        for(int i=1;i<numRows;i++){//行数
             List<Integer> cur = new ArrayList<>();
             List<Integer> pre = res.get(i-1);//上一行
             cur.add(1);//预置1
-            for(int j=1;j<i;j++){
+            for(int j=1;j<i;j++){//每行的和数
                 cur.add(pre.get(j-1)+pre.get(j));
             }
             cur.add(1);//预置1

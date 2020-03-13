@@ -50,27 +50,31 @@ public class hasCycle {
      * 3.快慢指针（Floyd 算法）
      * 1.fast slow指针先环中相遇
      * 2.head slow指针同时出发，相遇点为环的入口点
+     *
+     * 1.当慢指针走到距离为n的环节点时，快指针已经在环中距离环节点n的位置，距离环节点还剩b
+     * 2.慢指针走距离b后，快结点走了2b路径，两节点相遇，且距离环节点距离n
      */
 
     public ListNode hasCycleIII(ListNode head){
-        if(head == null || head.next == null ) return null;
-        ListNode slow = head;
-        ListNode fast = head.next;
-        while(slow.next != null && fast.next.next != null){
-            if(fast == slow) break;
-            slow = slow.next;
+        //龟兔赛跑，同一起点出发
+        if(head == null || head.next == null || head.next.next == null) return null;
+        ListNode fast = head.next.next, slow = head.next;
+        while (fast != slow) {
+            if (fast == null || fast.next == null) return null;
             fast = fast.next.next;
-        }
-        if(fast != slow) return null;
-        while(head != slow){
-            head = head.next;
             slow = slow.next;
         }
-        return head;
+        fast = head;
+        while (slow != fast) {
+            slow = slow.next;
+            fast = fast.next;
+        }
+        return fast;
     }
 
     //查找环的的长度
     //第二次相遇的时候快指针比慢指针正好又多走了一圈
+    //第一次相遇后距离环节点为n，第二次相遇时，慢指针绕环一圈，快指针绕2圈
     public int hasCycleIIII(ListNode head){
         if(head == null && head.next == null) return 0;
         ListNode slow = head;

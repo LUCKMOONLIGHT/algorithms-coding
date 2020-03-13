@@ -15,8 +15,8 @@ public class deleteDuplicates {
     }
     public ListNode deleteDuplicatesII(ListNode head) {
         ListNode dummy = new ListNode(0);
-        ListNode pre = dummy;
         dummy.next = head;
+        ListNode pre = dummy;
         while(head != null && head.next != null){
             if(head.val != head.next.val){//没有重复元素，指针直接向后移动
                 pre = head;
@@ -25,6 +25,7 @@ public class deleteDuplicates {
                 while(head != null && head.next != null && head.val == head.next.val){//存在重复元素，head向前移动
                     head = head.next;
                 }
+                //当不相等时
                 if(head.next == null) pre.next = null;//直到链表尾也为重复元素
                 else{//更新pre head指针
                     pre.next = head.next;

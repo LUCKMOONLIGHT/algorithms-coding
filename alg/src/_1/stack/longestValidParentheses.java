@@ -17,7 +17,7 @@ public class longestValidParentheses {
             char c = s.charAt(i);
             if(c == '(') stack.push(i);//保存当前左括号的位置
             else{
-                stack.pop();//如果是右括号，出栈
+                stack.pop();//如果是右括号，出栈，预置栈-1，防止错误
                 if(stack.isEmpty()) stack.push(i);//如果栈为空，保存当前位置作为起始地址
                 else max = Math.max(max, i-stack.peek());//如果栈不为空，求最长有效括号
             }

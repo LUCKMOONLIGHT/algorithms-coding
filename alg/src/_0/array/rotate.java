@@ -10,7 +10,7 @@ public class rotate {
     public void rotate(int[][] matrix) {
         int n = matrix.length;
 
-        // transpose matrix
+        // transpose matrix  沿着\进行交换
         for (int i = 0; i < n; i++) {
             for (int j = i; j < n; j++) {
                 int tmp = matrix[j][i];
@@ -18,7 +18,7 @@ public class rotate {
                 matrix[i][j] = tmp;
             }
         }
-        // reverse each row
+        // reverse each row  每行沿着|进行交换
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n / 2; j++) {
                 int tmp = matrix[i][j];
@@ -77,9 +77,9 @@ public class rotate {
         int l = 0, r = numbers.length - 1;
         while(l < r){
             int mid = l+(r-l)/2;
-            if(numbers[mid] < numbers[r]) r = mid;
+            if(numbers[mid] < numbers[r]) r = mid;  //根据递增关系判断旋转点在左边还是在右边
             else if(numbers[mid] > numbers[r]) l = mid + 1;
-            else r--;
+            else r--; //如果相等表示重复，r--
         }
         return numbers[l];
     }

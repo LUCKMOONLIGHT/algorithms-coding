@@ -80,7 +80,7 @@ public class findDisappearedNumbers {
                     if(row[j] == mate){
                         int tmp = row[j];
                         row[j] = row[i+1];
-                        row[i+1] = row[j];
+                        row[i+1] = tmp;
                         res ++;
                     }
                 }
@@ -131,6 +131,7 @@ public class findDisappearedNumbers {
     //面试题05. 替换空格
     //把字符串 s 中的每个空格替换成"%20"。
     //"We are happy."  "We%20are%20happy."
+    //思路：指针，判断当前元素是' ',插入%20
     public String replaceSpace(String s) {
         char[] arr = new char[s.length()*3];
         int size = 0;

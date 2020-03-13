@@ -19,7 +19,7 @@ public class oddEvenList {
         }
         ListNode odd = head; //奇数位
         ListNode even = head.next; //偶数位
-        ListNode evenHead = even;
+        ListNode evenHead = even;//偶数头
         while(even !=null && even.next != null){
             odd.next = even.next; //奇数连接
             odd = odd.next; //指针往后移

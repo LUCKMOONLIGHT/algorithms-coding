@@ -13,9 +13,9 @@ public class findContinuousSequence {
         //当窗口中数字和小于target时，r右移; 大于target时，l右移; 等于target时就获得了一个解
         List<int[]> list = new ArrayList<>();
         for(int l=1,r=1,sum=0;r<target;r++){
-            sum += r;
-            while(sum > target) sum -= l++;
-            if(sum == target){
+            sum += r; //相加右指针
+            while(sum > target) sum -= l++;//相减左指针的值
+            if(sum == target){//当获得到一个解后，加入到数组中
                 int[] tmp = new int[r - l + 1];
                 for(int i=l;i<=r;i++){
                     tmp[i-l] = i;

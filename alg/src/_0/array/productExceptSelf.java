@@ -22,4 +22,16 @@ public class productExceptSelf {
         return res;
     }
 
+
+    public int[] productExceptSelfII(int[] nums) {
+        int[] res = new int[nums.length];
+        for(int i=0,p = 1;i<nums.length;p = p*nums[i],i++){
+            res[i] = p;
+        }
+        for(int i = nums.length - 1, p = 1;i>=0;p = p*nums[i],i--){
+            res[i] *= p;
+        }
+        return res;
+    }
+
 }

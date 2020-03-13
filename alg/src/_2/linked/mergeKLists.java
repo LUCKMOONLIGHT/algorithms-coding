@@ -47,10 +47,10 @@ public class mergeKLists {
 
         while (!pq.isEmpty()) {
             //从优先队列中输出链表头节点，拼接到curr后面，然后将节点的后继节点加入到优先队列
-            ListNode nextNode = pq.poll();
-            curr.next = nextNode;
+            ListNode nextNode = pq.poll();  //当前最小值的结点
+            curr.next = nextNode; //添加到新结点后面
             curr = curr.next;
-            if (nextNode.next != null) {
+            if (nextNode.next != null) {//添加最小值结点的后继结点
                 pq.add(nextNode.next);
             }
         }

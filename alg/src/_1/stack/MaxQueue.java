@@ -26,7 +26,7 @@ public class MaxQueue {
 
     public void push_back(int value) {
         data.offer(value);
-        //找当前队列里面的最大值
+        //保留每个窗口的最大值
         while (!help.isEmpty() && value > help.peekLast()){
             help.pollLast();
         }

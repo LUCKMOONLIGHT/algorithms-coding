@@ -21,11 +21,11 @@ public class dailyTemperatures {
         Stack<Integer> resPush = new Stack<>();
         int[] resArr = new int[n];
         for (int i=0;i<n;i++){
-            while(!resPush.isEmpty() && T[resPush.peek()] < T[i]){
+            while(!resPush.isEmpty() && T[resPush.peek()] < T[i]){  //比当前元素大的下一个元素
                 int curInx = resPush.pop();
-                resArr[curInx] = i - curInx;
+                resArr[curInx] = i - curInx; //记录相差天数
             }
-            resPush.push(i);
+            resPush.push(i);//将当前位置传入栈中
         }
         return resArr;
     }

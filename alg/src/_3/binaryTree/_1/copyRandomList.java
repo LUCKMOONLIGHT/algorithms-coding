@@ -10,12 +10,12 @@ public class copyRandomList {
         if(head == null) return head;
         Map<Node, Node> map = new HashMap<Node, Node>();
         Node p = head;
-        while(p != null){
+        while(p != null){//复制节点
             map.put(p, new Node(p.val));
             p = p.next;
         }
         p = head;
-        while(p != null){
+        while(p != null){//连接
             map.get(p).next = map.get(p.next);
             map.get(p).random = map.get(p.random);
             p = p.next;

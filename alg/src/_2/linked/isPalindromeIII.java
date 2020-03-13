@@ -29,7 +29,7 @@ public class isPalindromeIII {
             q = q.next;
         }
 
-        first.next = reverse(second);
+        first.next = reverse(second); //还原
         return res;
     }
     //反转链表，返回的是右链表的尾结点
@@ -45,9 +45,9 @@ public class isPalindromeIII {
     }
     //快慢指针找中间结点
     public ListNode half(ListNode head){
-        ListNode slow = head;
+        ListNode slow = head; //初始节点
         ListNode fast = head;
-        while(fast.next != null && fast.next.next != null){
+        while(fast.next != null && fast.next.next != null){//fast到达末尾时，slow为中点
             slow = slow.next;
             fast = fast.next.next;
         }
