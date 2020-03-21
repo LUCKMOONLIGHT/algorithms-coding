@@ -20,7 +20,7 @@ public class addBinary {
             carry = (ai + bi + carry) / 2;
             sb.append(sum);
         }
-        sb.append(carry == 1 ? 1:"");
+        sb.append(carry == 1 ? 1:""); //判断最后的进位
         return sb.reverse().toString();
     }
 }

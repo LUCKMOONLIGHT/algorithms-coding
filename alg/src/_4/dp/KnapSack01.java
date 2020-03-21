@@ -67,7 +67,7 @@ public class KnapSack01 {
         int[] dp = new int[C+1];
         for(int i=1;i<N+1;i++){//遍历物品的容量
             //逆序实现，防止被覆盖
-            for(int j=C;j>=w[i-1];j--){//逆序 背包的容量 - 物品所需容量
+            for(int j=C;j>=w[i-1];j--){//逆序 背包的容量 - 物品所需容量  （逆序实现，每次只能取一个）
                 dp[j] = Math.max(dp[j-w[i-1]]+v[i-1],dp[j]);
             }
         }

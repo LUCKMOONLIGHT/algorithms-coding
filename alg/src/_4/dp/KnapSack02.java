@@ -18,7 +18,7 @@ public class KnapSack02 {
                     dp[i][j] = dp[i-1][j];
                 else{
                     //考虑物品的件数限制(当前物品的数量，背包能够装下的数量)
-                    int maxV = Math.min(num[i-1],j/w[i-1]);
+                    int maxV = Math.min(num[i-1],j/w[i-1]);    //（最大获取数量）
                     for(int k=0;k<maxV+1;k++){ //相同物品装入0-maxV次，求最大价值，迭代
                         dp[i][j]=Math.max(dp[i-1][j],dp[i-1][j-k*w[i-1]]+k*v[i-1]);
                     }

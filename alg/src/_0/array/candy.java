@@ -20,12 +20,12 @@ public class candy {
         int[] right = new int[ratings.length];
         Arrays.fill(left, 1);
         Arrays.fill(right, 1);
-        for(int i = 1; i < ratings.length; i++)
+        for(int i = 1; i < ratings.length; i++)   //以ratings[i]结束的子序列获得的糖果数
             if(ratings[i] > ratings[i - 1]) left[i] = left[i - 1] + 1;
         int count = left[ratings.length - 1];
-        for(int i = ratings.length - 2; i >= 0; i--) {
+        for(int i = ratings.length - 2; i >= 0; i--) {//以ratings[i]开始的子序列获得的糖果数
             if(ratings[i] > ratings[i + 1]) right[i] = right[i + 1] + 1;
-            count += Math.max(left[i], right[i]);
+            count += Math.max(left[i], right[i]);//当前孩纸获得最大糖果数之和
         }
         return count;
     }

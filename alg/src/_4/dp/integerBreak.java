@@ -4,12 +4,16 @@ package _4.dp;
 public class integerBreak {
     //343. 整数拆分  1<n<56 数字不会超出2^32
     //给定一个正整数 n，将其拆分为至少两个正整数的和，并使这些整数的乘积最大化。 返回你可以获得的最大乘积。
-    //注意到我们每次将一段绳子剪成两段时，剩下的部分可以继续剪，也可以不剪， 因此我们得到了递归函数 F(n)=max(i\times(n-i),i\times F(n-i)),i=1,2,...,n-2F(n)=max(i×(n−i),i×F(n−i)),
+    //注意到我们每次将一段绳子剪成两段时，
+    // 剩下的部分可以继续剪，也可以不剪，
+    // 因此我们得到了递归函数
+    // F(n)=max(i\times(n-i),i\times F(n-i)),i=1,2,...,n-2F(n)=max(i×(n−i),i×F(n−i)),
     public int integerBreak(int n) {
         int[] memory = new int[n+1];
-        memory[2] = 1;
+        memory[2] = 1; // 2 = 1+1  max=1*1=1
         for (int i = 3; i <= n; i++) {
             for ( int j = 1; j <= i - 1; j++) {
+                //将绳子拆分j，剩下的部分拆分memory[i - j]，不拆分(i - j)
                 memory[i] = Math.max(memory[i], Math.max(j * memory[i - j], j * (i - j)));
             }
         }

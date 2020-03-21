@@ -7,7 +7,7 @@ public class flatten {
         while(root != null){
             if(root.left == null){
                 root = root.right;
-            }else{ //迭代右子树，当前左子树不为null时
+            }else{ //当前左子树不为null时，迭代右子树，
                 TreeNode pre = root.left;
                 while(pre.right != null) pre = pre.right;
                 pre.right = root.right; //先把右子树连接到左子树的最右子树

@@ -28,9 +28,14 @@ public class reverseKGroup {
                 p.next = stack.pop();
                 p = p.next;
             }
-            p.next = tmp; //连接剩余结点
-            head = tmp; //更新tmp的位置
+            head = tmp; //更新head的位置
         }
         return dummy.next;
     }
+
+    //变型：从尾部开始反转k组，剩余不足k个不反转
+
+    //1.首先将这个整个链表进行首尾反转
+    //2.k group反转
+    //3.整个链表反转
 }

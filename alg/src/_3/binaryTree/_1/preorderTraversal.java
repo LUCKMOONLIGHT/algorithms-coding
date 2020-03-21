@@ -24,22 +24,19 @@ public class preorderTraversal {
      * @return
      */
     public List<Integer> preorderTraversal(TreeNode root){
-        List<Integer> list = new ArrayList<>();
-        Stack<TreeNode> stack = new Stack<>();
-        if (root != null) {
-            stack.add(root);
-            while(!stack.isEmpty()){
-                TreeNode tmp = stack.pop();
-                list.add(tmp.val);
-                if (tmp.right != null){ //先右节点,再左节点，出栈的时候先左再右
-                    stack.push(tmp.right);
-                }
-                if(tmp.left != null){
-                    stack.push(tmp.left);
-                }
-
-            }
+        List<Integer> res = new ArrayList<>();
+        if (root == null) {
+            return res;
         }
-        return list;
+        Stack<TreeNode> stack = new Stack<>();
+        stack.add(root);
+        while(!stack.isEmpty()){
+            TreeNode tmp = stack.pop();
+            res.add(tmp.val);
+            //先右节点,再左节点，出栈的时候先左再右
+            if (tmp.right != null) stack.push(tmp.right);
+            if(tmp.left != null) stack.push(tmp.left);
+        }
+        return res;
     }
 }

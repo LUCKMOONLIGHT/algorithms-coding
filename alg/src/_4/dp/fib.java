@@ -35,8 +35,8 @@ public class fib {
         for(int i=0;i<=n;i++){
             if(i<2) dp[i] = 1;
             else {
-                int v = Integer.parseInt(s.substring(i-2,i));
-                dp[i] = dp[i-1] + (v>=10 && v <=25 ? dp[i-2]:0);
+                int v = Integer.parseInt(s.substring(i-2,i));//和前一个元素的组合在0-25区间内
+                dp[i] = dp[i-1] + (v>=10 && v <=25 ? dp[i-2]:0);//状态转移方程
             }
         }
         return dp[n];

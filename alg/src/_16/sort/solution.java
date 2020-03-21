@@ -126,19 +126,47 @@ class Solution {
      将比这个数小的数全部放在它的左边，大于或等于它的数全部放在它的右边；
      对左右两个小数列重复第二步，直至各区间只有1个数。
      **/
-    void qSort(int[] arr,int s,int e){
-        int l = s, r = e;
-        if(l < r){
-            int temp = arr[l];
-            while(l < r){
-                while(l < r && arr[r] >= temp) r--;  //从右边开始
-                if(l < r) arr[l] = arr[r];
-                while(l < r && arr[l] < temp) l++;
-                if(l < r) arr[r] = arr[l];
+//    void qSort(int[] arr,int s,int e){
+//        int l = s, r = e;
+//        if(l < r){
+//            int temp = arr[l];
+//            while(l < r){
+//                while(l < r && arr[r] >= temp) r--;  //从右边开始
+//                if(l < r) arr[l] = arr[r];
+//                while(l < r && arr[l] < temp) l++;
+//                if(l < r) arr[r] = arr[l];
+//            }
+//            arr[l] = temp;
+//            qSort(arr,s,l);  //左半边递归
+//            qSort(arr,l + 1, e); //右半边递归
+//        }
+//    }
+    static void quickSort(int[] nums, int s, int e){
+        int l, r, tmp, t;
+        if(s > e) return;
+        l = s;
+        r = e;
+        tmp = nums[l];
+        while(l < r){
+            while(l < r && nums[r] >= tmp) r--;
+            while(l < r && nums[l] <= tmp) l++;
+            if (l < r){
+                t = nums[l];
+                nums[l] = nums[r];
+                nums[r] = t;
             }
-            arr[l] = temp;
-            qSort(arr,s,l);  //左半边递归
-            qSort(arr,l + 1, e); //右半边递归
+        }
+        nums[s] = nums[l];
+        nums[l] = tmp;
+        quickSort(nums, s, l-1);
+        quickSort(nums, l+1, e);
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {10,7,2,4,7,62,3,4,2,1,8,9,19};
+        quickSort(arr, 0, arr.length-1);
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println(arr[i]);
         }
     }
 

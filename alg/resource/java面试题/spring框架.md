@@ -187,13 +187,14 @@
 
 
 > Mybatis
-
-#### Mybatis 两级缓存缓存
+# Mybatis
+### Mybatis 两级缓存缓存
     Mybatis 中有一级缓存和二级缓存，默认情况下一级缓存是开启的，而且是不能关闭的。
     一级缓存是指 SqlSession 级别的缓存，当在同一个 SqlSession 中进行相同的 SQL 语句查询时，第二次以
-    后的查询不会从数据库查询，而是直接从缓存中获取，一级缓存最多缓存 1024 条 SQL。
+    后的查询不会从数据库查询，而是直接从缓存中获取，一级缓存最多缓存 1024 条 SQL，底层实现HashMap。
+        不同的sqlsession之间的缓存不共享，会导致读到了脏数据，建议设定缓存级别为Statement，一次操作有效不缓存
     二级缓存是指可以跨 SqlSession 的缓存。 是 mapper 级别的缓存，对于 mapper 级别的缓存不同的
-    sqlsession 是可以共享的
+    sqlsession 是可以共享的。数据的查询执行的流程就是 二级缓存 -> 一级缓存 -> 数据库
 
     ##### Mybatis 的一级缓存原理
         - 第一次发出一个查询 sql， sql 查询结果写入 sqlsession 的一级缓存中，缓存使用的数据结构是一个Map
@@ -210,14 +211,16 @@
         key： MapperID+offset+limit+Sql+所有的入参
 
 
+    在分布式环境下，由于默认的MyBatis Cache实现都是基于本地的，分布式环境下必然会出现读取到脏数据，
+    需要使用集中式缓存将MyBatis的Cache接口实现，有一定的开发成本，
+    直接使用Redis、Memcached等分布式缓存可能成本更低，安全性也更高。
 
-
-# Servlet生命周期
+### Servlet生命周期
     - Servlet 通过调用 init () 方法进行初始化
     - Servlet 调用 service() 方法来处理客户端的请求
     - Servlet 通过调用 destroy() 方法终止（结束）
     
-# MyBatis中#{}和${}的区别
+### MyBatis中#{}和${}的区别
     1.#字符串：#将传入的数据都当成一个字符串，会对自动传入的数据加一个双引号。如：order by #user_id#，如果传入的值是111,那么解析成sql时的值为order by "111", 如果传入的值是id，则解析成的sql为order by "id".
     2.$直接显示：$将传入的数据直接显示生成在sql中。如：orderbyuser_id$，如果传入的值是111,那么解析成sql时的值为order by user_id, 如果传入的值是id，则解析成的sql为order by id.
     3.#方式能够很大程度防止sql注入;$方式无法防止Sql注入。
@@ -225,9 +228,32 @@
     6.一般能用#的就别用$.
     MyBatis排序时使用order by 动态参数时需要注意，用$而不是#
 
+### Mybatis的优缺点
+    mybatis是一种持久层框架，也属于ORM映射。前身是ibatis。
+    1.sql语句与代码分离，存放于xml配置文件中：
+    优点：便于维护管理，不用在java代码中找这些语句；
+    缺点： JDBC方式可以用用打断点的方式调试，但是Mybatis不能，需要通过log4j日志输出日志信息帮助调试，然后在配置文件中修改。
+    
+    2.用逻辑标签控制动态SQL的拼接：
+    优点：用标签代替编写逻辑代码；
+    缺点：拼接复杂SQL语句时，没有代码灵活，拼写比较复杂。不要使用变通的手段来应对这种复杂的语句。
+    
+    3.查询的结果集与java对象自动映射：
+    优点：保证名称相同，配置好映射关系即可自动映射或者，不配置映射关系，通过配置列名=字段名也可完成自动映射。
+    缺点：对开发人员所写的SQL依赖很强。
+    
+    4.编写原声SQL：
+    优点：接近JDBC，比较灵活。
+    缺点：对SQL语句依赖程度很高；并且属于半自动，数据库移植比较麻烦，比如mysql数据库编程Oracle数据库，部分的sql语句需要调整。
+
+### TK_Mybatis
+    1.tkmybatis是在mybatis框架的基础上提供了很多工具
+    2.CRUD的sql可以省略
+    3.提供更多的自定义注解 Table 
+    4.通过面向对象的方法实现动态sql  使用weekendSqls实现
 
 > SpringBoot
-
+# SpringBoot
 #### SpringBoot-自动装配原理    
     - 1.SpringBoot的主配置类上有@SpringBootApplication注解
     - 2.@SpringBootApplication是一个组合注解，有@EnableAutoConfiguration开启自动配置的功能
@@ -236,3 +262,18 @@
         调用了loadFactoryNames方法会从META-INF/spring.factories中获取指定的值，
         将这些值作为自动配置类导入到容器中，自动配置类就生效
   
+#### 项目部署有没有遇到跨域的问题，怎么解决的
+         - SpringBoot可以基于Cors解决跨域问题
+             - 1、直接采用SpringBoot的注解@CrossOrigin，Controller层在需要跨域的类或者方法上加上该注解即可
+             - 2、处理跨域请求的Configuration，继承WebMvcConfigurerAdapter或者实现WebMvcConfigurer接口，实现addCorsMappings方法，添加映射
+         - Nginx服务器反向代理
+             - 通过反向代理服务器监听同端口，同域名的访问，不同路径映射到不同的地址
+             
+#### springboot中的一个线程安全问题
+      springmvc不同用户登录的信息怎么保证线程安全的?
+    - springMVC中，一般Controller、service、DAO层的scope均是singleton
+    - Spring MVC的Controller默认使用单例
+       1、性能好   2、没有必要用多例 减少资源浪费
+    - 在controller中定义成员变量，并且对成员变量存在写操作就会存在线程安全问题
+        - 万一必须要定义一个非静态成员变量时候，则通过注解@Scope("prototype")，将其设置为多例模式
+        - 仍然使用默认单例方式，对于要共享对象属性，可以用ThreadLocal保护

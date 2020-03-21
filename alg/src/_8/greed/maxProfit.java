@@ -52,6 +52,7 @@ public class maxProfit {
     /**
      * 设计一个算法来计算你所能获取的最大利润。你可以尽可能地完成更多的交易（多次买卖一支股票）。
      * 1.多次买卖一支股票，当是上升的时候，都能赚；即上升的幅度
+     * 2.允许当天多次买卖一只股票
      */
     public int maxProfitII(int[] prices){
         if (prices == null || prices.length == 0) return 0;

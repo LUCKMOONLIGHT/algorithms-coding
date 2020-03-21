@@ -24,7 +24,7 @@ public class diameterOfBinaryTree {
         return Math.max(L, R) + 1;  //返回该节点为根的子树的深度
     }
 
-    //687. 最长同值路径
+    //687. 最长同值路径  左右中
     //给定一个二叉树，找到最长的路径，这个路径中的每个节点具有相同值。 这条路径可以经过也可以不经过根节点。
     //注意：两个节点之间的路径长度由它们之间的边数表示。
     public int longestUnivaluePath(TreeNode root) {
@@ -47,7 +47,7 @@ public class diameterOfBinaryTree {
         return Math.max(arrowLeft, arrowRight); //当前节点最长
     }
 
-    //124.二叉树的最大路径和
+    //124.二叉树的最大路径和   左右中
     int ret = 0;
     private int getMax(TreeNode r) {
         if(r == null) return 0;

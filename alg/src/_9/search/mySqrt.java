@@ -2,6 +2,7 @@ package _9.search;
 
 /**
  * x的平方根
+ * x / sqrt = mid
  */
 public class mySqrt {
     public int mySqrt(int x){
@@ -14,5 +15,11 @@ public class mySqrt {
             else h = mid - 1;
         }
         return h;
+    }
+
+    public static void main(String[] args) {
+        mySqrt mySqrt = new mySqrt();
+        int res = mySqrt.mySqrt(16);
+        System.out.println(res);
     }
 }

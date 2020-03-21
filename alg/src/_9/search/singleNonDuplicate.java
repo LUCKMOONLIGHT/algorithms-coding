@@ -11,9 +11,17 @@ public class singleNonDuplicate {
         while(l < h){
             int m = l+(h-l)/2;
             if(m % 2 !=0) m--; //保持m在偶数位
-            if(nums[m] == nums[m+1]) l=m+2; //当偶数位两位相等时，右移两位
-            else h=m; //当不相等时，说明在前面
+            if(nums[m] == nums[m+1]) l=m+2; //偶数位对相等，说明单数在后面
+            else h=m; //当不相等时，说明在前面搜索旋转排序数组
         }
         return nums[l];
+    }
+
+    public int singleNonDuplicateII(int[] nums) {
+        int a = nums[0];
+        for(int i = 1;i<nums.length;i++){
+            a ^= nums[i];
+        }
+        return a;
     }
 }

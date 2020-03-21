@@ -3,6 +3,7 @@ package _11.MonotonousStack;
 import java.util.LinkedList;
 
 //面试题59 - I. 滑动窗口的最大值
+//输入nums 窗口大小k
 //滑动窗口最大值  1.优先队列   2.单调栈
 // 1 2 3 4
 public class maxSlidingWindow {

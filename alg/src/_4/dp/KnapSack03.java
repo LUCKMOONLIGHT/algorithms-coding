@@ -57,7 +57,7 @@ public class KnapSack03 {
         int[] dp = new int[C+1];
         for(int i=1;i<N+1;i++){ // 遍历物品的容量
 
-            for(int j=weight[i-1];j<C+1;j++){ //顺序实现,从当前物品的容量开始到最大容量
+            for(int j=weight[i-1];j<C+1;j++){ //顺序实现,从当前物品的容量开始到最大容量    （顺序实现，可以多次取）
                 //用新数据来覆盖新数据，如果已经拿了n种物品了，如果再拿一个价值会更大，则继续拿
                 dp[j] = Math.max(dp[j-weight[i-1]]+value[i-1],dp[j]);
             }

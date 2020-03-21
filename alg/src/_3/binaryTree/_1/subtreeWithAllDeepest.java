@@ -12,9 +12,9 @@ public class subtreeWithAllDeepest {
         int lnode = maxDepth(root.left);
         int rnode = maxDepth(root.right);
 
-        if(lnode == rnode) return root;
+        if(lnode == rnode) return root; //先找左右结点的深度，相同，直接返回
         else if(lnode > rnode) return subtreeWithAllDeepest(root.left);
-        return subtreeWithAllDeepest(root.right);
+        return subtreeWithAllDeepest(root.right);//否则，去较深的子树dfs
     }
     //求二叉树的最大深度
     int maxDepth(TreeNode root){

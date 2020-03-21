@@ -32,66 +32,10 @@ public class lengthOfLIS {
         return maxans;
     }
 
-
-    /**
-     * 一个连续的子序列,并且这个子序列还必须得满足:最多只改变一个数,就可以使得这个连续的子序列是一个严格上升的子序列
-     * 7 2 3 1 5 6
-     * 5 （2，3，1，5，6）
-     *
-     *
-     * 思路：
-     * 1.正序遍历一遍以end[i]结束的子数组
-     * 2.反序遍历一遍以start[i]开头的子数组
-     * 3.正序遍历，当元素前后为递增时，将两个子序列相加再+1
-     */
-    public int lengthOfLISII(int[] nums) {
-        int n = nums.length;
-        int[] start = new int[n];
-        int[] end = new int[n];
-        end[0] = 1;
-        for (int i = 1; i < n; i++) {//以end[i]结束的子序列
-            end[i] = nums[i] > nums[i - 1] ? end[i - 1] + 1 : 1;
-        }
-        start[n - 1] = 1;
-        for (int i = n - 2; i >= 0; i--) {//以start[i]开始的子序列
-            start[i] = nums[i] < nums[i + 1] ? start[i + 1] + 1 : 1;
-        }
-        int result = 0;
-        for (int i = 1; i < n - 1; i++) {
-            if ( nums[i + 1] - nums[i - 1] > 1) {  //当前后元素大小相差大于1时，求组合两个子序列的最大值
-                int sum = start[i + 1] + end[i - 1] + 1;
-                result = Math.max(result, sum);
-            }
-        }
-        return result;
-    }
-
-    /**
-     * 最长连续递增子序列 - 要求连续 = 子串 即nums[i] > nums[i-1]
-     * 给定一个未经排序的整数数组，找到最长且连续的的递增序列。
-     * dp[i]表示以i位置结尾，即nums[i]值结尾的，最长连续递增序列的长度
-     * 想要求dp[i] 只需要关注 nums[i] 与 nums[i - 1]的对比
-     * 当nums[i] > nums[i - 1]，可以和nums[i-1]拼接起来， dp[i] = dp[i - 1] + 1;
-     * 当nums[i] <=nums[i - 1] nums[i]自身形成一个最长连续递增序列，长度为1
-     *
-     * @param nums
-     */
-
-    public int findLengthOfLCISI(int[] nums) {
-        if(nums == null || nums.length == 0) return 0;
-        int n= nums.length;
-        int[] dp = new int[n];
-        Arrays.fill(dp, 1);
-        int res = 0;
-        for (int i=1;i<n;i++){//只需要关注 nums[i] 与 nums[i - 1]的对比
-            if (nums[i-1] < nums[i]) dp[i] = dp[i-1] + 1; //长度可以和nums[i-1]拼接起来
-            res = Math.max(res, dp[i]);
-        }
-        return res;
-    }
-
-    //因为连续的序列，i依赖前一个数i-1，使用int[] dp = new int[2]; 重复使用
-    public int findLengthOfLCISII(int[] nums) {
+    //674. 最长连续递增序列 子串
+    //给定一个未经排序的整数数组，找到最长且连续的的递增序列。
+    //[1,3,5,4,7]  3
+    public int findLengthOfLCIS(int[] nums) {
         if (nums == null || nums.length == 0) return 0;
         int n = nums.length;
         int[] dp = new int[2];
@@ -105,6 +49,70 @@ public class lengthOfLIS {
             maxLen =Math.max(maxLen,dp[i%2]);
         }
         return maxLen;
+    }
+
+    /**
+     * 最长连续子序列长度：一个连续的子序列,并且这个子序列还必须得满足:
+     * 最多只改变一个数,就可以使得这个连续的子序列是一个严格上升的子序列
+     *  5 （2，3，1，5，6）
+     * 最多只改变一个数，即不考虑该数，求以每个数开头和以每个数结尾的子序列长度和
+     *
+     * 思路：
+     * 1.正序遍历一遍以end[i]结束的子数组
+     * 2.反序遍历一遍以start[i]开头的子数组
+     * 3.正序遍历，当元素前后为递增时，将两个子序列相加再+1
+     *
+     *  分别求以下标i元素为起始点和结束点的递增子序列长度。
+     *  比较下标i-1和i+1位置的元素差值是否大于2，如果大于2则拼接长度
+     */
+    public int lengthOfLISII(int[] nums) {
+        int n = nums.length;
+        int[] start = new int[n];
+        int[] end = new int[n];
+        end[0] = 1;
+        for (int i = 1; i < n; i++) {//以end[i]结束的子序列，原数组后面加一个数
+            end[i] = nums[i] > nums[i - 1] ? end[i - 1] + 1 : 1;
+        }
+        start[n - 1] = 1;
+        for (int i = n - 2; i >= 0; i--) {//以start[i]开始的子序列，原数组前面加一个数
+            start[i] = nums[i] < nums[i + 1] ? start[i + 1] + 1 : 1;
+        }
+        int result = 0;
+        for (int i = 1; i < n - 1; i++) {
+            if ( nums[i + 1] - nums[i - 1] >= 2) {  //当前后元素大小相差大于1时，求组合两个子序列的最大值
+                int sum = start[i + 1] + end[i - 1] + 1;  //以end[i - 1]结尾的子串长度加上start[i + 1]开头的子串长度 + 1 当前改变后的数字长度
+                result = Math.max(result, sum);
+            }
+        }
+        return result;
+    }
+
+
+    //任意删除一个正整数，剩余的最长上升子串构造长度
+    //1.求以每个位置开始和结束能够组成的最长上升子串构造长度
+    //2.判断每个位置的前后元素是否满足条件，满足将前后长度相加，否则为前后最大长度
+
+    public int lengthOfLISIII(int[] nums) {
+        int n = nums.length;
+        int[] start = new int[n];
+        int[] end = new int[n];
+        end[0] = 1;
+        for (int i = 1; i < n; i++) {//以end[i]结束的子序列，原数组后面加一个数
+            end[i] = nums[i] > nums[i - 1] ? end[i - 1] + 1 : 1;
+        }
+        start[n - 1] = 1;
+        for (int i = n - 2; i >= 0; i--) {//以start[i]开始的子序列，原数组前面加一个数
+            start[i] = nums[i] < nums[i + 1] ? start[i + 1] + 1 : 1;
+        }
+        int result = 0;
+        for (int i = 1; i < n - 1; i++) {
+            int sum = 0;
+            if ( nums[i + 1] - nums[i - 1] >= 1) {  //当后面的元素大于前面的元素时，求组合两个子序列的最大值
+                sum = start[i + 1] + end[i - 1] ;  //以end[i - 1]结尾的子串长度加上start[i + 1]开头的子串长度 (当前字符串删除)
+            }else sum = Math.max(start[i + 1], end[i - 1]); //不满足条件，求前后最大的子串
+            result = Math.max(result, sum);//保存当前最大的子串
+        }
+        return result;
     }
 
     /**
@@ -126,7 +134,7 @@ public class lengthOfLIS {
     public int findNumberOfLIS(int[] nums){
         if(nums == null || nums.length == 0) return 0;
         int n = nums.length;
-        int[] dp = new int[n]; //子序列中最长子序列的长度
+        int[] dp = new int[n]; //最长子序列的长度
         int[] combination = new int[n];//最长子序列的个数
         Arrays.fill(dp ,1);
         Arrays.fill(combination, 1);
@@ -148,41 +156,6 @@ public class lengthOfLIS {
             if(max == dp[i]) res += combination[i];
         }
         return res;
-    }
-
-    /**
-     * 最长上升连续子序列
-     * 可以从前往后也可以从后往前生成上升连续子序列
-     * 准备两个数组，start，end ，容量都为2，start表示从前往后，end表示从后往前
-     * Math.max(maxStart, maxEnd)
-     * @param nums
-     * @return
-     */
-    public int longestIncreasingContinuousSubsequence(int[] nums){
-        if (nums == null || nums.length == 0) return 0;
-        int n = nums.length;
-        int[] start = new int[2];
-        Arrays.fill(start,1);
-        int maxStart = 1;
-        for (int i = 1; i < n; i++) {
-            start[i % 2] = 1;
-            if (nums[i] > nums[i - 1]) {
-                start[i % 2] += start[(i - 1) % 2];
-            }
-            maxStart = Math.max(maxStart, start[i % 2]);
-        }
-        int[] end = new int[2];
-        int maxEnd = 1;
-        Arrays.fill(end,1);
-        for (int i = n - 2; i >= 0; i--) {
-            end[i % 2] = 1;
-            if (nums[i] > nums[i + 1]) {
-                end[i % 2] += end[(i + 1) % 2];
-            }
-            maxEnd = Math.max(maxEnd, end[i % 2]);
-        }
-
-        return Math.max(maxStart, maxEnd);
     }
 
     /**
@@ -216,6 +189,7 @@ public class lengthOfLIS {
     //哈希表和线性空间的构造  O(n) O(n)
 
     /**
+     * 最大连续递增数列  无序-递增子序列
      * 1.将数字放入set集合中
      * 2.遍历数组，从不连续的数组开始，while计算连续的
      * @param nums
@@ -223,21 +197,24 @@ public class lengthOfLIS {
      */
     public int longestConsecutiveI(int[] nums) {
         Set<Integer> set = new HashSet<>();
-        for (int num : nums) set.add(num);
+        for (int num : nums) set.add(num);//把每个元素添加到set中
         int longestCnt = 0;
-        for (int num : nums) {
-            if (!set.contains(num - 1)) { //连续数组的开始
-                int curNum = num;
+        for (int num : nums) {//迭代数组
+            if (!set.contains(num - 1)) { //判断是否包含前一个，包含前一个说明以及计算进去了，不重复计算，每次从最新的开始计算
+                int curNum = num; //如果不包含前一个，从当前计数
                 int curCnt = 1;
                 while (set.contains(curNum + 1)) { //如果包含下一个数组
-                    curNum++;
+                    curNum++;//当前计数+1
                     curCnt++;
                 }
-                longestCnt = Math.max(longestCnt,curCnt);
+                longestCnt = Math.max(longestCnt,curCnt);//保存最大值
             }
         }
         return longestCnt;
     }
+
+
+
     public static void main(String[] args) {
         lengthOfLIS lengthOfLIS = new lengthOfLIS();
         int res = lengthOfLIS.findNumberOfLIS(new int[]{1,3,5,4,7});

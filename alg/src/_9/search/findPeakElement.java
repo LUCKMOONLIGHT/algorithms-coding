@@ -19,7 +19,7 @@ public class findPeakElement {
      *
      * 规律一：如果nums[i] > nums[i+1]，则在i之前一定存在峰值元素
      *
-     * 规律二：如果nums[i] < nums[i+1]，则在i+1之后一定存在峰值元素
+     * 规律二：如果nums[i] <= nums[i+1]，则在i+1之后一定存在峰值元素
      * @param nums
      * @return
      */

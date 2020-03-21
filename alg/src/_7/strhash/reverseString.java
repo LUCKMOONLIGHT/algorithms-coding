@@ -48,6 +48,8 @@ public class reverseString {
 
     //面试题58 - I. 翻转单词顺序
     //split 逆序for StringBuilder
+    //"the sky is blue"
+    //"blue is sky the"
     public String reverseWords(String s) {
         String[] strs = s.trim().split(" ");//删除字符串的头尾空白符
         StringBuilder sb = new StringBuilder();
@@ -63,15 +65,17 @@ public class reverseString {
         return sb.toString();
     }
 
+    //滑动窗口里面的最大值
+    //当滑动窗口大于k时，删除窗口外的值i-k+1
     public int[] maxSlidingWindow(int[] nums, int k) {
         PriorityQueue<Integer> queue = new PriorityQueue<>((o1, o2) -> (o2 - o1));
         int[] res = new int[nums.length - 2];
         int j = 0;
         for(int i = 0;i<nums.length;i++){
             queue.offer(nums[i]);
-            if(i<k-1) continue;
-            res[j++] = queue.peek();
-            queue.remove(nums[i-k+1]);
+            if(i<k-1) continue;       //2
+            res[j++] = queue.peek();  //当满足三个时
+            queue.remove(nums[i-k+1]);  //2-3+1   删除第一个
         }
         return res;
     }

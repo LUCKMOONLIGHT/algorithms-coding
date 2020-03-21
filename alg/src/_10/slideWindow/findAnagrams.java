@@ -29,8 +29,8 @@ public class findAnagrams {
         for(char c:p.toCharArray()) target[c]++;
         int l = 0,r = 0;
         while(r<s.length()){
-            if(!valid(target, source)) source[s.charAt(r++)]++;
-            while(valid(target, source) || (r - l) > p.length()){
+            if(!valid(target, source)) source[s.charAt(r++)]++; //如果target，source不是异位词，继续添加r位置的字符，进行计数
+            while(valid(target, source) || (r - l) > p.length()){//当是异位词，且长度大于要求时，添加保存结果，并减去最左边的数字，缩小窗口
                 if(valid(target, source)) res.add(l);
                 source[s.charAt(l++)]--;
             }
@@ -40,7 +40,7 @@ public class findAnagrams {
 
     //检查target与source的异动字符是否相等
     public boolean valid(int[] target, int[] source){
-        for(int i=0;i<target.length;i++){
+        for(int i=0;i<target.length;i++){//减少source是否包含source中的数字
             if(target[i] != source[i]) return false;
         }
         return true;

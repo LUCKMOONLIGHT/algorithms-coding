@@ -29,23 +29,23 @@ public class buildTreeDFS {
 
     private Map<Integer, Integer> hashmap = new HashMap<>();
 
-    public TreeNode buildTree(int[] preOrder, int[] inOrder){
-        if(preOrder == null || inOrder == null || preOrder.length != inOrder.length) return null;
-        for (int i=0;i<inOrder.length;i++){
-            hashmap.put(inOrder[i], i);//中序的值及其每个值对应的位置
-        }
-        return buildDFSTree(preOrder, 0, preOrder.length - 1, inOrder, 0, inOrder.length - 1);
-    }
-
-    private TreeNode buildDFSTree(int[] preOrder, int preStart, int preEnd, int[] inOrder, int inPre, int inEnd){
-        if(preStart > preEnd || inPre > inEnd) return null;
-        int mid = hashmap.get(preOrder[preStart]);//通过hashmap来查找根结点对用的位置，省去了查找的时间
-        if (mid < 0) return null;
-        TreeNode root = new TreeNode(preOrder[preStart]);
-        root.left = buildDFSTree(preOrder, preStart + 1, preStart + (mid - inPre), inOrder, inPre, mid - 1);
-        root.right = buildDFSTree(preOrder, preStart + (mid - inPre) + 1, preEnd, inOrder, mid + 1, inEnd);
-        return root;
-    }
+//    public TreeNode buildTree(int[] preOrder, int[] inOrder){
+//        if(preOrder == null || inOrder == null || preOrder.length != inOrder.length) return null;
+//        for (int i=0;i<inOrder.length;i++){
+//            hashmap.put(inOrder[i], i);//中序的值及其每个值对应的位置
+//        }
+//        return buildDFSTree(preOrder, 0, preOrder.length - 1, inOrder, 0, inOrder.length - 1);
+//    }
+//
+//    private TreeNode buildDFSTree(int[] preOrder, int preStart, int preEnd, int[] inOrder, int inPre, int inEnd){
+//        if(preStart > preEnd || inPre > inEnd) return null;
+//        int mid = hashmap.get(preOrder[preStart]);//通过hashmap来查找根结点对用的位置，省去了查找的时间
+//        if (mid < 0) return null;
+//        TreeNode root = new TreeNode(preOrder[preStart]);
+//        root.left = buildDFSTree(preOrder, preStart + 1, preStart + (mid - inPre), inOrder, inPre, mid - 1);
+//        root.right = buildDFSTree(preOrder, preStart + (mid - inPre) + 1, preEnd, inOrder, mid + 1, inEnd);
+//        return root;
+//    }
 
 
     public TreeNode buildTreeI(int[] preorder, int[] inorder) {

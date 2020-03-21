@@ -11,9 +11,9 @@ public class sortedArrayToBST {
     public TreeNode dfs(int[] nums, int i, int j){
         if(i == j) return null;
         int mid = (i+j) >>> 1;
-        TreeNode root = new TreeNode(nums[mid]);
-        root.left = dfs(nums, i, mid);
-        root.right = dfs(nums, mid+1,j);
-        return root;
+        TreeNode root = new TreeNode(nums[mid]);  //找到中间节点，将中间节点作为根节点
+        root.left = dfs(nums, i, mid);//dfs迭代左子树
+        root.right = dfs(nums, mid+1,j);//dfs迭代右子树
+        return root;//返回根节点
     }
 }
